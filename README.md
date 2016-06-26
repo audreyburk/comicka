@@ -1,6 +1,16 @@
-# Live Project
+# Capstone: Comicka
+- [Comicka [Live Site [soon]]](#mvp)
+- [Minimum Viable Product](#mvp)
+- [React Routes](#routes)
+- [React Components](#components)
+  - [Index](#index)
+  - [Read Comic](#comic)
+  - [Bookshelf](#bookshelf)
+  - [New Comic](#new)
+- [Production Timeline](#timeline)
 
-# Minimum Viable Product
+<a name="mvp"></a>
+## Minimum Viable Product
 Comicka is a web application inspired by DeviantArt and Hiveworks that will allow users to upload webcomics, read and follow webcomics, and interact via comments. It will be built on a Ruby*on*Rails backend, PostgreSQL database, and React/Flux frontend.
 
 By the end of week nine, this app will satisfy the following criteria:
@@ -48,7 +58,8 @@ By the end of week nine, this app will satisfy the following criteria:
         - Organizable/draggable bookshelf items
         - Multiple view options: tiles, list style, etc.
 
-# Routes
+<a name="routes"></a>
+## Routes
     <Route path="/" component={App}>
       <IndexRoute component={ComicIndex} />
       <Route path=":comicID/:pageID" component={ComicPage} />
@@ -58,8 +69,10 @@ By the end of week nine, this app will satisfy the following criteria:
     </Route>
 
 
-# Components
+<a name="components"></a>
+## Components
 
+<a name="index"></a>
 ### Index
     App
       Header
@@ -83,6 +96,7 @@ By the end of week nine, this app will satisfy the following criteria:
         children InfoColumns
           children InfoLinks
 
+<a name="comic"></a>
 ### Comic
     App
       Header
@@ -112,6 +126,7 @@ By the end of week nine, this app will satisfy the following criteria:
         children InfoColumns
           children InfoLinks
 
+<a name="bookshelf"></a>
 ### Bookshelf
     App
       Header
@@ -134,9 +149,8 @@ By the end of week nine, this app will satisfy the following criteria:
           children InfoLinks
 
 
-
-
-# Production Timeline
+<a name="timeline"></a>
+## Production Timeline
 
     W8D2:
     - New project!
