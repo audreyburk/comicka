@@ -1,3 +1,4 @@
+<a name="top"></a>
 # Capstone: Comicka
 - [Comicka [Live Site [soon]]](#mvp)
 - [Minimum Viable Product](#mvp)
@@ -10,7 +11,7 @@
 - [Production Timeline](#timeline)
 
 <a name="mvp"></a>
-## Minimum Viable Product
+## Minimum Viable Product [[top]](#top)
 Comicka is a web application inspired by DeviantArt and Hiveworks that will allow users to upload webcomics, read and follow webcomics, and interact via comments. It will be built on a Ruby*on*Rails backend, PostgreSQL database, and React/Flux frontend.
 
 By the end of week nine, this app will satisfy the following criteria:
@@ -59,7 +60,7 @@ By the end of week nine, this app will satisfy the following criteria:
         - Multiple view options: tiles, list style, etc.
 
 <a name="routes"></a>
-## Routes
+## Routes [[top]](#top)
     <Route path="/" component={App}>
       <IndexRoute component={ComicIndex} />
       <Route path=":comicID/:pageID" component={ComicPage} />
@@ -70,87 +71,84 @@ By the end of week nine, this app will satisfy the following criteria:
 
 
 <a name="components"></a>
-## Components
+## Components [[top]](#top)
 
 <a name="index"></a>
 ### Index
     App
       Header
-        HeaderContent
-          Logo
-          HeaderButtons
-          Search
-            Results Modal
-              children SearchResults
+        Logo
+        HeaderButtons
+        Search
+        ProfilePic / LogIn
       ComicGrid
-        children ComicTiles
+        ComicTiles
           TileImg
           TileTitle
           TileNav
-            children TileButtons
         NavFooter
+          First
           Prev
-          children PageLinks
+          PaginationNavButton
           Next
       Footer
-        children InfoColumns
-          children InfoLinks
 
 <a name="comic"></a>
 ### Comic
     App
       Header
-        HeaderContent
-          Left
-            Logo (FAR left)
-            PreviousColumn
-          Center
-            Buttons: First, Previous
-            Progress
-            Buttons: Next, Latest
-          Right
-            (blank)
-            NextColumn
-      ComicPanel
-        BannerImg
-        ComicImg
-        CaptionPanel
-          children Caption
-            CreatorPic
-            CaptionContent
-      CommentPanel
-        children Comments
-          CommenterPic
-          CommentContent
+        Logo
+        Buttons: First, Previous
+        Progress
+        Buttons: Next, Latest
+        ProfilePic / LogIn
+      ReadComic
+        ComicPanel
+          BannerImg
+          ComicImg
+          CaptionPanel
+            Captions
+              CreatorPic
+              CaptionContent
+        CommentPanel
+          Comments
+            CommenterPic
+            CommentContent
       Footer
-        children InfoColumns
-          children InfoLinks
 
 <a name="bookshelf"></a>
 ### Bookshelf
     App
       Header
-        HeaderContent
-          Logo
-          HeaderButtons
-          Search
-            Results Modal
-              Toggle (search all/search bookshelf)
-              children SearchResults
+        Logo
+        HeaderButtons
+        Search
+        ProfilePic / LogIn
       Bookshelf
-        children ComicTiles
-          TileImg
-          TileTitle
-          TileProgress (Count of unread pages, small progress bar)
-          TileNav
-            children TileButtons
+        BookshelfStats
+        BookshelfGrid
+          BookshelfTiles
+            BookshelfThumb
+            BookshelfTileInfo
+            BookshelfTileProgress
+            BookshelfTileNav
       Footer
-        children InfoColumns
-          children InfoLinks
+
+<a name="new"></a>
+### New Comic
+    App
+      Header
+        Logo
+        HeaderButtons
+        Search
+        ProfilePic / LogIn
+      NewComic
+        ???
+      Footer
 
 
 <a name="timeline"></a>
-## Production Timeline
+## Production Timeline [[top]](#top)
 
     W8D2:
     - New project!
