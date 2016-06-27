@@ -157,7 +157,7 @@ By the end of week nine, this app will satisfy the following criteria:
 
 
 <a name="flux"></a>
-## Flux Cycles
+## Flux Cycles [[top]](#top)
 
 <a name="comic-cycle"></a>
 #### Comic Cycles
@@ -201,7 +201,6 @@ By the end of week nine, this app will satisfy the following criteria:
 
     ComicIndex listens to ComicStore
     Bookshelf listens to ComicStore
-    ??? On unfollow, how to remove from Bookshelf?
 
 <a name="page-cycle"></a>
 #### Page Cycles
@@ -240,6 +239,25 @@ By the end of week nine, this app will satisfy the following criteria:
 ###### Store Listeners
 
     SearchResultPane listens to SearchSuggestionStore
+
+## API Endpoints [[top]](#top)
+
+#### HTML API
+
+    GET     /           loads App
+    POST    /users      sign up
+    PATCH   /users      update user?
+    POST    /session    sign in
+    DELETE  /session    sign out
+
+#### JSON API
+
+    GET     /api/comics             returns all comics
+    GET     /api/comics/bookshelf   returns followed comics
+    GET     /api/comics/:comic_id   returns all pages
+    POST    /api/comics             create comic
+    PATCH   /api/comics             update comic
+    DELETE  /api/comics             destroy comic
 
 <a name="timeline"></a>
 ## Production Timeline [[top]](#top)
