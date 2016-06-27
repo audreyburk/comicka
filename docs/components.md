@@ -1,5 +1,5 @@
 <a name="components"></a>
-## Components [[top]](#top)
+## Components
   - [Index](#index)
   - [Read Comic](#comic)
   - [Bookshelf](#bookshelf)

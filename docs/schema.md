@@ -6,7 +6,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 shortname   | string    | not null
-image_url   | string    | not null
+creator_id  | integer   | not null
 thumb_url   | string    | not null
 banner_url  | string    | not null
 
@@ -35,13 +35,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 bookmark    | integer   | not null, default 1
 reader_id   | integer   | not null, foreign key, indexed, unique [comic_id]
-comic_id    | integer   | not null, foreign key, indexed
-
-#### creations
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-creator_id  | integer   | not null, foreign key, indexed, unique [comic_id]
 comic_id    | integer   | not null, foreign key, indexed
 
 #### users
