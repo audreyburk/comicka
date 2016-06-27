@@ -1,6 +1,7 @@
 # Capstone: Comicka <a name="top"></a>
 - [Comicka [Live Site [soon]]](#top)
 - [Minimum Viable Product](#mvp)
+- [Bonus Features](#bonus)
 - [Design Documents](#design)
 - [Production Timeline](#timeline)
 
@@ -29,28 +30,31 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
-6. [ ] Index:
-  - [ ] Shows all comics
-  - [ ] Read or follow in one click
-  - [ ] Adequate styling
-
-7. [ ] Bookshelf:
-  - [ ] Shows all comics user is following
-  - [ ] Appropriate, intuitive navigation
-  - [ ] Adequate styling
-
-8. [ ] New / Update Comic
+6. [ ] New / Update Comic
   - [ ] Upload page and captions
   - [ ] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
-9. Semi-Important Bonus Features:
+7. [ ] Index:
+  - [ ] Shows all comics
+  - [ ] Read or follow in one click
+  - [ ] Adequate styling
+
+<a name="bonus"></a>
+## Bonus Features [[top]](#top)
+
+1. [ ] Please let me have time for a Bookshelf:
+  - [ ] Shows all comics user is following
+  - [ ] Appropriate, intuitive navigation
+  - [ ] Adequate styling
+
+2. Semi-Important Bonus Features:
   - [ ] Search/sort functionality
   - [ ] Comments
   - [ ] Bookmarking of readers' place in each comic
-  - [ ] Multiple creators
 
-10. Super-bonus Bonus Features
+3. Super-bonus Bonus Features
+  - [ ] Multiple creators
   - [ ] Improved search: by genre, creator, etc.
   - [ ] Creator styling of comic pages
   - [ ] Nested comments
