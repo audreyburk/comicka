@@ -12,6 +12,8 @@
   - [Comic Cycle](#comic-cycle)
   - [Page Cycle](#page-cycle)
   - [Search Suggestion Cycle](#search-cycle)
+- [Database Schema](#schema)
+- [API Endpoints](#api)
 - [Production Timeline](#timeline)
 
 <a name="mvp"></a>
@@ -111,6 +113,7 @@ By the end of week nine, this app will satisfy the following criteria:
           BannerImg
           ComicImg
           CaptionPanel
+            Title
             Captions
               CreatorPic
               CaptionContent
@@ -201,6 +204,8 @@ By the end of week nine, this app will satisfy the following criteria:
 
     ComicIndex listens to ComicStore
     Bookshelf listens to ComicStore
+    Bookshelf listens to SessionStore
+    Progress listens to SessionStore
 
 <a name="page-cycle"></a>
 #### Page Cycles
@@ -240,6 +245,70 @@ By the end of week nine, this app will satisfy the following criteria:
 
     SearchResultPane listens to SearchSuggestionStore
 
+
+
+<a name="schema"></a>
+## Database Schema [[top]](#top)
+
+#### comics
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+shortname   | string    | not null
+image_url   | string    | not null
+thumb_url   | string    | not null
+banner_url  | string    | not null
+
+#### pages
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+comic_id    | integer   | not null, foreign key (references comics), indexed
+image_url   | string    | not null
+thumb_url   | string    | not null
+title       | string    |
+
+#### captions
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+comic_id    | integer   | not null, foreign key (references comics), indexed
+title       | string    | not null [body]
+body        | text      |
+
+#### comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+author_id   | integer   | not null, foreign key (references users), indexed
+page_id     | integer   | not null, foreign key, indexed
+title       | string    | not null [body]
+body        | text      |
+
+#### bookshelves
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+reader_id   | integer   | not null, foreign key, indexed, unique [comic_id]
+comic_id    | integer   | not null, foreign key, indexed
+
+#### creations
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+creator_id   | integer   | not null, foreign key, indexed, unique [comic_id]
+comic_id    | integer   | not null, foreign key, indexed
+
+#### users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, indexed, unique
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
+
+<a name="api"></a>
 ## API Endpoints [[top]](#top)
 
 #### HTML API
