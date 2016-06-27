@@ -2,11 +2,12 @@
 
 #### HTML API
 
-    GET     /           loads App
-    POST    /users      sign up
-    PATCH   /users      update user?
-    POST    /session    sign in
-    DELETE  /session    sign out
+    GET     /              loads App
+    POST    api/users      sign up
+    PATCH   api/users      update user?
+    POST    api/session    sign in
+    DELETE  api/session    sign out
+    GET     api/session
 
 #### JSON API
 
