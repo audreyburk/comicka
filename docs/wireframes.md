@@ -1,5 +1,5 @@
 <a name="wires"></a>
-## Wireframes [[top]](#top)
+## Wireframes
 
 ![Index Wireframe](wireframes/1.JPG)
 ![Comic Wireframe](wireframes/2.JPG)

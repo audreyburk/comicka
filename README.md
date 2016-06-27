@@ -14,55 +14,55 @@ By the end of week nine, this app will satisfy the following criteria:
 2. [ ] Production README to replace this file
 
 3. [ ] Site overview:
-  [ ] Adequate seed data
-  [ ] Free of bugs and console logs
-  [ ] Gorgeous!
+  - [ ] Adequate seed data
+  - [ ] Free of bugs and console logs
+  - [ ] Gorgeous!
 
 4. [ ] Account creation and authorization:
-  [ ] Sign up, sign in, demo user!
-  [ ] Guests may browse full site
-  [ ] Users may upload comics, have bookshelf
+  - [ ] Sign up, sign in, demo user!
+  - [ ] Guests may browse full site
+  - [ ] Users may upload comics, have bookshelf
 
 5. [ ] Comics:
-  [ ] Displays comic and caption
-  [ ] Keyboard navigation: forward, backward
-  [ ] Appropriate, intuitive navigation
-  [ ] Adequate styling
+  - [ ] Displays comic and caption
+  - [ ] Keyboard navigation: forward, backward
+  - [ ] Appropriate, intuitive navigation
+  - [ ] Adequate styling
 
 6. [ ] Index:
-  [ ] Shows all comics
-  [ ] Read or follow in one click
-  [ ] Adequate styling
+  - [ ] Shows all comics
+  - [ ] Read or follow in one click
+  - [ ] Adequate styling
 
 7. [ ] Bookshelf:
-  [ ] Shows all comics user is following
-  [ ] Appropriate, intuitive navigation
-  [ ] Adequate styling
+  - [ ] Shows all comics user is following
+  - [ ] Appropriate, intuitive navigation
+  - [ ] Adequate styling
 
 8. [ ] New / Update Comic
-  [ ] Upload page and captions
-  [ ] Appropriate, intuitive navigation
-  [ ] Adequate styling
+  - [ ] Upload page and captions
+  - [ ] Appropriate, intuitive navigation
+  - [ ] Adequate styling
 
 9. Semi-Important Bonus Features:
-  [ ] Comments
-  [ ] Multiple creators
-  [ ] Bookmarking of readers' place in each comic
-  [ ] Search/sort functionality
+  - [ ] Comments
+  - [ ] Multiple creators
+  - [ ] Bookmarking of readers' place in each comic
+  - [ ] Search/sort functionality
 
 10. Super-bonus Bonus Features
-  [ ] Improved search: by genre, creator, etc.
-  [ ] Creator styling of comic pages
-  [ ] Nested comments
-  [ ] Moderator accounts for trimming comments, etc.
-  [ ] Recommended/similar comics per user and per comic
-  [ ] Comics have chapter/section markers
-  [ ] Comment upvotes/downvotes; comment hiding
-  [ ] Featured comments
-  [ ] Organizable/draggable bookshelf items
-  [ ] Multiple view options: tiles, list style, etc.
-  [ ] Fancy, comment-style captions
-  [ ] Update schedules
+  - [ ] Improved search: by genre, creator, etc.
+  - [ ] Creator styling of comic pages
+  - [ ] Nested comments
+  - [ ] Moderator accounts for trimming comments, etc.
+  - [ ] Recommended/similar comics per user and per comic
+  - [ ] Comics have chapter/section markers
+  - [ ] Comment upvotes/downvotes; comment hiding
+  - [ ] Featured comments
+  - [ ] Organizable/draggable bookshelf items
+  - [ ] Multiple view options: tiles, list style, etc.
+  - [ ] Fancy, comment-style captions
+  - [ ] Update schedules
 
 <a name="design"></a>
 ## Design Documents [[top]](#top)
