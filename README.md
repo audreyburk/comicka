@@ -77,10 +77,11 @@ By the end of week nine, this app will satisfy the following criteria:
 ![Comic Wireframe](git_imgs/2.JPG)
 ![Bookshelf Wireframe](git_imgs/4.JPG)
 ![New/Edit Wireframe](git_imgs/3.JPG)
-    I have no idea why this image is so angry. I'm very sorry.
-    I've done everything in my power to coax it into cooperating,
-    and it has summarily refused. I will replace these with lovely,
-    well-behaved screenshots in the production readme.  
+
+       I have no idea why this image is so angry. I'm very sorry.
+       I've done everything in my power to coax it into cooperating,
+       and it has summarily refused. I will replace these with lovely,
+       well-behaved screenshots in the production readme.  
 
 <a name="routes"></a>
 ## Routes [[top]](#top)
