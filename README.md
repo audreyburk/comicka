@@ -34,10 +34,10 @@ By the end of week nine, this app will satisfy the following criteria:
     4. Account creation and authorization:
       - Sign up, sign in, demo user!
       - Guests may browse full site
-      - Users may comment, upload comics, have bookshelf
+      - Users may upload comics, have bookshelf
 
     5. Comics:
-      - Displays comic, caption, and comments
+      - Displays comic and caption
       - Keyboard navigation: forward, backward
 
     6. Index:
@@ -53,7 +53,8 @@ By the end of week nine, this app will satisfy the following criteria:
       - Upload page and captions
 
     9. Bonus Features:
-    - Improved search: by genre, creator, etc.
+      - Comments!
+      - Improved search: by genre, creator, etc.
       - Bookmarking of readers' place in each comic
       - Creator styling of comic pages
       - Nested comments
@@ -64,6 +65,8 @@ By the end of week nine, this app will satisfy the following criteria:
       - Featured comments
       - Organizable/draggable bookshelf items
       - Multiple view options: tiles, list style, etc.
+      - Fancy, comment-style captions
+      - Update schedules
 
 <a name="routes"></a>
 ## Routes [[top]](#top)
@@ -113,14 +116,8 @@ By the end of week nine, this app will satisfy the following criteria:
           BannerImg
           ComicImg
           CaptionPanel
-            Title
-            Captions
-              CreatorPic
-              CaptionContent
-        CommentPanel
-          Comments
-            CommenterPic
-            CommentContent
+            Page Title
+            Caption
       Footer
 
 <a name="bookshelf"></a>
@@ -205,14 +202,14 @@ By the end of week nine, this app will satisfy the following criteria:
     ComicIndex listens to ComicStore
     Bookshelf listens to ComicStore
     Bookshelf listens to SessionStore
-    Progress listens to SessionStore
+    Header listens to SessionStore
 
 <a name="page-cycle"></a>
 #### Page Cycles
 
     fetchPages (small chunk at a time)
       1. invoked from ReadComic componentDidMount or willReceiveProps
-      2. GET /api/:comic_id
+      2. GET /api/comics/:comic_id
       3. callback ComicAPI.receiveSingleComic
 
     fetchAllPages
@@ -227,7 +224,12 @@ By the end of week nine, this app will satisfy the following criteria:
 
     destroyPage
       1. invoked from edit comic onSubmit
-      2. DELETE /api/:comic_id/:page_id
+      2. DELETE /api/comics/:comic_id/:page_id
+      3. callback ComicAPI.receiveSingleComic
+
+    fetchPage (only if implementing comments and fancy captions)
+      1. invoked from ComicPanel componentDidMount or willReceiveProps
+      2. GET /api/comics/:comic_id/:page_id
       3. callback ComicAPI.receiveSingleComic
 
 <a name="search-cycle"></a>
@@ -268,14 +270,7 @@ comic_id    | integer   | not null, foreign key (references comics), indexed
 image_url   | string    | not null
 thumb_url   | string    | not null
 title       | string    |
-
-#### captions
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-comic_id    | integer   | not null, foreign key (references comics), indexed
-title       | string    | not null [body]
-body        | text      |
+caption     | text      |
 
 #### comments
 column name | data type | details
@@ -286,10 +281,11 @@ page_id     | integer   | not null, foreign key, indexed
 title       | string    | not null [body]
 body        | text      |
 
-#### bookshelves
+#### readerships
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+bookmark    | integer   | not null, default 1
 reader_id   | integer   | not null, foreign key, indexed, unique [comic_id]
 comic_id    | integer   | not null, foreign key, indexed
 
@@ -297,7 +293,7 @@ comic_id    | integer   | not null, foreign key, indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-creator_id   | integer   | not null, foreign key, indexed, unique [comic_id]
+creator_id  | integer   | not null, foreign key, indexed, unique [comic_id]
 comic_id    | integer   | not null, foreign key, indexed
 
 #### users
@@ -331,14 +327,79 @@ session_token   | string    | not null, indexed, unique
 <a name="timeline"></a>
 ## Production Timeline [[top]](#top)
 
-    W8D2:
+#### Phase 1: Functioning site with Auth
+###### W8D2 (1 day)
     - New project!
     - User model
-    - session/user create/destroy api routes
-    - contentless index page after sign-in
-    - hosted on heroku!
+    - Session/user create/destroy api routes
+    - Frontend Auth, however that works...
+    - Blank landing page after sign-in
+    - Hosted on heroku!
 
-    W8D3:
+#### Phase 2: Backend can handle pages and comics
+##### W8D3 (1 day)
     - Comic model
-    - Comic api controller
-    - Comic api views
+    - Page model
+    - ComicsController and Rails routes
+      - shortname only available for New
+    - Comic JBuilder views
+    - Test all controller actions
+    - Seed some data
+
+#### Phase 3: Functional React router and index page
+###### W8D5 (2 days)
+    - Initialize React router
+    - Set up React directories
+    - Index page!
+      - Header (sans search)
+      - Tiles that link to comic page
+      - Uses all the right Flux bits
+      - Vaguely styled
+
+#### Phase 4: You can read comics now!
+###### W8D7 (1 weekend)
+    - Read Comic page!
+      - No comments yet
+      - Displays page and caption
+      - Keyboard navigation
+      - Vaguely styled
+
+#### Phase 5: New/Edit comic pages
+###### W9D1 (1 day)
+    - New comic and edit comic forms
+      - Image uploading O_O
+      - Title, creators, etc.
+      - Page insertion
+      - Page deletion
+      - Vaguely styled
+
+#### Phase 6: Bookshelf and readerships
+###### W9D2 (1 day)
+    - Readerships model
+    - Implement bookmarking
+    - Follow button on index tiles, ReadComic header
+    - Bookshelf!
+      - Displays all followed comics
+      - Fancy little nav pane
+      - Shows progress through each comic
+
+#### Phase 7: Searchability and organization
+###### W9D3 (1 day)
+    - Set up search flux loop
+    - Add search bar to index/bookshelf
+    - Add pagination to index
+    - Sort by title, creator, recency, length
+
+#### Phase 8: Styling
+###### W9D4 (1 day)
+    - Touch up/finish all styles
+    - Add transitions
+    - Make it gorgeous
+
+#### Phase 9: Seeding and Cleanup
+###### W9D4 (1 day)
+    - Ugh figure out how to get all the comics
+    - Seed all the comics
+    - Clean out logs, etc.
+    - Ensure HTML/JS injection security
+    - Do whatever else needs doing
