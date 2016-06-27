@@ -45,10 +45,10 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Adequate styling
 
 9. Semi-Important Bonus Features:
-  - [ ] Comments
-  - [ ] Multiple creators
-  - [ ] Bookmarking of readers' place in each comic
   - [ ] Search/sort functionality
+  - [ ] Comments
+  - [ ] Bookmarking of readers' place in each comic
+  - [ ] Multiple creators
 
 10. Super-bonus Bonus Features
   - [ ] Improved search: by genre, creator, etc.
@@ -76,7 +76,7 @@ By the end of week nine, this app will satisfy the following criteria:
 <a name="timeline"></a>
 ## Production Timeline [[top]](#top)
 
-#### Phase 1: Functioning site with Auth
+#### Phase 1: We can log in to something!
 ###### W8D2 (1 day)
     - New project!
     - User model
@@ -85,7 +85,7 @@ By the end of week nine, this app will satisfy the following criteria:
     - Blank landing page after sign-in
     - Hosted on heroku!
 
-#### Phase 2: Backend can handle pages and comics
+#### Phase 2: The server knows what to do!
 ###### W8D3 (1 day)
     - Comic model
     - Page model
@@ -93,63 +93,75 @@ By the end of week nine, this app will satisfy the following criteria:
       - shortname only available for New
     - Comic JBuilder views
     - Test all controller actions
-    - Seed some data
+    - Seed a bit of test data
 
-#### Phase 3: Functional React router and index page
+#### Phase 3: Oh wow, a React router AND a comic view!?
 ###### W8D5 (2 days)
     - Initialize React router
     - Set up React directories
-    - Index page!
-      - Header (sans search)
-      - Tiles that link to comic page
-      - Uses all the right Flux bits
-      - Vaguely styled
-
-#### Phase 4: You can read comics now!
-###### W8D7 (1 weekend)
     - Read Comic page!
+      - Make a header
       - No comments yet
       - Displays page and caption
-      - Keyboard navigation
       - Vaguely styled
 
-#### Phase 5: New/Edit comic pages
-###### W9D1 (1 day)
-    - New comic and edit comic forms
+#### Phase 4: We can totally upload comics now!
+###### W8D7 (1 weekend)
+    - New comic form
       - Image uploading O_O
-      - Title, creators, etc.
-      - Page insertion
-      - Page deletion
+      - Title, shortname, etc.
       - Vaguely styled
 
-#### Phase 6: Bookshelf and readerships
+#### Phase 5: They can even be updated!
+###### W9D1 (1 day)
+    - Edit comic form
+      - Edit all fields but shortname
+      - Change out any images
+      - Insert and remove pages
+      - Vaguely styled
+
+#### Phase 6: Things are starting to look sleek and shiny!
 ###### W9D2 (1 day)
-    - Readerships model
-    - Implement bookmarking
-    - Follow button on index tiles, ReadComic header
-    - Bookshelf!
-      - Displays all followed comics
-      - Fancy little nav pane
-      - Shows progress through each comic
+    - Finalize basic styling
+      - Solidify color palette
+      - Get logo put together
+      - Make everything pretty!
 
-#### Phase 7: Searchability and organization
+#### Phase 7: It's a never-ending deluge of comics!
 ###### W9D3 (1 day)
-    - Set up search flux loop
-    - Add search bar to index/bookshelf
-    - Add username search to new/edit page
-    - Add pagination to index
-    - Sort by title, creator, amount read, length
+    - Put together an index page
+      - Tiles that link to comic page
+      - Uses all the right Flux bits
+      - Fully styled
 
-#### Phase 8: Styling
+#### Phase 8: This is now the sexiest site!
 ###### W9D4 (1 day)
     - Touch up/finish all styles
     - Add transitions
-    - Make it gorgeous
+    - Make sure index page has OOMPH (large tiles, etc)
+    - Make it stunning
 
-#### Phase 9: Seeding and Cleanup
-###### W9D4 (1 day)
+#### Phase 9: Time to make this house a home!
+###### W9D5 (1 day)
     - Ugh figure out how to get all the comics
     - Seed all the comics
     - Clean out logs, etc.
     - Ensure HTML/JS injection security
     - Do whatever else needs doing
+
+#### Bonus Phase 1: Oh my god I'm so burnt out!
+###### W9D6 (1 day)
+    - Readerships model
+      - Including bookmarking
+    - Follow button on index tiles and on ReadComic header
+    - Bookshelf!
+      - Displays all followed comics
+      - Fancy little nav pane
+      - Shows progress through each comic
+
+#### Bonus Phase 2: Please please just let me sleep!
+###### W9D7 (1 day)
+    - Set up search flux loop
+    - Add search bar to index/bookshelf
+    - Add pagination to index
+    - Sort by title, creator, amount read, length
