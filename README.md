@@ -1,5 +1,5 @@
-<a name="top"></a>
-# Capstone: Comicka
+
+# Capstone: Comicka <a name="top"></a>
 - [Comicka [Live Site [soon]]](#top)
 - [Minimum Viable Product](#mvp)
 - [React Routes](#routes)
@@ -67,6 +67,16 @@ By the end of week nine, this app will satisfy the following criteria:
       - Multiple view options: tiles, list style, etc.
       - Fancy, comment-style captions
       - Update schedules
+
+
+<a name="wires"></a>
+## Wireframes [[top]](#top)
+
+![Index Wireframe](git_imgs/1.JPG)
+![Comic Wireframe](git_imgs/2.JPG)
+![Bookshelf Wireframe](git_imgs/4.JPG)
+![New/Edit Wireframe](git_imgs/3.JPG)
+
 
 <a name="routes"></a>
 ## Routes [[top]](#top)
@@ -337,7 +347,7 @@ session_token   | string    | not null, indexed, unique
     - Hosted on heroku!
 
 #### Phase 2: Backend can handle pages and comics
-##### W8D3 (1 day)
+###### W8D3 (1 day)
     - Comic model
     - Page model
     - ComicsController and Rails routes
@@ -387,8 +397,9 @@ session_token   | string    | not null, indexed, unique
 ###### W9D3 (1 day)
     - Set up search flux loop
     - Add search bar to index/bookshelf
+    - Add username search to new/edit page
     - Add pagination to index
-    - Sort by title, creator, recency, length
+    - Sort by title, creator, amount read, length
 
 #### Phase 8: Styling
 ###### W9D4 (1 day)
