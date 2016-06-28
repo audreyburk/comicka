@@ -9,6 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch"
+  },"engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
   },
   "keywords": [],
   "author": "",
