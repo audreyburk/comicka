@@ -82,11 +82,11 @@ By the end of week nine, this app will satisfy the following criteria:
 
 #### Phase 1: We can log in to something!
 ###### W8D2 (1 day)
-- [ ] New project!
-- [ ] User model
-- [ ] Session/user create/destroy api routes
-- [ ] Frontend Auth, however that works...
-- [ ] Blank landing page after sign-in
+- [x] New project!
+- [x] User model
+- [x] Session/user create/destroy api routes
+- [x] Frontend Auth, however that works...
+- [x] Blank landing page after sign-in
 - [ ] Hosted on heroku!
 
 #### Phase 2: The server knows what to do!
@@ -150,6 +150,7 @@ By the end of week nine, this app will satisfy the following criteria:
 - [ ] Ugh figure out how to get all the comics
 - [ ] Seed all the comics
 - [ ] Clean out logs, etc.
+  - [ ] window-mounted stores, etc.
 - [ ] Ensure HTML/JS injection security
 - [ ] Do whatever else needs doing
 
