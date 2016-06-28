@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create({username: jyllian, password: demoaccount});
-User.create({username: wicker, password: wicker});
+User.create({username: "jyllian", password: "demoaccount"});
+User.create({username: "wicker", password: "wicker"});
