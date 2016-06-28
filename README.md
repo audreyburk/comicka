@@ -87,7 +87,7 @@ By the end of week nine, this app will satisfy the following criteria:
 - [x] Session/user create/destroy api routes
 - [x] Frontend Auth, however that works...
 - [x] Blank landing page after sign-in
-- [ ] Hosted on heroku!
+- [ ] Hosted on Heroku!
 
 #### Phase 2: The server knows what to do!
 ###### W8D3 (1 day)
@@ -101,8 +101,8 @@ By the end of week nine, this app will satisfy the following criteria:
 
 #### Phase 3: Oh wow, a React router AND a comic view!?
 ###### W8D5 (2 days)
-- [ ] Initialize React router
-- [ ] Set up React directories
+- [x] Initialize React router
+- [x] Set up React directories
 - [ ] Read Comic page!
   - [ ] Make a header
   - [ ] No comments yet
