@@ -4,12 +4,28 @@ const SessionActions = require('./../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
+  getInitialState(){
+    return {currentUser: SessionStore.currentUser()};
+  },
+
+  componentDidMount(){
+    this.token = SessionStore.addListener(this._onChange);
+  },
+
+  componentWillUnmount(){
+    this.token.remove();
+  },
+
+  _onChange(){
+    this.setState({currentUser: SessionStore.currentUser()})
+  },
+
   render(){
     let buttons;
     if(SessionStore.isUserLoggedIn()){
       buttons = (
         <div>
-          <p>Welcome, {SessionStore.currentUser().username}</p>
+          <p>Welcome, {this.state.currentUser.username}</p>
           <button onClick={this._logOut}>Log Out</button>
         </div>
       );

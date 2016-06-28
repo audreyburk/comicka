@@ -30,6 +30,7 @@ const SessionActions = {
   },
 
   receiveCurrentUser(currentUser) {
+    ErrorActions.clearErrors();
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGIN,
       currentUser: currentUser
@@ -37,6 +38,7 @@ const SessionActions = {
   },
 
   removeCurrentUser() {
+    ErrorActions.clearErrors();
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGOUT
     });

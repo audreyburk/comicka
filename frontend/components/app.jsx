@@ -12,4 +12,6 @@ module.exports = React.createClass({
       </div>
     );
   }
+  // TODO: Should we be listening to currentUser session change here?
+  //       Instead of in tons of other places?
 });

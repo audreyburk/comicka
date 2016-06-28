@@ -7,9 +7,7 @@ const ErrorStore = require('./../stores/error_store');
 
 module.exports = React.createClass({
   render(){
-    // oh jeez, I'm using only one form
-    // how/why are we extracting only the appropriate errors?
-    // TODO: figure out errors!
+    // TODO: where do I clear my errors???
     const baseErrors = this.state.errors ? this.state.errors.base : "";
     const usernameErrors = this.state.errors ? this.state.errors.username : "";
     const passwordErrors = this.state.errors ? this.state.errors.password : "";
@@ -40,13 +38,17 @@ module.exports = React.createClass({
   },
 
   getInitialState(){
-    // TODO: any concerns about having password stored as string?
     return {username: "", password: "", errors: ErrorStore.formErrors("login")};
   },
 
   componentDidMount(){
-    SessionStore.addListener(this._onSessionChange);
-    ErrorStore.addListener(this._onErrorChange);
+    this.tokenA = SessionStore.addListener(this._onSessionChange);
+    this.tokenB = ErrorStore.addListener(this._onErrorChange);
+  },
+
+  componentWillUnmount(){
+    this.tokenA.remove();
+    this.tokenB.remove();
   },
 
   _onSessionChange(){
