@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :created_comics,
+    class_name: "Comic",
+    foreign_key: :creator_id,
+    dependent: :destroy
+
   attr_reader :password
   after_initialize :ensure_session_token
 

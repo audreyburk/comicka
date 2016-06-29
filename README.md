@@ -1,5 +1,5 @@
 # Capstone: Comicka <a name="top"></a>
-- [Comicka [Live Site [soon]]](#top)
+- [Comicka [Live Site [soon]]](https://comicka.herokuapp.com/)
 - [Minimum Viable Product](#mvp)
 - [Bonus Features](#bonus)
 - [Design Documents](#design)
@@ -11,7 +11,7 @@ Comicka is a web application inspired by DeviantArt and Hiveworks that will allo
 
 By the end of week nine, this app will satisfy the following criteria:
 
-1. [ ] Hosted on Heroku
+1. [x] Hosted on Heroku
 2. [ ] Production README to replace this file
 
 3. [ ] Site overview:
@@ -20,9 +20,9 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Gorgeous!
 
 4. [ ] Account creation and authorization:
-  - [ ] Sign up, sign in, demo user!
+  - [x] Sign up, sign in, demo user!
   - [ ] Guests may browse full site
-  - [ ] Users may upload comics, have bookshelf
+  - [ ] Users may upload comics
 
 5. [ ] Comics:
   - [ ] Displays comic and caption
@@ -87,14 +87,15 @@ By the end of week nine, this app will satisfy the following criteria:
 - [x] Session/user create/destroy api routes
 - [x] Frontend Auth, however that works...
 - [x] Blank landing page after sign-in
-- [ ] Hosted on Heroku!
+- [x] Hosted on Heroku!
 
 #### Phase 2: The server knows what to do!
 ###### W8D3 (1 day)
-- [ ] Comic model
-- [ ] Page model
+- [x] Comic model
+- [x] Page model
 - [ ] ComicsController and Rails routes
   - [ ] shortname only available for New
+- [ ] PagesController and Rails routes
 - [ ] Comic JBuilder views
 - [ ] Test all controller actions
 - [ ] Seed a bit of test data
@@ -149,6 +150,7 @@ By the end of week nine, this app will satisfy the following criteria:
 ###### W9D5 (1 day)
 - [ ] Ugh figure out how to get all the comics
 - [ ] Seed all the comics
+- [ ] Custom domain
 - [ ] Clean out logs, etc.
   - [ ] window-mounted stores, etc.
 - [ ] Ensure HTML/JS injection security
