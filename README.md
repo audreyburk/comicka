@@ -1,5 +1,5 @@
 # Capstone: Comicka <a name="top"></a>
-- [Comicka [Live Site](https://comicka.herokuapp.com/)
+- [Comicka [Live Site]](https://comicka.herokuapp.com/)
 - [Minimum Viable Product](#mvp)
 - [Bonus Features](#bonus)
 - [Design Documents](#design)
