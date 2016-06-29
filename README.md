@@ -1,5 +1,5 @@
 # Capstone: Comicka <a name="top"></a>
-- [Comicka [Live Site [soon]]](https://comicka.herokuapp.com/)
+- [Comicka [Live Site](https://comicka.herokuapp.com/)
 - [Minimum Viable Product](#mvp)
 - [Bonus Features](#bonus)
 - [Design Documents](#design)
@@ -106,7 +106,7 @@ By the end of week nine, this app will satisfy the following criteria:
 - [x] Set up React directories
 - [ ] Read Comic page!
   - [ ] Make a header
-  - [ ] No comments yet
+  - [x] No comments yet
   - [ ] Displays page and caption
   - [ ] Vaguely styled
 

@@ -7,7 +7,6 @@ module.exports = React.createClass({
     return (
       <div>
         <Header />
-        <p>Hello!</p>
         {this.props.children}
       </div>
     );

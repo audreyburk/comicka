@@ -14,7 +14,9 @@ class Api::ComicsController < ApplicationController
   end
 
   def show
-    @comic = Comic.find(params[:id])
+    # TODO: confirm that finding by shortname
+    #       doesn't destroy everything ever
+    @comic = Comic.find_by(shortname: params[:id])
     if @comic
       render "api/comics/show"
     else

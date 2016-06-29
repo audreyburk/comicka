@@ -1,0 +1,29 @@
+#header {
+  z-index: 2;
+  background: #bbb;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+}
+
+#header-content {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+}
+
+#header-content li {
+  display: block;
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+#header-content li:hover {
+  background: lightgrey;
+  cursor: pointer;
+}
