@@ -26,7 +26,6 @@ By the end of week nine, this app will satisfy the following criteria:
 
 5. [ ] Comics:
   - [ ] Displays comic and caption
-  - [ ] Keyboard navigation: forward, backward
   - [ ] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
@@ -52,6 +51,8 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Search/sort functionality
   - [ ] Comments
   - [ ] Bookmarking of readers' place in each comic
+  - [ ] Keyboard navigation: forward, backward
+  - [ ] Only loads some pages at once
 
 3. Super-bonus Bonus Features
   - [ ] Multiple creators
@@ -93,12 +94,11 @@ By the end of week nine, this app will satisfy the following criteria:
 ###### W8D3 (1 day)
 - [x] Comic model
 - [x] Page model
-- [ ] ComicsController and Rails routes
-  - [ ] shortname only available for New
-- [ ] PagesController and Rails routes
-- [ ] Comic JBuilder views
-- [ ] Test all controller actions
-- [ ] Seed a bit of test data
+- [x] ComicsController and Rails routes
+- [x] PagesController and Rails routes
+- [x] Comic JBuilder views
+- [x] Test all controller actions
+- [x] Seed a bit of test data
 
 #### Phase 3: Oh wow, a React router AND a comic view!?
 ###### W8D5 (2 days)
@@ -158,6 +158,7 @@ By the end of week nine, this app will satisfy the following criteria:
 
 #### Bonus Phase 1: Oh my god I'm so burnt out!
 ###### W9D6 (1 day)
+- [ ] shortname only available for New Comic, not Edit
 - [ ] Readerships model
   - [ ] Including bookmarking
 - [ ] Follow button on index tiles and on ReadComic header

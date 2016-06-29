@@ -1,5 +1,9 @@
 class Api::ComicsController < ApplicationController
 
+  # TODO: what even are errors?
+  #       appropriate way to display them
+  #       and WHY
+
   def create
     @comic = Comic.new(comic_params)
     if @comic.save
