@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628170407) do
+ActiveRecord::Schema.define(version: 20160629001238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comics", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.string   "shortname",  null: false
+    t.integer  "creator_id", null: false
+    t.string   "thumb_url",  null: false
+    t.string   "banner_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comics", ["creator_id"], name: "index_comics_on_creator_id", using: :btree
+  add_index "comics", ["shortname"], name: "index_comics_on_shortname", unique: true, using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "comic_id",   null: false
+    t.string   "image_url",  null: false
+    t.string   "thumb_url",  null: false
+    t.string   "title"
+    t.text     "caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pages", ["comic_id"], name: "index_pages_on_comic_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

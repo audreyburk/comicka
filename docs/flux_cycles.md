@@ -58,17 +58,22 @@
 
     fetchAllPages
       1. invoked from edit comic componentDidMount or willReceiveProps
-      2. GET /api/:comic_id
+      2. GET /api/comics/:comic_id
+      3. callback ComicAPI.receiveSingleComic
+
+    createPage
+      1. invoked from new/edit comic addPage
+      2. POST /api/pages
       3. callback ComicAPI.receiveSingleComic
 
     updatePage
       1. invoked from edit comic onSubmit
-      2. PATCH /api/:comic_id/:page_id
+      2. PATCH /api/pages/:page_id
       3. callback ComicAPI.receiveSingleComic
 
     destroyPage
       1. invoked from edit comic onSubmit
-      2. DELETE /api/comics/:comic_id/:page_id
+      2. DELETE /api/pages/:page_id
       3. callback ComicAPI.receiveSingleComic
 
     fetchPage (only if implementing comments and fancy captions)
