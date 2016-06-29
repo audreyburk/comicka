@@ -11,7 +11,6 @@ const hashHistory = ReactRouter.hashHistory;
 
 // Local files
 const App = require('./components/app');
-const LoginForm = require('./components/login_form');
 const SessionActions = require('./actions/session_actions');
 const ShowComic = require('./components/comics/show_comic');
 
@@ -19,12 +18,12 @@ const ShowComic = require('./components/comics/show_comic');
 window.SessionActions = SessionActions;
 window.SessionStore = require('./stores/session_store');
 window.ErrorStore = require('./stores/error_store');
+window.ComicStore = require('./stores/comic_store');
 
 // Actual code
 const router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <Route path="login" component={LoginForm} />
       <Route path=":shortname/:page" component={ShowComic} />
     </Route>
   </Router>

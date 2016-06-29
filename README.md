@@ -104,8 +104,8 @@ By the end of week nine, this app will satisfy the following criteria:
 ###### W8D5 (2 days)
 - [x] Initialize React router
 - [x] Set up React directories
+- [x] Make a header
 - [ ] Read Comic page!
-  - [ ] Make a header
   - [x] No comments yet
   - [ ] Displays page and caption
   - [ ] Vaguely styled

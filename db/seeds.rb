@@ -11,7 +11,7 @@ Comic.create({
   shortname:"gunnerkrigg",
   creator_id:3,
   thumb_url:"a",
-  banner_url:"a"
+  banner_url:"http://i.imgur.com/cnpwwWx.jpg"
 })
 
 Comic.create({

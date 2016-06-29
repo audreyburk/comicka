@@ -5,9 +5,12 @@
   right: 0px;
   top: 0px;
   position: fixed;
-  -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  // -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  // box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  font-family: 'montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 #header-content {
@@ -16,14 +19,97 @@
   display: flex;
 }
 
-#header-content li {
-  display: block;
-  flex: 1;
-  text-align: center;
-  padding: 20px;
+#logo {
+  background: #D82;
 }
 
-#header-content li:hover {
+#login {
+  cursor: default;
+}
+
+.header-item, #logo {
+  position: relative;
+  display: block;
+  flex: 0;
+  text-align: right;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.spacing {
+  flex: 1;
+}
+
+.header-item:hover {
   background: lightgrey;
   cursor: pointer;
+  // TODO: ugh, but not the dropdown form!
+}
+
+.header-item:hover > .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: lightgrey;
+  white-space: nowrap;
+  font-family: 'open-sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 20px;
+}
+
+.dropdown-item:hover {
+  background: #EEE;
+}
+
+.login-field {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.login-field span {
+  display: inline-block;
+  padding: 5px 5px 5px 0px;
+}
+
+.button {
+  padding: 5px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.login-field input[type=submit] {
+  border: 1px solid black;
+}
+
+.login-error {
+  display: block;
+  padding: 10px 5px;
+}
+
+.text-field {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.text-field:focus {
+  border-color: lightgrey;
+}
+
+.field-error {
+  margin: 10px;
+  color: darkorange;
 }
