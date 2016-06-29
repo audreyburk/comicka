@@ -7,32 +7,39 @@ const ErrorStore = require('./../stores/error_store');
 
 module.exports = React.createClass({
   render(){
-    // TODO: where do I clear my errors???
-    const baseErrors = this.state.errors ? this.state.errors.base : "";
-    const usernameErrors = this.state.errors ? this.state.errors.username : "";
-    const passwordErrors = this.state.errors ? this.state.errors.password : "";
+    let baseErrors = "",
+        usernameErrors = "",
+        passwordErrors = ""
+
+    if(!$.isEmptyObject(this.state.errors)){
+      baseErrors = <div className="field-error">{this.state.errors.base}</div>
+      usernameErrors = <div className="field-error">{this.state.errors.username}</div>
+      passwordErrors = <div className="field-error">{this.state.errors.password}</div>
+    }
 
     return(
-      <form onSubmit={this._onSubmit}>
-        <label>Username:
-          <input type="text" id="username"
+      <form id="login" className="dropdown" onSubmit={this._onSubmit}>
+        <label className="login-field"><span>Username:</span>
+          <input className="text-field" type="text" id="username"
                  onChange={this._onChange}></input>
+               {usernameErrors}
         </label>
-        {usernameErrors}
-        <br></br>
 
-        <label>Password:
-          <input type="password" id="password"
+        <label className="login-field"><span>Password:</span>
+          <input className="text-field" type="password" id="password"
                  onChange={this._onChange}></input>
+               {passwordErrors}
         </label>
-        {passwordErrors}
-        <br></br>
         {baseErrors}
         {baseErrors ? <br></br> : ""}
-
-        <input type="submit" value="Log In" onClick={this._whichSubmit}></input>
-        <input type="submit" value="Sign Up" onClick={this._whichSubmit}></input>
-        <input type="submit" value="Demo Login" onClick={this._whichSubmit}></input>
+        <div className="login-field">
+          <input type="submit" value="Log In" className="button"
+            onClick={this._whichSubmit}></input>
+          <input type="submit" value="Sign Up" className="button"
+            onClick={this._whichSubmit}></input>
+          <input type="submit" value="Demo Login" className="button"
+            onClick={this._whichSubmit}></input>
+        </div>
       </form>
     );
   },

@@ -12,14 +12,20 @@ html, body, main, div, h1, ul, li {
 
 body {
   background: grey;
+  font-family: 'open-sans', sans-serif;
 }
 
 ul, li {
   list-style-type: none;
 }
 
-#root {
-  background: antiquewhite;
-  height: 300px;
-  margin: 100px auto;
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
 }
+
+#root {
+  padding-top: 50px;
+}
+
+
+// roboto slab, oxygen, rajdhani
