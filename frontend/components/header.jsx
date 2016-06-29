@@ -24,23 +24,22 @@ module.exports = React.createClass({
     let buttons;
     if(SessionStore.isUserLoggedIn()){
       buttons = (
-        <div>
-          <p>Welcome, {this.state.currentUser.username}</p>
-          <button onClick={this._logOut}>Log Out</button>
-        </div>
+        <li onClick={this._logOut}>
+          {this.state.currentUser.username} (Log Out)
+        </li>
       );
     } else {
-      buttons = (
-        <div>
-          <button onClick={this._logIn}>Log In</button>
-        </div>
-      );
+      buttons = <li onClick={this._logIn}>Log In</li>;
     }
     return(
-      <div>
-        <h1>Comicka!</h1>
-        { buttons }
-      </div>
+      <header id="header">
+        <ul id="header-content">
+          <li>Comicka!</li>
+          <li>About</li>
+          <li>Explore</li>
+          { buttons }
+        </ul>
+      </header>
     );
   },
 
