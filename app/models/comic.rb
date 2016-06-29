@@ -5,5 +5,5 @@ class Comic < ActiveRecord::Base
   belongs_to :creator,
     class_name: "User"
 
-  has_many :pages
+  has_many :pages, dependent: :destroy
 end
