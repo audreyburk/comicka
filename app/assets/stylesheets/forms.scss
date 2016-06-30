@@ -1,11 +1,11 @@
 @import "variables";
 
 .form-head {
-  background: $medium-color;
+  background: black;
   padding: 20px;
 }
 
-.form-body {
+.form-inputs, .form-pages, .form-images {
   background: $light-color;
   min-height: 300px;
   padding: 20px;
@@ -14,4 +14,13 @@
 .form-end {
   background: $heavy-color;
   padding: 20px;
+}
+
+.form-element {
+  display: block;
+  padding: 10px;
+}
+
+.form-element span {
+  padding-right: 10px;
 }

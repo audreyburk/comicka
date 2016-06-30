@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'rails_12factor', group: :production
 
+gem 'figaro'
 gem 'faker'
 
 # Use ActiveModel has_secure_password

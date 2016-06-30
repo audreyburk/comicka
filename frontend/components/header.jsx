@@ -27,6 +27,32 @@ module.exports = React.createClass({
     pageNumber: React.PropTypes.number
   },
 
+  _logOut(){
+    SessionActions.logOut();
+  },
+
+  _new(){
+    hashHistory.push('/new');
+  },
+
+  _selectInput(){
+    const input = $(".text-field").get(0);
+    input.focus();
+    input.select();
+  },
+
+  // TODO: make sure we can't click button before navigating
+  _nav(pg){
+    const comic = this.context.comic;
+    const url = `/${comic.shortname}/${pg}`;
+    hashHistory.push(url);
+  },
+
+  _explore(){
+    const url = '/gunnerkrigg';
+    hashHistory.push(url);
+  },
+
   render(){
     let login_button;
 
@@ -36,7 +62,7 @@ module.exports = React.createClass({
         <li className="header-item">
           <span>{this.state.currentUser.username}</span>
           <ul className="dropdown">
-            <li className="dropdown-item">Profile</li>
+            <li className="dropdown-item" onClick={this._new}>New Comic</li>
             <li className="dropdown-item" onClick={this._logOut}>Log Out</li>
           </ul>
         </li>
@@ -99,27 +125,5 @@ module.exports = React.createClass({
         { nav_buttons }
       </header>
     );
-  },
-
-  _logOut(){
-    SessionActions.logOut();
-  },
-
-  _selectInput(){
-    const input = $(".text-field").get(0);
-    input.focus();
-    input.select();
-  },
-
-  // TODO: make sure we can't click button before navigating
-  _nav(pg){
-    const comic = this.context.comic;
-    const url = `/${comic.shortname}/${pg}`;
-    hashHistory.push(url);
-  },
-
-  _explore(){
-    const url = '/gunnerkrigg';
-    hashHistory.push(url);
   }
 });
