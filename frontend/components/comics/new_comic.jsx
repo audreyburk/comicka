@@ -31,9 +31,9 @@ module.exports = React.createClass({
           <h3>Create Comic</h3>
         </section>
 
-        <div class="form-container">
-          <FormInputs imageChange={this.imageChange} />
-          <FormImages />
+        <div className="form-container">
+          <FormInputs />
+          <FormImages imageChange={this.imageChange} />
         </div>
 
         <section className="form-pages">

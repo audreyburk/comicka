@@ -11,11 +11,6 @@ module.exports = React.createClass({
             errors: ErrorStore.formErrors("new")};
   },
 
-  contextTypes: {
-    banner_url: React.PropTypes.string,
-    thumb_url: React.PropTypes.string
-  },
-
   componentDidMount(){
     this.token = ErrorStore.addListener(this._onErrorChange);
   },
@@ -30,24 +25,6 @@ module.exports = React.createClass({
 
   _onErrorChange(){
     this.setState({errors: ErrorStore.formErrors("new_comic")});
-  },
-
-  _uploadBanner(){
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      if(error === null){
-        const url = result[0].url;
-        this.props.imageChange("banner_url", url);
-      }
-    }.bind(this));
-  },
-
-  _uploadThumb(){
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      if(error === null){
-        const url = result[0].url;
-        this.props.imageChange("thumb_url", url);
-      }
-    }.bind(this));
   },
 
   _createComic(){
@@ -70,23 +47,19 @@ module.exports = React.createClass({
       // remember to bind somehow!
 
       <section className="form-inputs">
+        <h2>Create Comic:</h2>
         <form onSubmit={this._createComic}>
-          <label className="form-element"><span>Comic Title:</span>
-            <input type="text" onChange={this._onChange}
-                   id="title" value={this.state.title}></input>
-          </label>
+          <label className="form-element" htmlFor="title">Comic Title:</label>
+          <input type="text" onChange={this._onChange} className="form-element"
+            id="title" value={this.state.title}></input>
 
-          <label className="form-element"><span>Shortname:</span>
-            <input type="text" onChange={this._onChange}
+          <label className="form-element" htmlFor="shortname">Shortname:</label>
+            <input type="text" onChange={this._onChange} className="form-element" 
                    id="shortname" value={this.state.shortname}></input>
-          </label>
 
-          <div onClick={this._uploadBanner} className="form-element">
-          Thumbnail Image:<br></br>
-          Banner Image:
-          </div>
           <input type="submit" value="Create Comic"></input>
         </form>
+        <input type="submit" value="Add Page"></input>
       </section>
     )
   }

@@ -121,16 +121,6 @@
   background: white;
 }
 
-.login-field input[type=submit] {
-  border: 1px solid black;
-  background: $light-color;
-  margin-left: 10px;
-}
-
-.login-field input[type=submit]:hover {
-  background: $medium-color;
-}
-
 .login-error {
   display: block;
   padding: 10px 5px;
