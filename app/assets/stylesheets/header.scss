@@ -1,3 +1,5 @@
+@import "variables";
+
 #header {
   z-index: 2;
   background: #bbb;
@@ -15,16 +17,21 @@
 
 #header-content {
   margin: 0 auto;
-  width: 1200px;
+  width: $column-width;
   display: flex;
 }
 
 #logo {
-  background: #D82;
+  background: var(--test-color);
 }
 
 #login {
   cursor: default;
+}
+
+#progress{
+  padding: 10px;
+  text-align: center;
 }
 
 .header-item, #logo {
@@ -43,7 +50,15 @@
 .header-item:hover {
   background: lightgrey;
   cursor: pointer;
-  // TODO: ugh, but not the dropdown form!
+}
+
+.no-nav {
+  color: grey;
+}
+
+.no-nav:hover {
+  cursor: default;
+  background: inherit;
 }
 
 .header-item:hover > .dropdown {
@@ -113,3 +128,5 @@
   margin: 10px;
   color: darkorange;
 }
+
+@import 'media_queries';

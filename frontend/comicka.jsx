@@ -7,6 +7,7 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
+const IndexRedirect = ReactRouter.IndexRedirect;
 const hashHistory = ReactRouter.hashHistory;
 
 // Local files
@@ -24,7 +25,10 @@ window.ComicStore = require('./stores/comic_store');
 const router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <Route path=":shortname/:page" component={ShowComic} />
+      <Route path=":shortname">
+        <IndexRedirect to="1" />
+      </Route>
+      <Route path=":shortname/:page" component={ShowComic}/>
     </Route>
   </Router>
 );

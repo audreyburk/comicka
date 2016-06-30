@@ -1,11 +1,23 @@
+@import "variables";
+
 @media (max-width: 1220px) {
-  #header-content, .content {
-    max-width: 800px;
+  $column-width: 800px;
+  
+  #header-content {
+    width: $column-width;
+  }
+  .content {
+    width: $column-width;
   }
 }
 
 @media (max-width: 820px) {
-  #header-content, .content {
-    max-width: 400px;
+  $column-width: 400px;
+
+  #header-content {
+    width: $column-width;
+  }
+  .content {
+    width: $column-width;
   }
 }

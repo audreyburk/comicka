@@ -1,3 +1,5 @@
+@import "variables";
+
 html, body, main, div, h1, ul, li {
   padding: 0;
   margin: 0;
@@ -11,12 +13,22 @@ html, body, main, div, h1, ul, li {
 }
 
 body {
-  background: grey;
+  background: url('http://i.imgur.com/USY0ACB.png');
   font-family: 'open-sans', sans-serif;
+}
+
+.content {
+  width: $column-width;
+  margin: 0px auto;
+  background: black;
 }
 
 ul, li {
   list-style-type: none;
+}
+
+img {
+  display: block;
 }
 
 input:-webkit-autofill {
@@ -24,8 +36,7 @@ input:-webkit-autofill {
 }
 
 #root {
-  padding-top: 50px;
+  padding: 100px 0px;
 }
 
-
-// roboto slab, oxygen, rajdhani
+@import 'media_queries';
