@@ -3,16 +3,18 @@ const React = require('react');
 module.exports = React.createClass({
   render(){
     const comic = this.context.comic;
-    console.log(page);
+    const page = comic.pages[this.context.pageNumber];
+
     return(
-      <div id="caption">
-        {comic.title ? <h3>{comic.title}</h3> : ""}
-        {comic.caption ? <p>{comic.caption}</p> : ""}
+      <div className="caption">
+        {page.title ? <h3>{page.title}</h3> : ""}
+        {page.caption ? <p>{page.caption}</p> : ""}
       </div>
     );
   },
 
   contextTypes: {
     comic: React.PropTypes.object,
+    pageNumber: React.PropTypes.number
   }
 });

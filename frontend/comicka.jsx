@@ -14,6 +14,8 @@ const hashHistory = ReactRouter.hashHistory;
 const App = require('./components/app');
 const SessionActions = require('./actions/session_actions');
 const ShowComic = require('./components/comics/show_comic');
+const NewComic = require('./components/comics/new_comic');
+const EditComic = require('./components/comics/edit_comic');
 
 // For testing only
 window.SessionActions = SessionActions;
@@ -25,10 +27,12 @@ window.ComicStore = require('./stores/comic_store');
 const router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
+      <Route path="new" component={NewComic} />
       <Route path=":shortname">
         <IndexRedirect to="1" />
       </Route>
-      <Route path=":shortname/:page" component={ShowComic}/>
+      <Route path=":shortname/edit" component={EditComic} />
+      <Route path=":shortname/:page" component={ShowComic} />
     </Route>
   </Router>
 );

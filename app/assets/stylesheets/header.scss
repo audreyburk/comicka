@@ -3,13 +3,16 @@
 
 // TODO: fix the header image hitbox!
 //       AKA use two images :(
+//       this will also hopefully fix z-indexing
+//       but make sure logo text is BELOW list items
+
 #header {
   z-index: 2;
-  background: #534741;
+  background: $heavy-color;
   left: 0px;
   right: 0px;
   top: 0px;
-  border-top: 100px solid #C7B299;
+  border-top: 100px solid $light-color;
   position: fixed;
   // -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
   // -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
@@ -23,7 +26,7 @@
   margin: 0 auto;
   width: $column-width;
   display: flex;
-  color: #C7B299;
+  color: $light-color;
 }
 
 #logo {
@@ -65,7 +68,7 @@
 }
 
 .header-item:hover, .dropdown-item:hover {
-  background: #504035;
+  background: $heaviest-color;
   color: white;
   cursor: pointer;
 }
@@ -85,8 +88,8 @@
   position: absolute;
   right: 0;
   top: 100%;
-  background: #504035;
-  color: #C7B299;
+  background: $heaviest-color;
+  color: $light-color;
   white-space: nowrap;
   font-family: 'open-sans', sans-serif;
   font-size: 16px;
