@@ -8,6 +8,10 @@ module.exports = {
     ComicUtil.fetchComic(shortname, this.receiveComic, ErrorActions.setErrors);
   },
 
+  createComic: function(comic){
+    ComicUtil.createComic(comic, this.receiveComic, ErrorActions.setErrors);
+  },
+
   receiveComic: function(comic){
     ErrorActions.clearErrors();
     Dispatcher.dispatch({

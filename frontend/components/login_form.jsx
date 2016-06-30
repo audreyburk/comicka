@@ -60,12 +60,13 @@ module.exports = React.createClass({
   _onSessionChange(){
     if(SessionStore.isUserLoggedIn) hashHistory.push("/");
   },
+  
   _onErrorChange(){
     this.setState({errors: ErrorStore.formErrors("login")});
   },
 
   _onChange(e){
-    this.setState({[e.target.id]: e.target.value})
+    this.setState({[e.target.id]: e.target.value});
   },
 
   _onSubmit(e){

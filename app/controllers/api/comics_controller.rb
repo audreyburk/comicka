@@ -5,7 +5,9 @@ class Api::ComicsController < ApplicationController
   #       and WHY
 
   def create
+    p current_user
     @comic = Comic.new(comic_params)
+    @comic.creator_id = current_user.id
     if @comic.save
       render :show
     else
@@ -51,7 +53,7 @@ class Api::ComicsController < ApplicationController
 
   private
   def comic_params
-    fields = [:title, :shortname, :creator_id, :thumb_url, :banner_url]
+    fields = [:title, :shortname, :thumb_url, :banner_url]
     params.require(:comic).permit(*fields)
   end
 
