@@ -105,7 +105,7 @@ By the end of week nine, this app will satisfy the following criteria:
 - [x] Initialize React router
 - [x] Set up React directories
 - [x] Make a header
-- [ ] Read Comic page!
+- [x] Read Comic page!
   - [x] No comments yet
   - [ ] Displays page and caption
   - [ ] Vaguely styled
