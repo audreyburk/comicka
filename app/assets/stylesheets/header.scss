@@ -103,7 +103,7 @@
 
 .login-field {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;;
   margin: 10px;
 }
 
@@ -118,11 +118,17 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: white;
+  background: white;
 }
 
 .login-field input[type=submit] {
   border: 1px solid black;
+  background: $light-color;
+  margin-left: 10px;
+}
+
+.login-field input[type=submit]:hover {
+  background: $medium-color;
 }
 
 .login-error {
