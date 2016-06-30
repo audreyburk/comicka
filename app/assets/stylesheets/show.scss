@@ -6,7 +6,7 @@
 }
 
 .page {
-  margin: 0px auto;
+  margin: 20px auto;
 }
 
 .page:hover {
@@ -15,6 +15,13 @@
 
 .page.last-page:hover {
   cursor: default;
+}
+
+.caption {
+  width: 100%;
+  padding: 20px;
+  background: $light-color;
+  box-sizing: border-box;
 }
 
 @import 'media_queries';

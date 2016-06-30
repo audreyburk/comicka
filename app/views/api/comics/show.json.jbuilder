@@ -1,2 +1,9 @@
 json.extract! @comic, :id, :title, :shortname, :creator_id, :thumb_url, :banner_url
-json.pages @comic.pages
+
+json.pages do
+  @comic.pages.each do |page|
+    json.set! page.page_number, page
+  end
+end
+
+json.length @comic.pages.length

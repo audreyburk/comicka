@@ -1,6 +1,6 @@
 @import "variables";
 
-html, body, main, div, h1, ul, li {
+html, body, main, div, h1, h2, h3, ul, li {
   padding: 0;
   margin: 0;
   border:0;
@@ -21,8 +21,12 @@ body {
 
 .content {
   width: $column-width;
-  margin: 0px auto;
+  margin: 143px auto 60px;
   background: black;
+}
+
+h3 {
+  font-weight: bold;
 }
 
 ul, li {
@@ -34,11 +38,7 @@ img {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: inset 0 0 0px 9999px white;
-}
-
-#root {
-  padding: 100px 0px;
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
 }
 
 @import 'media_queries';

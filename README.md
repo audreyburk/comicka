@@ -107,8 +107,8 @@ By the end of week nine, this app will satisfy the following criteria:
 - [x] Make a header
 - [x] Read Comic page!
   - [x] No comments yet
-  - [ ] Displays page and caption
-  - [ ] Vaguely styled
+  - [x] Displays page and caption
+  - [x] Vaguely styled
 
 #### Phase 4: We can totally upload comics now!
 ###### W8D7 (1 weekend)

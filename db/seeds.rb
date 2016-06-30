@@ -30,9 +30,9 @@ Comic.create({
   banner_url:"a"
 })
 
-10.times do
-  Page.create({ comic_id: 3, image_url: "a", thumb_url: "b" })
-  Page.create({ comic_id: 2, image_url: "a", thumb_url: "b" })
+10.times do |i|
+  Page.create({ comic_id: 3, image_url: "a", thumb_url: "b", page_number: (i+1) })
+  Page.create({ comic_id: 2, image_url: "a", thumb_url: "b", page_number: (i+1) })
 end
 
 url = "http://www.gunnerkrigg.com/comics/"
@@ -40,6 +40,7 @@ url = "http://www.gunnerkrigg.com/comics/"
   current_url = url + (i+1).to_s.rjust(8, "0") + ".jpg"
   Page.create({
       comic_id: 1,
+      page_number: (i+1),
       image_url: current_url,
       thumb_url: current_url,
       title: Faker::Book.title,

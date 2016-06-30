@@ -61,23 +61,20 @@ module.exports = React.createClass({
       </ul>
     );
 
-    if(this.context.comic){
+    if(this.context.comic && this.context.pageNumber){
       let backClass = "header-item"
       let foreClass = "header-item"
       let first = 1,
           prev = this.context.pageNumber - 1,
           next = this.context.pageNumber + 1,
-          last = this.context.comic.pages.length;
+          last = this.context.comic.length;
 
-
-
-      // TODO: Let's please have json export length!
       if(this.context.pageNumber === 1){
         backClass += " no-nav";
         first = this.context.pageNumber;
         prev = this.context.pageNumber;
       }
-      if(this.context.pageNumber === this.context.comic.pages.length){
+      if(this.context.pageNumber === this.context.comic.length){
         foreClass += " no-nav";
         next = this.context.pageNumber;
         last = this.context.pageNumber;
@@ -88,7 +85,7 @@ module.exports = React.createClass({
           <Logo />
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
-          <li id="progress" className="spacing">{this.context.pageNumber}</li>
+          <li id="progress" className="spacing"></li>
           <li className={foreClass} onClick={() => this._nav(next)}>{">"}</li>
           <li className={foreClass} onClick={() => this._nav(last)}>{">>"}</li>
           { login_button }
