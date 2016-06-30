@@ -5,10 +5,40 @@
   padding: 20px;
 }
 
-.form-inputs, .form-pages, .form-images {
+.form-container {
+  display: flex;
+}
+
+#banner-placeholder, #thumb-placeholder {
+  border: 2px dashed $medium-color;
+  margin: 0px 20px 20px 20px;
+  height: 200px;
+}
+
+#banner-placeholder:hover, #thumb-placeholder:hover {
+  cursor: pointer;
+}
+
+#banner-placeholder {
+  width: 400px;
+}
+
+#thumb-placeholder {
+  width: 200px;
+}
+
+.form-inputs, .form-images, .form-pages {
   background: $light-color;
   min-height: 300px;
   padding: 20px;
+}
+
+.form-inputs {
+  flex: 0;
+}
+
+.form-images {
+  flex: 1;
 }
 
 .form-end {
@@ -16,9 +46,13 @@
   padding: 20px;
 }
 
-.form-element {
+label.form-element {
   display: block;
-  padding: 10px;
+  padding: 10px 0px;
+}
+
+input.form-element {
+  padding: 5px;
 }
 
 .form-element span {
