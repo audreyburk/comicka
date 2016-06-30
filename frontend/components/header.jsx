@@ -52,15 +52,15 @@ module.exports = React.createClass({
     // display nav options or page stuff
     let nav_buttons = (
       <ul id="header-content">
-        <li id="logo">Comicka!</li>
+        <li id="logo" onClick={this._home}>Comicka!</li>
         <li className="spacing"></li>
         <li className="header-item">About</li>
-        <li className="header-item">Explore</li>
+        <li className="header-item" onClick={this._explore}>Explore</li>
         { login_button }
       </ul>
     );
 
-    if(this.context.comic){
+    if(this.context.comic){      
       let backClass = "header-item"
       let foreClass = "header-item"
       let first = 1,
@@ -84,7 +84,7 @@ module.exports = React.createClass({
 
       nav_buttons = (
         <ul id="header-content">
-          <li id="logo">Comicka!</li>
+          <li id="logo" onClick={this._home}>Comicka!</li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
           <li id="progress" className="spacing">{this.context.pageNumber}</li>
@@ -114,30 +114,18 @@ module.exports = React.createClass({
   },
 
   // TODO: make sure we can't click button before navigating
-
-  _first(){
-  },
-
-  _previous(){
-
-  },
-
-  _next(){
-    // const comic = this.context.comic;
-    // const next = this.context.pageNumber + 1;
-    // if(next <= comic.pages.length){
-    //   const url = `/${comic.shortname}/${next}`;
-    //   hashHistory.push(url);
-    // }
-  },
-
-  _last(){
-
-  },
-
   _nav(pg){
     const comic = this.context.comic;
     const url = `/${comic.shortname}/${pg}`;
     hashHistory.push(url);
+  },
+
+  _explore(){
+    const url = '/gunnerkrigg';
+    hashHistory.push(url);
+  },
+
+  _home(){
+    hashHistory.push('/');
   }
 });

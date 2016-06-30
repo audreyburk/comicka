@@ -13,7 +13,7 @@ module.exports = React.createClass({
   },
 
   componentDidMount(){
-    this.token = ComicStore.addListener(this._onChange);
+    ComicStore.addListener(this._onChange);
   },
 
   getChildContext() {
@@ -31,6 +31,14 @@ module.exports = React.createClass({
   _onChange(){
     this.setState({comic: this.getComic()});
   },
+
+  componentWillReceiveProps(newProps){
+    const comic = ComicStore.get(newProps.params.shortname);
+    this.setState({comic: comic});
+  },
+
+  // gotta set state again at soome point, to clear
+  // we only change when there's a new comic right now
 
   getInitialState(){
     return {comic: this.getComic()};
