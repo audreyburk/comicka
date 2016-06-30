@@ -3,6 +3,7 @@ const SessionStore = require('./../stores/session_store');
 const SessionActions = require('./../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
 const LoginForm = require('./login_form');
+const Logo = require('./logo');
 
 module.exports = React.createClass({
   getInitialState(){
@@ -42,8 +43,8 @@ module.exports = React.createClass({
       );
     } else {
       login_button = (
-        <li className="header-item" onClick={this._selectInput}>
-          <span>Log In</span>
+        <li className="header-item">
+          <span id="ugh" onClick={this._selectInput}>Log In</span>
           <LoginForm />
         </li>
       );
@@ -52,7 +53,7 @@ module.exports = React.createClass({
     // display nav options or page stuff
     let nav_buttons = (
       <ul id="header-content">
-        <li id="logo" onClick={this._home}>Comicka!</li>
+        <Logo />
         <li className="spacing"></li>
         <li className="header-item">About</li>
         <li className="header-item" onClick={this._explore}>Explore</li>
@@ -60,7 +61,7 @@ module.exports = React.createClass({
       </ul>
     );
 
-    if(this.context.comic){      
+    if(this.context.comic){
       let backClass = "header-item"
       let foreClass = "header-item"
       let first = 1,
@@ -84,7 +85,7 @@ module.exports = React.createClass({
 
       nav_buttons = (
         <ul id="header-content">
-          <li id="logo" onClick={this._home}>Comicka!</li>
+          <Logo />
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
           <li id="progress" className="spacing">{this.context.pageNumber}</li>
@@ -123,9 +124,5 @@ module.exports = React.createClass({
   _explore(){
     const url = '/gunnerkrigg';
     hashHistory.push(url);
-  },
-
-  _home(){
-    hashHistory.push('/');
   }
 });

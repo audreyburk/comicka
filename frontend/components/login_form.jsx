@@ -18,20 +18,19 @@ module.exports = React.createClass({
     }
 
     return(
-      <form id="login" className="dropdown" onSubmit={this._onSubmit}>
+      <form id="login" onSubmit={this._onSubmit} className="dropdown">
         <label className="login-field"><span>Username:</span>
           <input className="text-field" type="text" id="username"
                  onChange={this._onChange}></input>
-               {usernameErrors}
         </label>
+        {usernameErrors}
 
         <label className="login-field"><span>Password:</span>
           <input className="text-field" type="password" id="password"
                  onChange={this._onChange}></input>
-               {passwordErrors}
         </label>
+        {passwordErrors}
         {baseErrors}
-        {baseErrors ? <br></br> : ""}
         <div className="login-field">
           <input type="submit" value="Log In" className="button"
             onClick={this._whichSubmit}></input>

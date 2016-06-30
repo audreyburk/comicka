@@ -1,11 +1,15 @@
 @import "variables";
 
+
+// TODO: fix the header image hitbox!
+//       AKA use two images :(
 #header {
   z-index: 2;
-  background: #bbb;
+  background: #534741;
   left: 0px;
   right: 0px;
   top: 0px;
+  border-top: 100px solid #C7B299;
   position: fixed;
   // -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
   // -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
@@ -19,11 +23,23 @@
   margin: 0 auto;
   width: $column-width;
   display: flex;
+  color: #C7B299;
 }
 
 #logo {
-  background: var(--test-color);
+  padding-right: 200px;
+  width: 150px;
   cursor: pointer;
+  display: block;
+  flex: 0;
+}
+
+#logo-img {
+  position: absolute;
+  top: -90px;
+  content: image-url("logo2.png");
+  height: 200px;
+  width: auto;
 }
 
 #login {
@@ -35,7 +51,7 @@
   text-align: center;
 }
 
-.header-item, #logo {
+.header-item {
   position: relative;
   display: block;
   flex: 0;
@@ -48,18 +64,15 @@
   flex: 1;
 }
 
-.header-item:hover {
-  background: lightgrey;
+.header-item:hover, .dropdown-item:hover {
+  background: #504035;
+  color: white;
   cursor: pointer;
 }
 
 .no-nav {
-  color: grey;
-}
-
-.no-nav:hover {
-  cursor: default;
-  background: inherit;
+  color: black;
+  pointer-events: none;
 }
 
 .header-item:hover > .dropdown {
@@ -67,11 +80,13 @@
 }
 
 .dropdown {
+  min-width: 100%;
   display: none;
   position: absolute;
   right: 0;
   top: 100%;
-  background: lightgrey;
+  background: #504035;
+  color: #C7B299;
   white-space: nowrap;
   font-family: 'open-sans', sans-serif;
   font-size: 16px;
@@ -81,10 +96,6 @@
 .dropdown-item {
   display: block;
   padding: 5px 20px;
-}
-
-.dropdown-item:hover {
-  background: #EEE;
 }
 
 .login-field {
