@@ -6,27 +6,33 @@ const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
 
 module.exports = React.createClass({
-
-  // TODO: alert when navigate from page
-  //       without saving changes
-  //       when pages is not empty
-
   getInitialState(){
-    return {banner_url: "", thumb_url: ""};
-  },
-
-  getChildContext() {
-    return {banner_url: this.state.banner_url,
-      thumb_url: this.state.thumb_url};
-  },
-
-  childContextTypes: {
-    banner_url: React.PropTypes.string,
-    thumb_url: React.PropTypes.string
+    return {
+      banner_url: "",
+      thumb_url: "",
+      title: "",
+      shortname: "",
+    };
   },
 
   imageChange(type, url){
     this.setState({[type]: url});
+  },
+
+  onChange(e){
+    this.setState({[e.target.id]: e.target.value});
+  },
+
+  _createComic(){
+    // TODO: disable button until all fields are set!
+
+    const comic = {
+      title: this.state.title,
+      shortname: this.state.shortname,
+      banner_url: this.context.banner_url,
+      thumb_url: this.context.thumb_url
+    };
+    ComicActions.createComic(comic);
   },
 
   render(){
@@ -37,8 +43,8 @@ module.exports = React.createClass({
         </section>
 
         <div className="form-container">
-          <FormInputs />
-          <FormImages imageChange={this.imageChange} />
+          <FormInputs onChange={this.onChange} comic={this.state}/>
+          <FormImages imageChange={this.imageChange} comic={this.state}/>
         </div>
 
         <section className="form-pages">
