@@ -1,6 +1,7 @@
 const React = require('react');
 
 const ComicActions = require('./../../actions/comic_actions');
+const PageActions = require('./../../actions/page_actions');
 
 const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
@@ -17,18 +18,25 @@ module.exports = React.createClass({
     this.token = ComicStore.addListener(this._onComicStoreChange);
   },
 
+  componentWillUnmount(){
+    this.token.remove();
+  },
+
   getInitialState(){
     return {
       banner_url: "",
       thumb_url: "",
       title: "",
       shortname: "",
-      pages: {}
+      newPages: [{title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}],     // takes full page object
+      deletedPages: [], // takes ids
+      updatedPages: []  // takes ids
     };
   },
 
   _onComicStoreChange(){
     const comic = ComicStore.get(this.props.params.shortname);
+    console.log(comic);
     this.setState( comic );
   },
 
@@ -40,19 +48,19 @@ module.exports = React.createClass({
     this.setState({[type]: url});
   },
 
-  addPage(url, thumb_url){
-    console.log("adding a page!");
-  },
-
   updateComic(){
+    console.log(this.state);
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,
-      banner_url: this.context.banner_url,
-      thumb_url: this.context.thumb_url
+      banner_url: this.state.banner_url,
+      thumb_url: this.state.thumb_url,
+      id: this.state.id
     };
+    const newPages = this.state.newPages;
+    console.log(comic);
     ComicActions.updateComic(comic);
-    //on success, update pages!
+    PageActions.addPages(newPages);
   },
 
   render(){
@@ -61,11 +69,12 @@ module.exports = React.createClass({
         <div className="form-container">
           <FormInputs onChange={this.onChange}
                       doComic={this.updateComic}
-                      comic={this.state} />
+                      comic={this.state}
+                      buttonName="Update Comic" />
           <FormImages imageChange={this.imageChange}
                       comic={this.state} />
         </div>
-        <FormAddPages onChange={this.onChange} comic={this.state} />
+        <FormAddPages addPage={this.addPage} comic={this.state} />
       </article>
     );
   }

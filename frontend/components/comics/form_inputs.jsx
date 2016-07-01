@@ -25,7 +25,12 @@ module.exports = React.createClass({
 
   render(){
     // TODO: can't submit updates till comic fetched
-    console.log(this.props);
+    //       can't press any button till all fields valid?
+
+    //onSubmit taken care of
+    //button value needs to change
+
+
     return(
       <section className="form-inputs">
         <h2>Create Comic:</h2>
@@ -38,7 +43,7 @@ module.exports = React.createClass({
             <input type="text" onChange={this.props.onChange} className="form-element"
                    id="shortname" value={this.props.comic.shortname}></input>
 
-          <input type="submit" value="Update Comic"></input>
+          <input type="submit" value={this.props.buttonName}></input>
         </form>
       </section>
     )
