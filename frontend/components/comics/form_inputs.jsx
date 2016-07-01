@@ -1,5 +1,4 @@
 const React = require('react');
-const ComicActions = require('./../../actions/comic_actions');
 
 module.exports = React.createClass({
   componentDidMount(){
@@ -30,7 +29,7 @@ module.exports = React.createClass({
     return(
       <section className="form-inputs">
         <h2>Create Comic:</h2>
-        <form onSubmit={this._updateComic}>
+        <form onSubmit={this.props.doComic}>
           <label className="form-element" htmlFor="title">Comic Title:</label>
           <input type="text" onChange={this.props.onChange} className="form-element"
             id="title" value={this.props.comic.title}></input>
@@ -39,7 +38,7 @@ module.exports = React.createClass({
             <input type="text" onChange={this.props.onChange} className="form-element"
                    id="shortname" value={this.props.comic.shortname}></input>
 
-                 <input type="submit" value="Update Comic"></input>
+          <input type="submit" value="Update Comic"></input>
         </form>
       </section>
     )

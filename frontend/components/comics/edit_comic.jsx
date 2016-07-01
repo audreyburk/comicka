@@ -59,8 +59,11 @@ module.exports = React.createClass({
     return(
       <article className="content">
         <div className="form-container">
-          <FormInputs onChange={this.onChange} comic={this.state} />
-          <FormImages imageChange={this.imageChange} comic={this.state} />
+          <FormInputs onChange={this.onChange}
+                      doComic={this.updateComic}
+                      comic={this.state} />
+          <FormImages imageChange={this.imageChange}
+                      comic={this.state} />
         </div>
         <FormAddPages onChange={this.onChange} comic={this.state} />
       </article>

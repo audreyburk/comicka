@@ -1,6 +1,7 @@
 const React = require('react');
 
 const ErrorStore = require('./../../stores/error_store');
+const ComicActions = require('./../../actions/comic_actions');
 
 const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
@@ -23,15 +24,16 @@ module.exports = React.createClass({
     this.setState({[e.target.id]: e.target.value});
   },
 
-  _createComic(){
+  createComic(){
     // TODO: disable button until all fields are set!
 
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,
-      banner_url: this.context.banner_url,
-      thumb_url: this.context.thumb_url
+      banner_url: this.state.banner_url,
+      thumb_url: this.state.thumb_url
     };
+    debugger
     ComicActions.createComic(comic);
   },
 
@@ -43,8 +45,11 @@ module.exports = React.createClass({
         </section>
 
         <div className="form-container">
-          <FormInputs onChange={this.onChange} comic={this.state}/>
-          <FormImages imageChange={this.imageChange} comic={this.state}/>
+          <FormInputs onChange={this.onChange}
+                      doComic={this.createComic}
+                      comic={this.state}/>
+          <FormImages imageChange={this.imageChange}
+                      comic={this.state}/>
         </div>
 
         <section className="form-pages">
