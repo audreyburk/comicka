@@ -47,9 +47,10 @@ module.exports = React.createClass({
         <div className="form-container">
           <FormInputs onChange={this.onChange}
                       doComic={this.createComic}
-                      comic={this.state}/>
+                      comic={this.state}
+                      buttonName="Create Comic" />
           <FormImages imageChange={this.imageChange}
-                      comic={this.state}/>
+                      comic={this.state} />
         </div>
 
         <section className="form-pages">

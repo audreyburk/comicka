@@ -12,6 +12,10 @@ module.exports = {
     ComicUtil.createComic(comic, this.receiveComic, ErrorActions.setErrors);
   },
 
+  updateComic: function(comic, pages){
+    ComicUtil.updateComic( comic, this.receiveComic, ErrorActions.setErrors);
+  },
+
   receiveComic: function(comic){
     ErrorActions.clearErrors();
     Dispatcher.dispatch({
