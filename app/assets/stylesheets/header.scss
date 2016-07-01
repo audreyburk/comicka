@@ -45,7 +45,7 @@
 #logo-img {
   position: absolute;
   top: -80px;
-  content: url("symbol.png");
+  content: image-url("symbol.png");
   width: auto;
 }
 
@@ -58,7 +58,7 @@
   width: 299px;
   height: 61px;
   background-size: cover;
-  background-image: url('logo.png');
+  background-image: image-url('logo.png');
   position: absolute;
   left: 145px;
   bottom: -104px;
