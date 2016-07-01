@@ -5,9 +5,6 @@ module.exports = React.createClass({
   getInitialState(){
     return {title: "",
             shortname: "",
-            // banner_url: "https://pixabay.com/static/uploads/photo/2016/03/28/12/35/cat-1285634_960_720.png",
-            // thumb_url: "fdsa",
-            pages: {},
             errors: ErrorStore.formErrors("new")};
   },
 
@@ -43,9 +40,6 @@ module.exports = React.createClass({
 
   render(){
     return(
-      // pass in _onChange as prop
-      // remember to bind somehow!
-
       <section className="form-inputs">
         <h2>Create Comic:</h2>
         <form onSubmit={this._createComic}>
@@ -54,7 +48,7 @@ module.exports = React.createClass({
             id="title" value={this.state.title}></input>
 
           <label className="form-element" htmlFor="shortname">Shortname:</label>
-            <input type="text" onChange={this._onChange} className="form-element" 
+            <input type="text" onChange={this._onChange} className="form-element"
                    id="shortname" value={this.state.shortname}></input>
 
           <input type="submit" value="Create Comic"></input>

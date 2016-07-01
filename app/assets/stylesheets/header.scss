@@ -12,7 +12,6 @@
   left: 0px;
   right: 0px;
   top: 0px;
-  border-top: 100px solid $light-color;
   position: fixed;
   // -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
   // -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
@@ -20,6 +19,17 @@
   font-family: 'montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
+}
+
+#header-top {
+  background: $light-color;
+  height: 100px;
+}
+
+#header-top-inner {
+  margin: 0px auto;
+  width: $column-width;
+  position: relative;
 }
 
 #header-content {
@@ -30,19 +40,34 @@
 }
 
 #logo {
-  padding-right: 200px;
-  width: 150px;
-  cursor: pointer;
+  padding-right: 150px;
   display: block;
   flex: 0;
+  position: relative;
 }
+
+// TODO: logo-img:hover { content: highlighted img!}
 
 #logo-img {
   position: absolute;
-  top: -90px;
-  content: url("logo2.png");
-  height: 200px;
+  top: -80px;
+  content: url("symbol.png");
   width: auto;
+}
+
+#logo-img:hover, #logo-text:hover {
+  cursor: pointer;
+}
+
+#logo-text {
+  z-index: 2;
+  width: 299px;
+  height: 61px;
+  background-size: cover;
+  background-image: url('logo.png');
+  position: absolute;
+  left: 145px;
+  bottom: -104px;
 }
 
 #login {
@@ -74,7 +99,7 @@
 }
 
 .no-nav {
-  color: black;
+  color: $heavy-color;
   pointer-events: none;
 }
 
