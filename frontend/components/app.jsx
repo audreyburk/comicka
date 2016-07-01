@@ -17,6 +17,7 @@ module.exports = React.createClass({
   },
 
   getChildContext() {
+    // TODO: Use props.routeParams???????
     const comic = this.state.comic;
     const pathname = this.props.location.pathname.split("/");
     const pageNumber = parseInt(pathname[2]);

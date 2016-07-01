@@ -40,17 +40,6 @@ module.exports = React.createClass({
     ComicActions.createComic(comic);
   },
 
-  _addPage(){
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      if(error === null){
-        console.log(result);
-        const url = result[0].url;
-        const thumb_url = result[0].thumb_url;
-        this.props.addPage(result);
-      }
-    }.bind(this));
-  },
-
   render(){
     return(
       <section className="form-inputs">
@@ -66,7 +55,6 @@ module.exports = React.createClass({
 
           <input type="submit" value="Create Comic"></input>
         </form>
-        <input type="submit" value="Add Page" onClick={this._addPage}></input>
       </section>
     )
   }
