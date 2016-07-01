@@ -12,7 +12,7 @@ module.exports = React.createClass({
   //       when pages is not empty
 
   getInitialState(){
-    return {banner_url: "", thumb_url: "", pages: {}};
+    return {banner_url: "", thumb_url: ""};
   },
 
   getChildContext() {
@@ -29,10 +29,6 @@ module.exports = React.createClass({
     this.setState({[type]: url});
   },
 
-  addPage(result){
-    console.log(result);
-  },
-
   render(){
     return(
       <article className="content">
@@ -41,7 +37,7 @@ module.exports = React.createClass({
         </section>
 
         <div className="form-container">
-          <FormInputs addPage = {this.addPage}/>
+          <FormInputs />
           <FormImages imageChange={this.imageChange} />
         </div>
 
