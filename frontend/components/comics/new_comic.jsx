@@ -7,7 +7,7 @@ const FormImages = require('./form_images');
 
 module.exports = React.createClass({
   getInitialState(){
-    return {banner_url: "", thumb_url: ""};
+    return {banner_url: "", thumb_url: "", pages: {}};
   },
 
   getChildContext() {

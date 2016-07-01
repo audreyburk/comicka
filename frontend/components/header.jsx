@@ -41,6 +41,10 @@ module.exports = React.createClass({
     input.select();
   },
 
+  _home(){
+    hashHistory.push('/');
+  },
+
   // TODO: make sure we can't click button before navigating
   _nav(pg){
     const comic = this.context.comic;
@@ -122,6 +126,11 @@ module.exports = React.createClass({
     // render everything
     return(
       <header id="header">
+        <div id="header-top">
+          <div id="header-top-inner">
+            <div id="logo-text" onClick={this._home}></div>
+          </div>
+        </div>
         { nav_buttons }
       </header>
     );
