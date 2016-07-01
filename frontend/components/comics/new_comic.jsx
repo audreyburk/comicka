@@ -6,6 +6,11 @@ const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
 
 module.exports = React.createClass({
+
+  // TODO: alert when navigate from page
+  //       without saving changes
+  //       when pages is not empty
+
   getInitialState(){
     return {banner_url: "", thumb_url: "", pages: {}};
   },
@@ -24,6 +29,10 @@ module.exports = React.createClass({
     this.setState({[type]: url});
   },
 
+  addPage(result){
+    console.log(result);
+  },
+
   render(){
     return(
       <article className="content">
@@ -32,7 +41,7 @@ module.exports = React.createClass({
         </section>
 
         <div className="form-container">
-          <FormInputs />
+          <FormInputs addPage = {this.addPage}/>
           <FormImages imageChange={this.imageChange} />
         </div>
 

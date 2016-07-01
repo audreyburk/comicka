@@ -48,13 +48,16 @@
 
 label.form-element {
   display: block;
-  padding: 10px 0px;
+  padding: 20px 0px 5px 0px;
 }
 
 input.form-element {
   padding: 5px;
 }
 
-.form-element span {
-  padding-right: 10px;
+.form-inputs input[type=submit] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }

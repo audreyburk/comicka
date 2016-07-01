@@ -29,6 +29,8 @@ module.exports = React.createClass({
     //       and require at least one page
     //       is this that inverse of stuff?
 
+    // TODO: disable button until all fields are set!
+
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,
@@ -36,6 +38,17 @@ module.exports = React.createClass({
       thumb_url: this.context.thumb_url
     };
     ComicActions.createComic(comic);
+  },
+
+  _addPage(){
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
+      if(error === null){
+        console.log(result);
+        const url = result[0].url;
+        const thumb_url = result[0].thumb_url;
+        this.props.addPage(result);
+      }
+    }.bind(this));
   },
 
   render(){
@@ -53,7 +66,7 @@ module.exports = React.createClass({
 
           <input type="submit" value="Create Comic"></input>
         </form>
-        <input type="submit" value="Add Page"></input>
+        <input type="submit" value="Add Page" onClick={this._addPage}></input>
       </section>
     )
   }

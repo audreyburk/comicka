@@ -1,11 +1,5 @@
 @import "variables";
 
-
-// TODO: fix the header image hitbox!
-//       AKA use two images :(
-//       this will also hopefully fix z-indexing
-//       but make sure logo text is BELOW list items
-
 #header {
   z-index: 2;
   background: $heavy-color;
@@ -163,6 +157,10 @@
 .field-error {
   margin: 10px;
   color: darkorange;
+}
+
+.login-field input[type="submit"] {
+  margin-left: 10px;
 }
 
 @import 'media_queries';

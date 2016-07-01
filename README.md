@@ -25,7 +25,7 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Users may upload comics
 
 5. [ ] Comics:
-  - [ ] Displays comic and caption
+  - [x] Displays comic and caption
   - [ ] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
@@ -113,8 +113,8 @@ By the end of week nine, this app will satisfy the following criteria:
 #### Phase 4: We can totally upload comics now!
 ###### W8D7 (1 weekend)
 - [ ] New comic form
-  - [ ] Image uploading O_O
-  - [ ] Title, shortname, etc.
+  - [x] Image uploading O_O
+  - [x] Title, shortname, etc.
   - [ ] Vaguely styled
 
 #### Phase 5: They can even be updated!
@@ -128,8 +128,8 @@ By the end of week nine, this app will satisfy the following criteria:
 #### Phase 6: Things are starting to look sleek and shiny!
 ###### W9D2 (1 day)
 - [ ] Finalize basic styling
-  - [ ] Solidify color palette
-  - [ ] Get logo put together
+  - [x] Solidify color palette
+  - [x] Get logo put together
   - [ ] Make everything pretty!
 
 #### Phase 7: It's a never-ending deluge of comics!
