@@ -49,6 +49,7 @@ module.exports = React.createClass({
   _nav(pg){
     const comic = this.context.comic;
     const url = `/${comic.shortname}/${pg}`;
+    window.scrollTo(0, ($('#page').offset().top - 150));
     hashHistory.push(url);
   },
 

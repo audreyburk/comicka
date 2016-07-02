@@ -1,14 +1,14 @@
 @import "variables";
 
-.page {
+#page {
   margin: 20px auto;
 }
 
-.page:hover {
+#page:hover {
   cursor: pointer;
 }
 
-.page.last-page:hover {
+#page.last-page:hover {
   cursor: default;
 }
 

@@ -54,6 +54,7 @@ input:-webkit-autofill {
 input[type=submit] {
   border: 1px solid black;
   background: $light-color;
+  border-radius: 5px;
 }
 
 input[type=submit]:hover {
