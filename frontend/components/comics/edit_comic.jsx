@@ -29,9 +29,9 @@ module.exports = React.createClass({
       title: "",
       shortname: "",
       pages: {},
-      newPages: [],     // takes full page object
-      deletedPages: [], // takes ids
-      updatedPages: []  // takes ids
+      newPages: {},     // takes full page object
+      deletedPages: {}, // takes full page object ugh
+      updatedPages: {}  // takes full page object
     };
     // {title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}
   },
@@ -62,13 +62,18 @@ module.exports = React.createClass({
     };
 
     this.state.pages[page.page_number] = page;
-    this.state.newPages.push(page);
+    this.state.newPages[page.page_number] = page;
 
     this.setState({pages: this.state.pages, newPages: this.state.newPages});
   },
 
+  updatePage(page){
+    this.state.pages[page.page_number] = page;
+    this.state.updatedPages.push(page);
+    this.setState({pages: this.state.pages, newPages: this.state.newPages});
+  },
+
   updateComic(){
-    console.log(this.state);
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,

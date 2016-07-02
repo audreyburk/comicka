@@ -29,6 +29,21 @@
 
 .form-add-pages {
   background-color: $heavy-color;
+  padding: 20px;
+}
+
+.form-add-pages-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-add-pages-header h2, .page-upload {
+  white-space: nowrap;
+  flex: 0;
+}
+
+.page-thumb-container {
+  margin-top: 20px;
   overflow-y: scroll;
   max-height: 400px;
   display: flex;
@@ -36,10 +51,6 @@
 }
 
 .page-upload {
-  min-width: 100px;
-  flex: 1;
-  height: 100px;
-  margin: 5px;
   border: 2px dashed $medium-color;
   box-sizing: border-box;
   display: inline-block;
@@ -81,7 +92,9 @@
 }
 
 .form-inputs {
+  padding-top: 50px;
   flex: 0;
+  white-space: nowrap;
 }
 
 .form-images {
@@ -107,4 +120,28 @@ input.form-element {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
+}
+
+.modal {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  position: relative;
+  height: 90%;
+  flex: 0;
+}
+
+.modal-page {
+  max-height: 100%;
 }
