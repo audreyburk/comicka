@@ -33,7 +33,7 @@ module.exports = React.createClass({
 
     return(
       <section className="form-inputs">
-        <h2>Create Comic:</h2>
+        <h2>{this.props.buttonName}:</h2>
         <form onSubmit={this.props.doComic}>
           <label className="form-element" htmlFor="title">Comic Title:</label>
           <input type="text" onChange={this.props.onChange} className="form-element"
