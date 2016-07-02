@@ -31,13 +31,12 @@ module.exports = React.createClass({
           image_url: result[0].url
         };
         PageActions.createPage(page);
-        // this.props.addPage(result[0].url);
       }
     }.bind(this));
   },
 
   renderThumbs(){
-    const pages = this.props.comic.pages;
+    const pages = this.context.comic.pages;
     const pageThumbs = []
     for( let i = Object.keys(pages).length; i > 0; i-- ){
       pageThumbs.push(pages[i]);

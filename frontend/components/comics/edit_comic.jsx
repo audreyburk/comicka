@@ -27,11 +27,7 @@ module.exports = React.createClass({
       banner_url: "",
       thumb_url: "",
       title: "",
-      shortname: "",
-      pages: {},
-      newPages: {},     // takes full page object
-      deletedPages: {}, // takes full page object ugh
-      updatedPages: {}  // takes full page object
+      shortname: ""
     };
     // {title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}
   },
@@ -53,27 +49,8 @@ module.exports = React.createClass({
     this.setState({[type]: url});
   },
 
-  // addPage(url){
-  //   const page = {
-  //     page_number: (Object.keys(this.state.pages).length + 1),
-  //     image_url: url,
-  //     thumb_url: url,
-  //     comic_id: this.state.id
-  //   };
-  //
-  //   this.state.pages[page.page_number] = page;
-  //   this.state.newPages[page.page_number] = page;
-  //
-  //   this.setState({pages: this.state.pages, newPages: this.state.newPages});
-  // },
-
-  // updatePage(page){
-  //   this.state.pages[page.page_number] = page;
-  //   this.state.updatedPages.push(page);
-  //   this.setState({pages: this.state.pages, newPages: this.state.newPages});
-  // },
-
-  updateComic(){
+  updateComic(e){
+    e.preventDefault();
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,
@@ -81,8 +58,6 @@ module.exports = React.createClass({
       thumb_url: this.state.thumb_url,
       id: this.state.id
     };
-    const newPages = this.state.newPages;
-    // PageActions.addPages(newPages);
     ComicActions.updateComic(comic);
   },
 

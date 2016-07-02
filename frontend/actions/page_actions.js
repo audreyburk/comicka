@@ -21,6 +21,14 @@ module.exports = {
     );
   },
 
+  updatePage: function(page){
+    PageUtil.updatePage(
+      page,
+      ComicActions.receiveComic,
+      ErrorActions.setErrors
+    );
+  },
+
   deletePage: function(id){
     PageUtil.deletePage(
       id,
