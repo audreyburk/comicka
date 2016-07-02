@@ -20,6 +20,23 @@ class Api::PagesController < ApplicationController
     end
   end
 
+  def destroy
+    page = Page.find(params[:id])
+    if page
+      @comic = Comic.find(page.comic_id)
+      higher_pages = @comic.pages.where("page_number > ?", page.page_number)
+      Page.transaction do
+        higher_pages.each do |higher_page|
+          higher_page.update_attributes!(page_number: higher_page.page_number - 1)
+        end
+      end
+      page.destroy
+      render "api/comics/show"
+    else
+      render( json: { base: ["Page not found"] },
+              status: 404 )
+    end
+  end
 
   private
   def page_params
@@ -33,17 +50,6 @@ class Api::PagesController < ApplicationController
   # end
 end
 
-# def destroy
-#   page = Page.find(params[:id])
-#   if page
-#     page.destroy
-#     @comic = Comic.find(page.comic_id)
-#     render "api/comics/show"
-#   else
-#     render( json: { base: ["Page not found"] },
-#             status: 404 )
-#   end
-# end
 
 # def create
 #   Page.transaction do
