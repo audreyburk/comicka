@@ -37,5 +37,18 @@ module.exports = {
         error("edit", errors);
       }
     });
+  },
+
+  deletePage: function(id, success, error){
+    const url = `/api/pages/${id}`;
+    $.ajax({
+      method: "DELETE",
+      url: url,
+      success: success,
+      error: function(response) {
+        const errors = response.responseJSON;
+        error("edit", errors);
+      }
+    });
   }
 };
