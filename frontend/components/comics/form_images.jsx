@@ -21,11 +21,11 @@ module.exports = React.createClass({
 
   render(){
     const banner = this.props.comic.banner_url ?
-      <img src={this.props.comic.banner_url} className="full-img"></img> :
+      <img onClick={this._uploadBanner} src={this.props.comic.banner_url} className="full-img"></img> :
       <div onClick={this._uploadBanner} id="banner-placeholder">banner will go here</div>;
 
     const thumb = this.props.comic.thumb_url ?
-      <img src={this.props.comic.thumb_url}></img> :
+      <img onClick={this._uploadThumb} src={this.props.comic.thumb_url}></img> :
       <div onClick={this._uploadThumb} id="thumb-placeholder">thumb will go here</div>;
 
     return(
