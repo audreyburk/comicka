@@ -82,7 +82,6 @@ module.exports = React.createClass({
       id: this.state.id
     };
     const newPages = this.state.newPages;
-    debugger
     PageActions.addPages(newPages);
     ComicActions.updateComic(comic);
   },

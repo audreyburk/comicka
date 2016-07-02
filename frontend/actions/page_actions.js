@@ -8,7 +8,15 @@ module.exports = {
   addPages: function(pages){
     PageUtil.addPages(
       pages,
-      ComicActions.receivePage,
+      ComicActions.receiveComic,
+      ErrorActions.setErrors
+    );
+  },
+
+  deletePage: function(id){
+    PageUtil.deletePage(
+      id,
+      ComicActions.receiveComic,
       ErrorActions.setErrors
     );
   }

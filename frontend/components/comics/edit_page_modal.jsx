@@ -11,8 +11,9 @@ module.exports = React.createClass({
       <div className="modal" onClick={this.props.closeModal}>
         <div className="modal-content" onClick={this.stopProp}>
           <img className="modal-page" src={this.props.page.image_url}></img>
-          <form>
-            <input></input>
+          <form onSubmit={this.props.updatePage}>
+
+            <input type="submit"></input>
           </form>
         </div>
       </div>
