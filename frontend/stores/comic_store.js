@@ -6,7 +6,6 @@ const ComicConstants = require('../constants/comic_constants');
 const ComicStore = new Store(Dispatcher);
 let _comics = {};
 
-
 ComicStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ComicConstants.RECEIVE_COMIC:
