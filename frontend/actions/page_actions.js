@@ -15,7 +15,7 @@ module.exports = {
 
   createPage: function(page){
     PageUtil.createPage(
-      pages,
+      page,
       ComicActions.receiveComic,
       ErrorActions.setErrors
     );

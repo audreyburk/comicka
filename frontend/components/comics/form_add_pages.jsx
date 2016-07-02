@@ -25,10 +25,13 @@ module.exports = React.createClass({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       if(error === null){
         const page = {
-          
+          comic_id: this.context.comic.id,
+          page_number: this.context.comic.length + 1,
+          thumb_url: result[0].url,
+          image_url: result[0].url
         };
-        page_actions.createPage(page);
-        this.props.addPage(result[0].url);
+        PageActions.createPage(page);
+        // this.props.addPage(result[0].url);
       }
     }.bind(this));
   },
