@@ -40,20 +40,20 @@ class Api::PagesController < ApplicationController
 end
 
 # def update
-#   @page = Page.find(params[:id])
-#   if @page.update_attributes(page_params)
-#     @comic = Comic.find(@page.comic_id)
+#   page = Page.find(params[:id])
+#   if page.update_attributes(page_params)
+#     @comic = Comic.find(page.comic_id)
 #     render "api/comics/show"
 #   else
-#     render json: @page.errors, status: 422
+#     render json: page.errors, status: 422
 #   end
 # end
 #
 # def destroy
-#   @page = Page.find(params[:id])
-#   if @page
-#     @page.destroy
-#     @comic = Comic.find(@page.comic_id)
+#   page = Page.find(params[:id])
+#   if page
+#     page.destroy
+#     @comic = Comic.find(page.comic_id)
 #     render "api/comics/show"
 #   else
 #     render( json: { base: ["Page not found"] },
