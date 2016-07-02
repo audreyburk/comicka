@@ -5,8 +5,16 @@ const ComicConstants = require('./../constants/comic_constants');
 const ComicActions = require('./../actions/comic_actions');
 
 module.exports = {
-  addPages: function(pages){
-    PageUtil.addPages(
+  // addPages: function(pages){
+  //   PageUtil.addPages(
+  //     pages,
+  //     ComicActions.receiveComic,
+  //     ErrorActions.setErrors
+  //   );
+  // },
+
+  createPage: function(page){
+    PageUtil.createPage(
       pages,
       ComicActions.receiveComic,
       ErrorActions.setErrors

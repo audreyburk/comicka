@@ -1,6 +1,7 @@
 const React = require('react');
 
 const PageThumb = require('./page_thumb');
+const PageActions = require('./../../actions/page_actions');
 const EditPageModal = require('./edit_page_modal');
 
 module.exports = React.createClass({
@@ -23,6 +24,10 @@ module.exports = React.createClass({
   _addPage(){
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       if(error === null){
+        const page = {
+          
+        };
+        page_actions.createPage(page);
         this.props.addPage(result[0].url);
       }
     }.bind(this));

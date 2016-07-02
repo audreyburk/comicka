@@ -1,7 +1,7 @@
 const React = require('react');
 
 const ComicActions = require('./../../actions/comic_actions');
-const PageActions = require('./../../actions/page_actions');
+// const PageActions = require('./../../actions/page_actions');
 
 const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
@@ -53,25 +53,25 @@ module.exports = React.createClass({
     this.setState({[type]: url});
   },
 
-  addPage(url){
-    const page = {
-      page_number: (Object.keys(this.state.pages).length + 1),
-      image_url: url,
-      thumb_url: url,
-      comic_id: this.state.id
-    };
+  // addPage(url){
+  //   const page = {
+  //     page_number: (Object.keys(this.state.pages).length + 1),
+  //     image_url: url,
+  //     thumb_url: url,
+  //     comic_id: this.state.id
+  //   };
+  //
+  //   this.state.pages[page.page_number] = page;
+  //   this.state.newPages[page.page_number] = page;
+  //
+  //   this.setState({pages: this.state.pages, newPages: this.state.newPages});
+  // },
 
-    this.state.pages[page.page_number] = page;
-    this.state.newPages[page.page_number] = page;
-
-    this.setState({pages: this.state.pages, newPages: this.state.newPages});
-  },
-
-  updatePage(page){
-    this.state.pages[page.page_number] = page;
-    this.state.updatedPages.push(page);
-    this.setState({pages: this.state.pages, newPages: this.state.newPages});
-  },
+  // updatePage(page){
+  //   this.state.pages[page.page_number] = page;
+  //   this.state.updatedPages.push(page);
+  //   this.setState({pages: this.state.pages, newPages: this.state.newPages});
+  // },
 
   updateComic(){
     const comic = {
@@ -82,7 +82,7 @@ module.exports = React.createClass({
       id: this.state.id
     };
     const newPages = this.state.newPages;
-    PageActions.addPages(newPages);
+    // PageActions.addPages(newPages);
     ComicActions.updateComic(comic);
   },
 
