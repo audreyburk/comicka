@@ -15,11 +15,11 @@ Comic.create({
 })
 
 Comic.create({
-  title:"Broodhollow",
-  shortname:"broodhollow",
+  title:"Ava's Demon",
+  shortname:"avas_demon",
   creator_id:1,
-  thumb_url:"a",
-  banner_url:"a"
+  thumb_url:"http://avasdemon.com/start.png",
+  banner_url:"http://http://avasdemon.com/tt.png"
 })
 
 Comic.create({
@@ -36,7 +36,7 @@ Comic.create({
 end
 
 url = "http://www.gunnerkrigg.com/comics/"
-20.times do |i|
+80.times do |i|
   current_url = url + (i+1).to_s.rjust(8, "0") + ".jpg"
   Page.create({
       comic_id: 1,

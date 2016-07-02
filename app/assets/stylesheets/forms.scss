@@ -27,7 +27,54 @@
   width: 200px;
 }
 
-.form-inputs, .form-images, .form-add-pages {
+.form-add-pages {
+  background-color: $heavy-color;
+  overflow-y: scroll;
+  max-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-upload {
+  min-width: 100px;
+  flex: 1;
+  height: 100px;
+  margin: 5px;
+  border: 2px dashed $medium-color;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.page-thumb {
+  min-width: 100px;
+  flex: 1;
+  margin: 5px;
+}
+
+.page-thumb:hover, .page-upload:hover {
+  cursor: pointer;
+}
+
+.page-thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.page-thumb span {
+  width: 100%;
+  display: block;
+  background: $medium-color;
+  color: white;
+  padding: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.page-thumb:hover span {
+  background: $light-color;
+}
+
+.form-inputs, .form-images {
   background: $light-color;
   min-height: 300px;
   padding: 20px;

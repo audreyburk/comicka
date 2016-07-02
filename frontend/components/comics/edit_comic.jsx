@@ -28,15 +28,20 @@ module.exports = React.createClass({
       thumb_url: "",
       title: "",
       shortname: "",
-      newPages: [{title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}],     // takes full page object
+      pages: {},
+      newPages: [],     // takes full page object
       deletedPages: [], // takes ids
       updatedPages: []  // takes ids
     };
+    // {title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}
+  },
+
+  contextTypes: {
+    comic: React.PropTypes.object
   },
 
   _onComicStoreChange(){
     const comic = ComicStore.get(this.props.params.shortname);
-    console.log(comic);
     this.setState( comic );
   },
 
@@ -46,6 +51,20 @@ module.exports = React.createClass({
 
   imageChange(type, url){
     this.setState({[type]: url});
+  },
+
+  addPage(url){
+    const page = {
+      page_number: (Object.keys(this.state.pages).length + 1),
+      image_url: url,
+      thumb_url: url,
+      comic_id: this.state.id
+    };
+
+    this.state.pages[page.page_number] = page;
+    this.state.newPages.push(page);
+
+    this.setState({pages: this.state.pages, newPages: this.state.newPages});
   },
 
   updateComic(){
@@ -58,9 +77,9 @@ module.exports = React.createClass({
       id: this.state.id
     };
     const newPages = this.state.newPages;
-    console.log(comic);
-    ComicActions.updateComic(comic);
+    debugger
     PageActions.addPages(newPages);
+    ComicActions.updateComic(comic);
   },
 
   render(){
