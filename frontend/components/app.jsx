@@ -1,4 +1,5 @@
 const React = require('react');
+const ComicActions = require('./../actions/comic_actions');
 
 const Header = require('./header');
 
@@ -14,6 +15,9 @@ module.exports = React.createClass({
 
   componentDidMount(){
     ComicStore.addListener(this._onChange);
+    if(this.props.params.shortname){
+      ComicActions.fetchComic(this.props.params.shortname);
+    }
   },
 
   getChildContext() {
@@ -33,13 +37,8 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
-    console.log(newProps);
-    const comic = ComicStore.get(newProps.params.shortname);
-    this.setState({comic: comic});
+    ComicActions.fetchComic(newProps.params.shortname);
   },
-
-  // gotta set state again at soome point, to clear
-  // we only change when there's a new comic right now
 
   getInitialState(){
     return {comic: this.getComic()};

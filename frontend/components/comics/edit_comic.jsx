@@ -1,8 +1,5 @@
 const React = require('react');
 
-const ComicActions = require('./../../actions/comic_actions');
-// const PageActions = require('./../../actions/page_actions');
-
 const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
 const FormAddPages = require('./form_add_pages');
@@ -14,7 +11,6 @@ module.exports = React.createClass({
   //       when pages is not empty
 
   componentDidMount(){
-    ComicActions.fetchComic(this.props.params.shortname);
     this.token = ComicStore.addListener(this._onComicStoreChange);
   },
 
