@@ -32,7 +32,6 @@ module.exports = React.createClass({
   },
 
   renderThumbs(){
-    debugger
     const pages = this.props.comic.pages;
     const pageThumbs = []
     for( let i = Object.keys(pages).length; i > 0; i-- ){
