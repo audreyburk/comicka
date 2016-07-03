@@ -1,5 +1,6 @@
 const React = require('react');
 const SessionStore = require('./../stores/session_store');
+const ComicStore = require('./../stores/comic_store');
 const SessionActions = require('./../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
 const LoginForm = require('./login_form');
@@ -8,20 +9,27 @@ const Logo = require('./logo');
 module.exports = React.createClass({
   getInitialState(){
     return {currentUser: SessionStore.currentUser(),
+            comic: this._getComic(),
             scrolled: $(window).scrollTop() > 150};
   },
 
   componentDidMount(){
-    this.token = SessionStore.addListener(this._onChange);
+    this.tokenA = SessionStore.addListener(this._onSessionChange);
+    this.tokenB = ComicStore.addListener(this._onComicChange);
     $(window).on("scroll", this._onScroll);
   },
 
   componentWillUnmount(){
-    this.token.remove();
+    this.tokenA.remove();
+    this.tokenB.remove();
   },
 
-  _onChange(){
-    this.setState({currentUser: SessionStore.currentUser()})
+  _onSessionChange(){
+    this.setState({currentUser: SessionStore.currentUser()});
+  },
+
+  _onComicChange(){
+    this.setState({comic: this._getComic()});
   },
 
   _onScroll(){
@@ -32,9 +40,10 @@ module.exports = React.createClass({
     }
   },
 
-  contextTypes: {
-    comic: React.PropTypes.object,
-    pageNumber: React.PropTypes.number
+  _getComic(){
+    if(this.props.shortname){
+      return ComicStore.get(this.props.shortname);
+    }
   },
 
   _logOut(){
@@ -57,8 +66,7 @@ module.exports = React.createClass({
 
   // TODO: make sure we can't click button before navigating
   _nav(pg){
-    const comic = this.context.comic;
-    const url = `/${comic.shortname}/${pg}`;
+    const url = `/${this.props.shortname}/${pg}`;
     window.scrollTo(0, ($('#page').offset().top - 50));
     hashHistory.push(url);
   },
@@ -102,23 +110,25 @@ module.exports = React.createClass({
       </ul>
     );
 
-    if(this.context.comic && this.context.pageNumber){
+    if(this.state.comic && this.props.pageNumber){
+      const page = this.props.pageNumber;
+      const length = this.state.comic.length;
       let backClass = "header-item"
       let foreClass = "header-item"
       let first = 1,
-          prev = this.context.pageNumber - 1,
-          next = this.context.pageNumber + 1,
-          last = this.context.comic.length;
+          prev = page - 1,
+          next = page + 1,
+          last = length;
 
-      if(this.context.pageNumber === 1){
+      if(page === 1){
         backClass += " no-nav";
-        first = this.context.pageNumber;
-        prev = this.context.pageNumber;
+        first = page;
+        prev = page;
       }
-      if(this.context.pageNumber === this.context.comic.length){
+      if(page === length){
         foreClass += " no-nav";
-        next = this.context.pageNumber;
-        last = this.context.pageNumber;
+        next = page;
+        last = page;
       }
 
       nav_buttons = (

@@ -29,7 +29,6 @@ module.exports = React.createClass({
 
   _onComicStoreChange(){
     const comic = ComicStore.get(this.props.params.shortname);
-    console.log(comic);
     this.setState( comic );
   },
 
