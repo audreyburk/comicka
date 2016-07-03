@@ -7,7 +7,7 @@ const Caption = require('./caption');
 
 module.exports = React.createClass({
   getInitialState(){
-    return {comic: null};
+    return {comic: this._getComic()};
   },
 
   componentDidMount(){
@@ -19,12 +19,19 @@ module.exports = React.createClass({
   },
 
   _onComicStoreChange(){
-    const comic = ComicStore.get(this.props.params.shortname);
-    this.setState( comic );
+    const comic = this._getComic();
+    this.setState({comic: comic});
+  },
+
+  _getComic(){
+    if(this.props.params.shortname){
+      return ComicStore.get(this.props.params.shortname);
+    }
   },
 
   _nextPage(){
-    const next = this.props.params.page + 1
+    const next = parseInt(this.props.params.page) + 1;
+    debugger
     if(next <= this.state.comic.length){
       window.scrollTo(0, ($('#page').offset().top - 50));
       const url = `/${this.props.params.shortname}/${next}`;
@@ -35,7 +42,7 @@ module.exports = React.createClass({
   render(){
     let content = <article className="content"></article>;
     const comic = this.state.comic;
-    if (comic){
+    if (comic && Object.keys(comic).length > 0){
       const pageNumber = this.props.params.page;
       const page = comic.pages[pageNumber];
       let pageClass = "";
