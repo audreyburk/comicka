@@ -5,10 +5,6 @@ const PageActions = require('./../../actions/page_actions');
 const EditPageModal = require('./edit_page_modal');
 
 module.exports = React.createClass({
-  contextTypes: {
-    comic: React.PropTypes.object
-  },
-
   getInitialState(){
     return {modal: false};
   },
@@ -25,8 +21,8 @@ module.exports = React.createClass({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       if(error === null){
         const page = {
-          comic_id: this.context.comic.id,
-          page_number: this.context.comic.length + 1,
+          comic_id: this.props.comic.id,
+          page_number: this.props.comic.length + 1,
           thumb_url: result[0].url,
           image_url: result[0].url
         };
@@ -36,7 +32,7 @@ module.exports = React.createClass({
   },
 
   renderThumbs(){
-    const pages = this.context.comic.pages;
+    const pages = this.props.comic.pages;
     const pageThumbs = []
     for( let i = Object.keys(pages).length; i > 0; i-- ){
       pageThumbs.push(pages[i]);
@@ -59,7 +55,7 @@ module.exports = React.createClass({
           <input type="submit" value="Add Page" className="page-upload" onClick={this._addPage}></input>
         </div>
         <div className="page-thumb-container">
-          { this.context.comic ? this.renderThumbs() : "" }
+          { this.props.comic ? this.renderThumbs() : "" }
         </div>
       </section>
     );

@@ -15,7 +15,7 @@ ComicStore.__onDispatch = function (payload) {
 };
 
 ComicStore.get = function(shortname){
-  return _comics[shortname];
+  return Object.assign({}, _comics[shortname]);
 };
 
 ComicStore.all = function(){
