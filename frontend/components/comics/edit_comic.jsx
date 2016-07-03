@@ -29,15 +29,11 @@ module.exports = React.createClass({
       title: "",
       shortname: ""
     };
-    // {title:"title", comic_id:2, page_number:10000, thumb_url:"d", image_url:"f"}
-  },
-
-  contextTypes: {
-    comic: React.PropTypes.object
   },
 
   _onComicStoreChange(){
     const comic = ComicStore.get(this.props.params.shortname);
+    console.log(comic);
     this.setState( comic );
   },
 

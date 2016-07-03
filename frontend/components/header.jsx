@@ -7,11 +7,13 @@ const Logo = require('./logo');
 
 module.exports = React.createClass({
   getInitialState(){
-    return {currentUser: SessionStore.currentUser()};
+    return {currentUser: SessionStore.currentUser(),
+            scrolled: $(window).scrollTop() > 150};
   },
 
   componentDidMount(){
     this.token = SessionStore.addListener(this._onChange);
+    $(window).on("scroll", this._onScroll);
   },
 
   componentWillUnmount(){
@@ -20,6 +22,14 @@ module.exports = React.createClass({
 
   _onChange(){
     this.setState({currentUser: SessionStore.currentUser()})
+  },
+
+  _onScroll(){
+    if($(window).scrollTop() > 150){
+      this.setState({scrolled: true})
+    } else if (this.state.scrolled === true){
+      this.setState({scrolled: false})
+    }
   },
 
   contextTypes: {
@@ -49,7 +59,7 @@ module.exports = React.createClass({
   _nav(pg){
     const comic = this.context.comic;
     const url = `/${comic.shortname}/${pg}`;
-    window.scrollTo(0, ($('#page').offset().top - 150));
+    window.scrollTo(0, ($('#page').offset().top - 50));
     hashHistory.push(url);
   },
 
@@ -124,16 +134,21 @@ module.exports = React.createClass({
       );
     }
 
+    const headerTop = this.state.scrolled ?
+       " ": ( <div id="header-top">
+                <div id="header-top-inner">
+                  <div id="logo-text" onClick={this._home}></div>
+                </div>
+              </div> );
+
     // render everything
     return(
-      <header id="header">
-        <div id="header-top">
-          <div id="header-top-inner">
-            <div id="logo-text" onClick={this._home}></div>
-          </div>
-        </div>
-        { nav_buttons }
-      </header>
+      <div id="header-displacement">
+        <header id="header">
+          { headerTop }
+          { nav_buttons }
+        </header>
+      </div>
     );
   }
 });
