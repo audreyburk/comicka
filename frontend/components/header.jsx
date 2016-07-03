@@ -117,7 +117,7 @@ module.exports = React.createClass({
       let foreClass = "header-item"
       let first = 1,
           prev = page - 1,
-          next = page + 1,
+          next = parseInt(page) + 1,
           last = length;
 
       if(page === 1){
