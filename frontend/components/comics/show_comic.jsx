@@ -10,6 +10,7 @@ module.exports = React.createClass({
   render(){
     let content = <article className="content"></article>;
     const comic = this.context.comic;
+    console.log(comic);
     if (comic){
       const pageNumber = this.context.pageNumber;
       let pageClass = "";
@@ -43,7 +44,7 @@ module.exports = React.createClass({
     const params = this.props.params;
     const next = this.context.pageNumber + 1
     if(next <= this.context.comic.length){
-      window.scrollTo(0, ($('#page').offset().top - 150));
+      window.scrollTo(0, ($('#page').offset().top - 50));
       const url = `/${params.shortname}/${next}`;
       hashHistory.push(url);
     }

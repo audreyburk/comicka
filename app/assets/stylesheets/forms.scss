@@ -124,7 +124,7 @@ input.form-element {
 
 .modal {
   z-index: 10;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -144,6 +144,7 @@ input.form-element {
 
 .modal-page {
   max-height: 100%;
+  width: auto;
 }
 
 .confirm-modal {
