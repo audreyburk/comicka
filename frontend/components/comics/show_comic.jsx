@@ -2,7 +2,6 @@ const React = require('react');
 const hashHistory = require('react-router').hashHistory;
 
 const ComicStore = require('./../../stores/comic_store');
-const ComicActions = require('./../../actions/comic_actions');
 
 const Caption = require('./caption');
 
@@ -10,7 +9,6 @@ module.exports = React.createClass({
   render(){
     let content = <article className="content"></article>;
     const comic = this.context.comic;
-    console.log(comic);
     if (comic){
       const pageNumber = this.context.pageNumber;
       let pageClass = "";
@@ -34,10 +32,6 @@ module.exports = React.createClass({
   contextTypes: {
     comic: React.PropTypes.object,
     pageNumber: React.PropTypes.number
-  },
-
-  componentDidMount(){
-    ComicActions.fetchComic(this.props.params.shortname);
   },
 
   _nextPage(){

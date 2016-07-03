@@ -88,7 +88,7 @@ url = "http://www.spindrift-comic.com/static/pages/chapter2/"
   current_url = url + (i + 76).to_s.rjust(2, "0") + ".jpg"
   Page.create({
       comic_id: 3,
-      page_number: (i+86),
+      page_number: (i+85),
       image_url: current_url,
       thumb_url: current_url,
       title: Faker::Book.title,
