@@ -54,17 +54,18 @@ module.exports = React.createClass({
 
   render(){
     return(
-      <article className="content">
-        <div className="form-container">
-          <FormInputs onChange={this.onChange}
-                      doComic={this.updateComic}
-                      comic={this.state}
-                      buttonName="Update Comic" />
-          <FormImages imageChange={this.imageChange}
-                      comic={this.state} />
-        </div>
-        <FormAddPages addPage={this.addPage} comic={this.state} />
-      </article>
+      this.state.title ?
+        <article className="content">
+          <div className="form-container">
+            <FormInputs onChange={this.onChange}
+                        doComic={this.updateComic}
+                        comic={this.state}
+                        buttonName="Update Comic" />
+            <FormImages imageChange={this.imageChange}
+                        comic={this.state} />
+          </div>
+          <FormAddPages addPage={this.addPage} comic={this.state} />
+        </article> : <article className="content"></article>
     );
   }
 });
