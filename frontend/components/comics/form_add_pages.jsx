@@ -49,7 +49,7 @@ module.exports = React.createClass({
   render(){
     return(
       <section className="form-add-pages">
-        { this.state.modal ? <EditPageModal page={this.state.modal} closeModal={this.closeModal} /> : "" }
+        { this.state.modal ? <EditPageModal page={this.state.modal} comic={this.props.comic} closeModal={this.closeModal} /> : "" }
         <div className="form-add-pages-header">
           <h2>Edit Pages:</h2>
           <input type="submit" value="Add Page" className="page-upload" onClick={this._addPage}></input>

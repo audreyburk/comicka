@@ -157,12 +157,12 @@ input.form-element {
   object-fit: contain;
 }
 
-.modal-form {
-
-}
-
 .modal-form .form-element {
   display: block;
+}
+
+.modal-form input[type="submit"] {
+  margin-top: 10px;
 }
 
 .confirm-modal {

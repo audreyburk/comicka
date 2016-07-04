@@ -1,0 +1,54 @@
+@import "variables";
+
+.content:hover .index-item .title {
+  display: block;
+}
+
+.index-item-container {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  width: 25%;
+}
+
+.index-item-container:nth-child(-n+2) {
+  width: 50%;
+}
+
+.dummy {
+  margin-top: 100%;
+}
+
+.index-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.index-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.index-item .title {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 5px 10px;;
+  background: $medium-color;
+  box-sizing: border-box;
+  display: none;
+  text-align: center;
+}
+
+.index-item:hover {
+  cursor: pointer;
+}
+
+.index-item:hover .title {
+  background: $light-color;
+}

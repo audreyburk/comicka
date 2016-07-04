@@ -11,6 +11,9 @@ ComicStore.__onDispatch = function (payload) {
     case ComicConstants.RECEIVE_COMIC:
       addComic(payload.comic);
       break;
+    case ComicConstants.RECEIVE_ALL_COMICS:
+      addAllComics(payload.comics);
+      break;
   }
 };
 
@@ -19,8 +22,23 @@ ComicStore.get = function(shortname){
 };
 
 ComicStore.all = function(){
-  return _comics;
+  const keys = Object.keys(_comics);
+  const result = [];
+  keys.forEach( key => {
+    result.push(_comics[key]);
+  });
+  return result;
 };
+
+function addAllComics(comics){
+  const keys = Object.keys(comics);
+  keys.forEach( key => {
+    if(!_comics[key]){
+      _comics[key] = comics[key];
+    }
+  });
+  ComicStore.__emitChange();
+}
 
 function addComic(comic){
   _comics[comic.shortname] = comic;

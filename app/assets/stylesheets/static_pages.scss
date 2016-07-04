@@ -1,6 +1,6 @@
 @import "variables";
 
-html, body, main, div, h1, h2, h3, ul, li {
+html, body, main, div, h1, h2, h3, ul, li, textarea {
   padding: 0;
   margin: 0;
   border:0;
@@ -45,6 +45,19 @@ ul, li {
 
 img {
   display: block;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+  background: white;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+}
+
+input {
+  word-break: break-word;
 }
 
 input:-webkit-autofill {
