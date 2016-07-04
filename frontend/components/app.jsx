@@ -12,7 +12,9 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
-    ComicActions.fetchComic(newProps.params.shortname);
+    if(newProps.params.shortname){
+      ComicActions.fetchComic(newProps.params.shortname);
+    }
   },
 
   render(){

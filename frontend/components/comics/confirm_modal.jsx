@@ -14,8 +14,11 @@ module.exports = React.createClass({
     return(
       <div className="modal" onClick={this._stopProp}>
         <form className="confirm-modal" onSubmit={this._onSubmit}>
-          <input type="submit" value="Yes" onClick={this.props.cb}></input>
-          <input type="submit" value="No"></input>
+          <h2>Are you sure you want to delete this page?</h2>
+          <div className="delete-buttons">
+            <input type="submit" value="Delete" id="delete" onClick={this.props.cb}></input>
+            <input type="submit" value="Cancel" id="cancel"></input>
+          </div>
         </form>
       </div>
     );
