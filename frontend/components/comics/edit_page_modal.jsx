@@ -36,6 +36,10 @@ module.exports = React.createClass({
     e.stopPropagation();
   },
 
+  _prevent(e){
+    e.preventDefault();
+  },
+
   render(){
     return(
       <div className="modal" onClick={this.props.closeModal}>
@@ -46,7 +50,7 @@ module.exports = React.createClass({
         <div className="modal-content" onClick={this._stopProp}>
           <img className="modal-page" src={this.state.image_url}></img>
 
-          <form onSubmit={this._updatePage}>
+          <form className="modal-form" onSubmit={this._prevent}>
             <label className="form-element" htmlFor="title">Page Title:</label>
             <input type="text" onChange={this._onChange} className="form-element"
               id="title" value={this.state.title}></input>
@@ -55,9 +59,9 @@ module.exports = React.createClass({
               <input type="text" onChange={this._onChange} className="form-element"
                      id="caption" value={this.state.caption}></input>
 
-                   <input type="submit" value="Update Page"></input>
+              <input type="submit" value="Update Page" onClick={this._updatePage} className="form-element"></input>
+              <input type="submit" value="Delete Page" onClick={this._deletePage} className="form-element"></input>
           </form>
-          <input type="submit" value="Delete Page" onClick={this._deletePage}></input>
         </div>
       </div>
     );

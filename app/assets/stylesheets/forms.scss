@@ -135,20 +135,66 @@ input.form-element {
   align-items: center;
 }
 
+.modal-content, .confirm-modal {
+  background: $light-color;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.75);
+}
+
 .modal-content {
   display: flex;
   position: relative;
-  height: 90%;
-  flex: 0;
+  max-height: 90%;
+  max-width: 90%;
 }
 
 .modal-page {
   max-height: 100%;
-  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.modal-form {
+
+}
+
+.modal-form .form-element {
+  display: block;
 }
 
 .confirm-modal {
-  width: 400px;
-  height: 300px;
+  width: 300px;
+}
+
+.delete-buttons {
+  display: flex;
+}
+
+.delete-buttons input[type="submit"] {
+  padding: 5px 10px;
+  margin: 20px 20px 0 0;
+}
+
+.delete-buttons input[type="submit"]:hover {
+  background: white;
+}
+
+#delete {
+  background: #991f00;
+  color: white;
+}
+
+#delete:hover {
+  background: #661400;
+}
+
+#cancel {
+  background: $medium-color;
+}
+
+#cancel:hover {
   background: white;
 }
