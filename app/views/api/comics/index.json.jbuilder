@@ -1,1 +1,3 @@
-json.array! @comics, :id, :title, :shortname, :thumb_url
+@comics.each do |comic|
+  json.set! comic.shortname, comic
+end

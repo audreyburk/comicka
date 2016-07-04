@@ -42,7 +42,7 @@ module.exports = React.createClass({
   render(){
     let content = <article className="content"></article>;
     const comic = this.state.comic;
-    if (comic && Object.keys(comic).length > 0){
+    if (comic && comic.pages){
       const pageNumber = this.props.params.page;
       const page = comic.pages[pageNumber];
       let pageClass = "";

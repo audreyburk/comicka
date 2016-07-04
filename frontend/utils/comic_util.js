@@ -1,4 +1,12 @@
 module.exports = {
+  fetchAllComics: function(success, error){
+    $.ajax({
+      url: "/api/comics",
+      success: success,
+      error: error
+    });
+  },
+
   fetchComic: function(shortname, success, error){
     const url = `/api/comics/${shortname}`;
     $.ajax({

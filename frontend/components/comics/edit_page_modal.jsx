@@ -1,6 +1,7 @@
 const React = require('react');
 const PageActions = require('./../../actions/page_actions');
 const ConfirmModal = require('./confirm_modal');
+const hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
   getInitialState(){
@@ -26,6 +27,12 @@ module.exports = React.createClass({
 
     // TODO: we never got initial state. Bad?
     this.setState({confirm: _yes});
+  },
+
+  _goToPage(){
+    debugger
+    const url = `/${this.props.comic.shortname}/${this.props.page.page_number}`;
+    hashHistory.push(url);
   },
 
   closeConfirm(){
@@ -59,8 +66,9 @@ module.exports = React.createClass({
               <input type="text" onChange={this._onChange} className="form-element"
                      id="caption" value={this.state.caption}></input>
 
-              <input type="submit" value="Update Page" onClick={this._updatePage} className="form-element"></input>
               <input type="submit" value="Delete Page" onClick={this._deletePage} className="form-element"></input>
+              <input type="submit" value="Go to Page" onClick={this._goToPage} className="form-element"></input>
+              <input type="submit" value="Update Page" onClick={this._updatePage} className="form-element"></input>
           </form>
         </div>
       </div>

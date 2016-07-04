@@ -16,9 +16,11 @@ const SessionActions = require('./actions/session_actions');
 const ShowComic = require('./components/comics/show_comic');
 const NewComic = require('./components/comics/new_comic');
 const EditComic = require('./components/comics/edit_comic');
+const ComicIndex = require('./components/comics/comic_index');
 
 // For testing only
 window.SessionActions = SessionActions;
+window.ComicActions = require('./actions/comic_actions');
 window.SessionStore = require('./stores/session_store');
 window.ErrorStore = require('./stores/error_store');
 window.ComicStore = require('./stores/comic_store');
@@ -27,6 +29,8 @@ window.ComicStore = require('./stores/comic_store');
 const router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={ComicIndex} />
+      <Route path="index" component={ComicIndex} />
       <Route path="new" component={NewComic} />
       <Route path=":shortname">
         <IndexRedirect to="1" />
