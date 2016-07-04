@@ -29,7 +29,7 @@ module.exports = React.createClass({
 
   render(){
     return(
-      <article className="content">
+      <article className="index-content">
         {this.renderItems()}
       </article>
     );

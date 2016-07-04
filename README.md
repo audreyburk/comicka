@@ -26,7 +26,7 @@ By the end of week nine, this app will satisfy the following criteria:
 
 5. [ ] Comics:
   - [x] Displays comic and caption
-  - [ ] Appropriate, intuitive navigation
+  - [x] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
 6. [ ] New / Update Comic
@@ -34,10 +34,10 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Appropriate, intuitive navigation
   - [ ] Adequate styling
 
-7. [ ] Index:
-  - [ ] Shows all comics
-  - [ ] Read or follow in one click
-  - [ ] Adequate styling
+7. [x] Index:
+  - [x] Shows all comics
+  - [x] Read or follow in one click
+  - [x] Adequate styling
 
 <a name="bonus"></a>
 ## Bonus Features [[top]](#top)
