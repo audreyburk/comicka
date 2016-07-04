@@ -1,18 +1,33 @@
 @import "variables";
 
-.content:hover .index-item .title {
+.index-content {
+  width: $column-width;
+  margin: 147px auto 60px;
+}
+
+.index-content .content {
+  background: transparent;
+  padding: .5%;
+}
+
+.index-content:hover .index-item .title {
   display: block;
 }
 
 .index-item-container {
+  margin: .5%;
+  box-sizing: border-box;
   position: relative;
   vertical-align: top;
   display: inline-block;
-  width: 25%;
+  width: 24%;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 .index-item-container:nth-child(-n+2) {
-  width: 50%;
+  width: 49%;
 }
 
 .dummy {
