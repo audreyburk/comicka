@@ -33,7 +33,7 @@ module.exports = React.createClass({
   _nextPage(){
     const next = parseInt(this.props.params.page) + 1;
     if(next <= this.state.comic.length){
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 51);
       // window.scrollTo(0, ($('#page').offset().top - 50));
       const url = `/${this.props.params.shortname}/${next}`;
       hashHistory.push(url);

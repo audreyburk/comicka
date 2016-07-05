@@ -33,7 +33,7 @@ module.exports = React.createClass({
   },
 
   _onScroll(){
-    if($(window).scrollTop() > 150){
+    if($(window).scrollTop() > 50){
       this.setState({scrolled: true})
     } else if (this.state.scrolled === true){
       this.setState({scrolled: false})
@@ -64,10 +64,15 @@ module.exports = React.createClass({
     hashHistory.push('/');
   },
 
+  _edit(){
+    const url = `/${this.props.shortname}/edit`;
+    hashHistory.push(url);
+  },
+
   // TODO: make sure we can't click button before navigating
   _nav(pg){
     const url = `/${this.props.shortname}/${pg}`;
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 51);
     // window.scrollTo(0, ($('#page').offset().top - 50));
     hashHistory.push(url);
   },
@@ -138,6 +143,7 @@ module.exports = React.createClass({
         <ul id="header-content" className={headerDisplay}>
           <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
           <li id="tagline" className={headerDisplay}>Comics are life.</li>
+          <li className="header-item" onClick={this._edit}>Edit</li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
           <li id="progress" className="spacing"></li>
