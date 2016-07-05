@@ -24,15 +24,15 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Guests may browse full site
   - [ ] Users may upload comics
 
-5. [ ] Comics:
+5. [x] Comics:
   - [x] Displays comic and caption
   - [x] Appropriate, intuitive navigation
-  - [ ] Adequate styling
+  - [x] Adequate styling
 
-6. [ ] New / Update Comic
+6. [x] New / Update Comic
   - [x] Upload page and captions
-  - [ ] Appropriate, intuitive navigation
-  - [ ] Adequate styling
+  - [x] Appropriate, intuitive navigation
+  - [x] Adequate styling
 
 7. [x] Index:
   - [x] Shows all comics

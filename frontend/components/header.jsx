@@ -67,7 +67,8 @@ module.exports = React.createClass({
   // TODO: make sure we can't click button before navigating
   _nav(pg){
     const url = `/${this.props.shortname}/${pg}`;
-    window.scrollTo(0, ($('#page').offset().top - 50));
+    window.scrollTo(0, 0);
+    // window.scrollTo(0, ($('#page').offset().top - 50));
     hashHistory.push(url);
   },
 
