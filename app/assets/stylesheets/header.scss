@@ -6,9 +6,9 @@
   right: 0px;
   position: fixed;
   background: $heavy-color;
-  // -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
-  // -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
-  // box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
   font-family: 'montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -87,9 +87,6 @@
   white-space: nowrap;
 }
 
-#bar-logo {
-}
-
 #bar-logo.top {
   overflow: hidden;
   width: 0px;
@@ -117,7 +114,7 @@
   flex: 1;
 }
 
-.header-item:hover, .dropdown-item:hover {
+.header-item:hover, .dropdown-item:hover, #bar-logo:hover {
   background: $heaviest-color;
   color: white;
   cursor: pointer;

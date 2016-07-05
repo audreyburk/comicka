@@ -104,7 +104,7 @@ module.exports = React.createClass({
     // display nav options or page stuff
     let nav_buttons = (
       <ul id="header-content" className={headerDisplay}>
-        <li id="bar-logo" className={headerDisplay}>COMICKA</li>
+        <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
         <li id="tagline" className={headerDisplay}>Comics are life.</li>
         <li className="spacing"></li>
         <li className="header-item">About</li>
@@ -136,6 +136,8 @@ module.exports = React.createClass({
 
       nav_buttons = (
         <ul id="header-content" className={headerDisplay}>
+          <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
+          <li id="tagline" className={headerDisplay}>Comics are life.</li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
           <li id="progress" className="spacing"></li>
