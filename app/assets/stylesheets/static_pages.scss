@@ -20,9 +20,8 @@ body {
 }
 
 .content {
-  width: $column-width;
-  margin: 143px auto 60px;
-  background: black;
+  max-width: $column-width;
+  margin: 180px auto 60px;
 }
 
 .full-img {
