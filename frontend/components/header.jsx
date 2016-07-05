@@ -10,7 +10,7 @@ module.exports = React.createClass({
   getInitialState(){
     return {currentUser: SessionStore.currentUser(),
             comic: this._getComic(),
-            scrolled: $(window).scrollTop() > 150};
+            scrolled: $(window).scrollTop() > 50};
   },
 
   componentDidMount(){
@@ -78,6 +78,7 @@ module.exports = React.createClass({
   },
 
   render(){
+    const headerDisplay = this.state.scrolled ? "scrolled" : "top";
     let login_button;
 
     // display login form or user options dropdown
@@ -102,8 +103,9 @@ module.exports = React.createClass({
 
     // display nav options or page stuff
     let nav_buttons = (
-      <ul id="header-content">
-        <Logo />
+      <ul id="header-content" className={headerDisplay}>
+        <li id="bar-logo" className={headerDisplay}>COMICKA</li>
+        <li id="tagline" className={headerDisplay}>Comics are life.</li>
         <li className="spacing"></li>
         <li className="header-item">About</li>
         <li className="header-item" onClick={this._explore}>Explore</li>
@@ -133,8 +135,7 @@ module.exports = React.createClass({
       }
 
       nav_buttons = (
-        <ul id="header-content">
-          <Logo />
+        <ul id="header-content" className={headerDisplay}>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
           <li id="progress" className="spacing"></li>
@@ -145,18 +146,16 @@ module.exports = React.createClass({
       );
     }
 
-    const headerTop = this.state.scrolled ?
-       " ": ( <div id="header-top">
-                <div id="header-top-inner">
-                  <div id="logo-text" onClick={this._home}></div>
-                </div>
-              </div> );
 
     // render everything
     return(
       <div id="header-displacement">
-        <header id="header">
-          { headerTop }
+        <header id="header" className={headerDisplay}>
+          <div id="header-top">
+             <div id="header-top-inner">
+               <div id="logo" className={headerDisplay} onClick={this._home}></div>
+             </div>
+           </div>
           { nav_buttons }
         </header>
       </div>
