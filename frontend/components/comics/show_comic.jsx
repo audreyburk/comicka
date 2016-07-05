@@ -33,7 +33,8 @@ module.exports = React.createClass({
   _nextPage(){
     const next = parseInt(this.props.params.page) + 1;
     if(next <= this.state.comic.length){
-      window.scrollTo(0, ($('#page').offset().top - 50));
+      window.scrollTo(0, 0);
+      // window.scrollTo(0, ($('#page').offset().top - 50));
       const url = `/${this.props.params.shortname}/${next}`;
       hashHistory.push(url);
     }
@@ -50,8 +51,6 @@ module.exports = React.createClass({
       if(pageNumber === comic.length) pageClass = "last-page";
       content = (
         <article className="content">
-          <img src={comic.banner_url}
-               className="full-img"></img>
              <img src={page.image_url}
              id="page"
              className={pageClass}
@@ -63,3 +62,7 @@ module.exports = React.createClass({
     return(content);
   }
 });
+
+
+  // <img src={comic.banner_url}
+  //      className="full-img"></img>

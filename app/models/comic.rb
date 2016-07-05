@@ -1,5 +1,5 @@
 class Comic < ActiveRecord::Base
-  validates :title, :shortname, :thumb_url, :banner_url, presence: true
+  validates :title, :shortname, :thumb_url, presence: true
   validates :shortname, uniqueness: true
 
   belongs_to :creator,
