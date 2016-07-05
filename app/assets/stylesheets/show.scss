@@ -1,10 +1,14 @@
 @import "variables";
 
+.show-comic {
+  display: inline-block;
+}
+
 #page {
-  margin: 20px auto;
   -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  margin: 20px auto;
 }
 
 #page:hover {
@@ -23,4 +27,8 @@
   -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+}
+
+.caption * {
+  white-space: pre-wrap;
 }

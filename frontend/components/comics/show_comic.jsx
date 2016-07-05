@@ -51,11 +51,13 @@ module.exports = React.createClass({
       if(pageNumber === comic.length) pageClass = "last-page";
       content = (
         <article className="content">
+          <section className="show-comic">
              <img src={page.image_url}
-             id="page"
-             className={pageClass}
-             onClick={this._nextPage}></img>
-           {page.title || page.caption ? <Caption page={page}/> : ""}
+                  id="page"
+                  className={pageClass}
+                  onClick={this._nextPage}></img>
+             {page.title || page.caption ? <Caption page={page}/> : ""}
+           </section>
         </article>);
     }
 
