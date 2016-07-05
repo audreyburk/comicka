@@ -7,6 +7,9 @@
 
 .form-container {
   display: flex;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 #banner-placeholder, #thumb-placeholder {
@@ -30,6 +33,9 @@
 .form-add-pages {
   background-color: $heavy-color;
   padding: 20px;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 .form-add-pages-header {

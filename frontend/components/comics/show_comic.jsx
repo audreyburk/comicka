@@ -44,7 +44,7 @@ module.exports = React.createClass({
     let content = <article className="content"></article>;
     const comic = this.state.comic;
     if (comic && comic.pages){
-      const pageNumber = this.props.params.page;
+      const pageNumber = parseInt(this.props.params.page);
       const page = comic.pages[pageNumber];
       let pageClass = "";
 
@@ -55,7 +55,7 @@ module.exports = React.createClass({
              id="page"
              className={pageClass}
              onClick={this._nextPage}></img>
-           <Caption page={page}/>
+           {page.title || page.caption ? <Caption page={page}/> : ""}
         </article>);
     }
 
