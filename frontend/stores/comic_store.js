@@ -41,7 +41,6 @@ function addAllComics(comics){
 }
 
 function addComic(comic){
-  debugger
   _comics[comic.shortname] = comic;
   ComicStore.__emitChange();
 }

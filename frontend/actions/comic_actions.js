@@ -28,7 +28,7 @@ module.exports = {
       actionType: ComicConstants.RECEIVE_COMIC,
       comic: comic
     });
-    cb();
+    if(cb !== "success") cb();
   },
 
   receiveAllComics: function(comics){
