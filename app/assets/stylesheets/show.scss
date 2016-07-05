@@ -1,7 +1,9 @@
 @import "variables";
 
 .show-comic {
-  display: inline-block;
+  display: table;
+  width: 1px;
+  margin : 0 auto;
 }
 
 #page {
@@ -21,7 +23,6 @@
 
 .caption {
   width: 100%;
-  padding: 20px;
   background: $light-color;
   box-sizing: border-box;
   -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
@@ -29,6 +30,10 @@
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
-.caption * {
-  white-space: pre-wrap;
+.caption, #page {
+  display: table-row;
+}
+
+.caption > * {
+  margin: 20px;
 }
