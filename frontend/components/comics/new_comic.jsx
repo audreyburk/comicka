@@ -1,4 +1,5 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory;
 
 const ErrorStore = require('./../../stores/error_store');
 const ComicActions = require('./../../actions/comic_actions');
@@ -33,17 +34,18 @@ module.exports = React.createClass({
       banner_url: this.state.banner_url,
       thumb_url: this.state.thumb_url
     };
+    ComicActions.createComic(comic, this._edit);
+  },
+
+  _edit(){
     debugger
-    ComicActions.createComic(comic);
+    const url = `/${this.state.shortname}/edit`;
+    hashHistory.push(url);
   },
 
   render(){
     return(
       <article className="content">
-        <section className="form-head">
-          <h3>Create Comic</h3>
-        </section>
-
         <div className="form-container">
           <FormInputs onChange={this.onChange}
                       doComic={this.createComic}
@@ -52,14 +54,6 @@ module.exports = React.createClass({
           <FormImages imageChange={this.imageChange}
                       comic={this.state} />
         </div>
-
-        <section className="form-pages">
-          <h3>Create Comic</h3>
-        </section>
-
-        <section className="form-end">
-          <h3>Create Comic</h3>
-        </section>
       </article>
     );
   }

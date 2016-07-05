@@ -27,7 +27,8 @@
 }
 
 #header-top {
-  background: $light-color;
+  // background: $light-color;
+  background-image: image-url("tile5.png");
   position: relative;
   height: 100px;
 }
@@ -121,8 +122,7 @@
 }
 
 .no-nav {
-  color: $heavy-color;
-  pointer-events: none;
+  display: none;
 }
 
 .header-item:hover > .dropdown {

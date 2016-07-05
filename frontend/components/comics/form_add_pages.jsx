@@ -32,9 +32,12 @@ module.exports = React.createClass({
   },
 
   renderThumbs(){
+    debugger
     const pages = this.props.comic.pages;
-    const pageThumbs = []
-    for( let i = Object.keys(pages).length; i > 0; i-- ){
+    const pageThumbs = [];
+    const keys = Object.keys(pages);
+
+    for( let i = keys.length; i > 0; i-- ){
       pageThumbs.push(pages[i]);
     }
 
@@ -43,10 +46,11 @@ module.exports = React.createClass({
         openModal={this.openModal}
         closeModal={this.closeModal}
         key={page.page_number}/>
-    })
+    });
   },
 
   render(){
+    debugger
     return(
       <section className="form-add-pages">
         { this.state.modal ? <EditPageModal page={this.state.modal} comic={this.props.comic} closeModal={this.closeModal} /> : "" }
@@ -55,7 +59,7 @@ module.exports = React.createClass({
           <input type="submit" value="Add Page" className="page-upload" onClick={this._addPage}></input>
         </div>
         <div className="page-thumb-container">
-          { this.props.comic ? this.renderThumbs() : "" }
+          { this.props.comic.pages ? this.renderThumbs() : "" }
         </div>
       </section>
     );

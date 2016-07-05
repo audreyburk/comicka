@@ -119,13 +119,13 @@ module.exports = React.createClass({
     );
 
     if(this.state.comic && this.props.pageNumber){
-      const page = this.props.pageNumber;
+      const page = parseInt(this.props.pageNumber);
       const length = this.state.comic.length;
       let backClass = "header-item"
       let foreClass = "header-item"
       let first = 1,
           prev = page - 1,
-          next = parseInt(page) + 1,
+          next = page + 1,
           last = length;
 
       if(page === 1){

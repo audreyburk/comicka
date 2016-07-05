@@ -14,20 +14,21 @@ module.exports = {
     ComicUtil.fetchComic(shortname, this.receiveComic, ErrorActions.setErrors);
   },
 
-  createComic: function(comic){
-    ComicUtil.createComic(comic, this.receiveComic, ErrorActions.setErrors);
+  createComic: function(comic, cb){
+    ComicUtil.createComic(comic, response => this.receiveComic(response, cb), ErrorActions.setErrors);
   },
 
   updateComic: function(comic, pages){
     ComicUtil.updateComic(comic, this.receiveComic, ErrorActions.setErrors);
   },
 
-  receiveComic: function(comic){
+  receiveComic: function(comic, cb){
     ErrorActions.clearErrors();
     Dispatcher.dispatch({
       actionType: ComicConstants.RECEIVE_COMIC,
       comic: comic
     });
+    cb();
   },
 
   receiveAllComics: function(comics){

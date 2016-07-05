@@ -30,7 +30,6 @@ module.exports = React.createClass({
   },
 
   _goToPage(){
-    debugger
     const url = `/${this.props.comic.shortname}/${this.props.page.page_number}`;
     hashHistory.push(url);
   },
