@@ -12,8 +12,17 @@ module.exports = React.createClass({
 
   render(){
     const thumb = this.props.comic.thumb_url ?
-      <img onClick={this._uploadThumb} src={this.props.comic.thumb_url}></img> :
-      <div onClick={this._uploadThumb} id="thumb-placeholder">thumb will go here</div>;
+      <div onClick={this._uploadThumb} className="upload-thumb">
+        <img src={this.props.comic.thumb_url}></img>
+        <div>
+          <span>Change thumbnail image</span>
+        </div>
+      </div> :
+      <div onClick={this._uploadThumb} className="upload-thumb" id="thumb-placeholder">
+        <div>
+          <span>Upload thumbnail image</span>
+        </div>
+      </div>;
 
     return(
       <section className="form-images">
