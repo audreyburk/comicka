@@ -92,7 +92,6 @@ module.exports = React.createClass({
         <li className="header-item">
           <span>{this.state.currentUser.username}</span>
           <ul className="dropdown">
-            <li className="dropdown-item" onClick={this._new}>New Comic</li>
             <li className="dropdown-item" onClick={this._logOut}>Log Out</li>
           </ul>
         </li>
@@ -114,6 +113,7 @@ module.exports = React.createClass({
         <li className="spacing"></li>
         <li className="header-item">About</li>
         <li className="header-item" onClick={this._explore}>Explore</li>
+        <li className="header-item" onClick={this._new}>New Comic</li>
         { login_button }
       </ul>
     );
@@ -143,12 +143,20 @@ module.exports = React.createClass({
         <ul id="header-content" className={headerDisplay}>
           <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
           <li id="tagline" className={headerDisplay}>Comics are life.</li>
-          <li className="header-item" onClick={this._edit}>Edit</li>
+          <li className="header-item" id="menu-button">
+            <span>vvv</span>
+            <ul className="dropdown">
+              <li className="dropdown-item" onClick={this._edit}>Edit</li>
+              <li className="dropdown-item" onClick={this._home}>Index</li>
+            </ul>
+          </li>
+          <li className="spacing"></li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
-          <li id="progress" className="spacing"></li>
+          <li id="progress">{page + "/" + length}</li>
           <li className={foreClass} onClick={() => this._nav(next)}>{">"}</li>
           <li className={foreClass} onClick={() => this._nav(last)}>{">>"}</li>
+          <li className="spacing"></li>
           { login_button }
         </ul>
       );

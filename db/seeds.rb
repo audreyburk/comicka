@@ -9,6 +9,16 @@ User.create({username: "David Troupes", password: "password"});
 User.create({username: "tober", password: "password"});
 User.create({username: "evandahm", password: "password"});
 User.create({username: "minna", password: "password"});
+User.create({username: "foglios", password: "password"});
+User.create({username: "emily_carroll", password: "password"});
+User.create({username: "kris", password: "password"});
+User.create({username: "penny_arcade", password: "password"});
+User.create({username: "michelle", password: "password"});
+User.create({username: "DavidMalki", password: "password"});
+User.create({username: "ursula", password: "password"});
+User.create({username: "Tracy_Butler", password: "password"});
+User.create({username: "Kadi", password: "password"});
+User.create({username: "ashleycope", password: "password"});
 
 User.create({username: "jyllian", password: "demoaccount"});
 User.create({username: "wicker", password: "wicker"});
@@ -83,6 +93,87 @@ Comic.create({
   creator_id:8,
   thumb_url:"http://i.imgur.com/XSe8O3d.jpg"
 })
+
+Comic.create({
+  title:"Girl Genius",
+  shortname:"girlgenius",
+  creator_id:9,
+  thumb_url:"http://cdn1.bigcommerce.com/server3400/v4eyu8t/products/1922/images/2433/Science_Magic_Brown_1__30320.1429551688.1280.1280.jpg?c=2"
+})
+
+Comic.create({
+  title:"Emily Carroll's Comics",
+  shortname:"carroll",
+  creator_id:10,
+  thumb_url:"http://i.imgur.com/lu5mjOp.jpg"
+})
+
+Comic.create({
+  title:"Starslip",
+  shortname:"starslip",
+  creator_id:11,
+  thumb_url:"http://cdn.shopify.com/s/files/1/0065/5862/products/starslip4_large_1024x1024.png?v=1305244727"
+})
+
+Comic.create({
+  title:"Penny Arcade",
+  shortname:"penny_arcade",
+  creator_id:12,
+  thumb_url:"http://i.imgur.com/GoVhwTL.jpg"
+})
+
+Comic.create({
+  title:"Ava's Demon",
+  shortname:"avas_demon",
+  creator_id:13,
+  thumb_url:"http://i.imgur.com/dneaVbv.png"
+})
+
+Comic.create({
+  title:"Wondermark",
+  shortname:"wondermark",
+  creator_id:14,
+  thumb_url:"http://i1.wp.com/wondermark.com/wp-content/uploads/2009/11/wondermark-turctopus.png"
+})
+
+Comic.create({
+  title:"A Redtail's Dream",
+  shortname:"redtail",
+  creator_id:9,
+  thumb_url:"http://i.imgur.com/RnTQKoB.jpg"
+})
+
+Comic.create({
+  title:"Digger",
+  shortname:"digger",
+  creator_id:15,
+  thumb_url:"http://www.writeups.org/wp-content/uploads/Boneclaw-Mother-Digger.jpg"
+})
+
+Comic.create({
+  title:"Lackadaisy",
+  shortname:"lackadaisy",
+  creator_id:16,
+  thumb_url:"http://i.imgur.com/cdwTezn.jpg"
+})
+
+Comic.create({
+  title:"Blindsprings",
+  shortname:"blindsprings",
+  creator_id:17,
+  thumb_url:"http://i.imgur.com/Akm0lRA.jpg"
+})
+
+Comic.create({
+  title:"Unsounded",
+  shortname:"unsounded",
+  creator_id:18,
+  thumb_url:"http://i.imgur.com/BTojR5R.jpg"
+})
+
+
+
+
 
 
 
@@ -194,7 +285,7 @@ end
 
 url = "http://www.buttercupfestival.com/2-"
 143.times do |i|
-  next if i == 12 || i == 30
+  next if i == 11 || i == 29
   current_url = url + (i + 1).to_s + ".png"
   Page.create({
       comic_id: 7,

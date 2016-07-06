@@ -102,6 +102,7 @@
 
 #tagline.top {
   width: 200px;
+  padding-left: 10px;
 }
 
 #tagline.scrolled {
@@ -122,7 +123,14 @@
 }
 
 .no-nav {
-  display: none;
+  color: $heaviest-color;
+  cursor: default;
+}
+
+.no-nav:hover {
+  color: $heaviest-color;
+  cursor: default;
+  background: inherit;
 }
 
 .header-item:hover > .dropdown {
