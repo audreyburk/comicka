@@ -19,10 +19,10 @@ By the end of week nine, this app will satisfy the following criteria:
   - [ ] Free of bugs and console logs
   - [ ] Gorgeous!
 
-4. [ ] Account creation and authorization:
+4. [x] Account creation and authorization:
   - [x] Sign up, sign in, demo user!
-  - [ ] Guests may browse full site
-  - [ ] Users may upload comics
+  - [x] Guests may browse full site
+  - [x] Users may upload comics
 
 5. [x] Comics:
   - [x] Displays comic and caption

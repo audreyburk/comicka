@@ -38,7 +38,6 @@ module.exports = React.createClass({
   },
 
   _edit(){
-    debugger
     const url = `/${this.state.shortname}/edit`;
     hashHistory.push(url);
   },
