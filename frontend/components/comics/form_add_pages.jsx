@@ -32,7 +32,6 @@ module.exports = React.createClass({
   },
 
   renderThumbs(){
-    debugger
     const pages = this.props.comic.pages;
     const pageThumbs = [];
     const keys = Object.keys(pages);
@@ -50,7 +49,6 @@ module.exports = React.createClass({
   },
 
   render(){
-    debugger
     return(
       <section className="form-add-pages">
         { this.state.modal ? <EditPageModal page={this.state.modal} comic={this.props.comic} closeModal={this.closeModal} /> : "" }
