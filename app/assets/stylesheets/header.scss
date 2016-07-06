@@ -191,8 +191,10 @@
 }
 
 .field-error {
-  margin: 10px;
+  margin: -5px 10px 10px 10px;
   color: darkorange;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .login-field input[type="submit"] {

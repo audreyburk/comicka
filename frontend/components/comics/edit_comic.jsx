@@ -11,11 +11,11 @@ module.exports = React.createClass({
   //       when pages is not empty
 
   componentDidMount(){
-    this.token = ComicStore.addListener(this._onComicStoreChange);
+    this.tokenA = ComicStore.addListener(this._onComicStoreChange);
   },
 
   componentWillUnmount(){
-    this.token.remove();
+    this.tokenA.remove();
   },
 
   getInitialState(){
@@ -52,7 +52,7 @@ module.exports = React.createClass({
 
   render(){
     return(
-      this.state.title ?
+      this.state.thumb_url ?
         <article className="content">
           <div className="form-container">
             <FormInputs onChange={this.onChange}

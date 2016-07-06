@@ -1,6 +1,8 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
 
+const ErrorStore = require('./../../stores/error_store');
+
 module.exports = React.createClass({
   componentDidMount(){
     this.token = ErrorStore.addListener(this._onErrorChange);
@@ -10,8 +12,13 @@ module.exports = React.createClass({
     this.token.remove();
   },
 
-  _onErrorChange(){
-    this.setState({errors: ErrorStore.formErrors("new_comic")});
+  getInitialState(){
+    return { errors: ErrorStore.formErrors("comic") };
+  },
+
+  _onErrorStoreChange(){
+    const errors = ErrorStore.formErrors("comic");
+    this.setState( comic );
   },
 
   _addPage(){
@@ -39,7 +46,13 @@ module.exports = React.createClass({
 
     //onSubmit taken care of
     //button value needs to change
+    let titleErrors = "", shortnameErrors = "", thumbErrors = "";
 
+    if(!$.isEmptyObject(this.state.errors)){
+      titleErrors = <div className="field-error">{this.state.errors.title}</div>
+      shortnameErrors = <div className="field-error">{this.state.errors.shortname}</div>
+      thumbErrors = <div className="field-error">{this.state.errors.thumb_url}</div>
+    }
 
     const name = this.props.buttonName;
     return(
@@ -48,11 +61,14 @@ module.exports = React.createClass({
         <form onSubmit={this._prevent}>
           <label className="form-element" htmlFor="title">Comic Title:</label>
           <input type="text" onChange={this.props.onChange} className="form-element"
-            id="title" value={this.props.comic.title}></input>
+                 id="title" value={this.props.comic.title}></input>
+          {titleErrors}
 
           <label className="form-element" htmlFor="shortname">Shortname:</label>
-            <input type="text" onChange={this.props.onChange} className="form-element"
-                   id="shortname" value={this.props.comic.shortname}></input>
+          <input type="text" onChange={this.props.onChange} className="form-element"
+                 id="shortname" value={this.props.comic.shortname}></input>
+          {shortnameErrors}
+          {thumbErrors}
 
                  {name === "Update Comic" ?
                    <input type="submit"
