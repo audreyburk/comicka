@@ -24,7 +24,7 @@ module.exports = {
       success: success,
       error: function(response) {
 				const errors = response.responseJSON;
-				error("new", errors);
+				error("comic", errors);
 			}
     });
   },
@@ -38,7 +38,7 @@ module.exports = {
       success: success,
       error: function(response) {
 				const errors = response.responseJSON;
-				error("edit", errors);
+				error("comic", errors);
 			}
     });
   }
