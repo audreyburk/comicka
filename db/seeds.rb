@@ -28,56 +28,49 @@ Comic.create({
   title:"Demon of the Underground",
   shortname:"dotu",
   creator_id:2,
-  thumb_url:"http://i.imgur.com/837wBXN.jpg",
-  banner_url:"http://www.bob-artist.com/demon/nav/headerimage.jpg"
+  thumb_url:"http://i.imgur.com/837wBXN.jpg"
 })
 
 Comic.create({
   title:"Stand Still. Stay Silent.",
   shortname:"ssss",
   creator_id:9,
-  thumb_url:"http://i.imgur.com/Sg1roi5.jpg",
-  banner_url: "http://i.imgur.com/ZKsjXaV.jpg"
+  thumb_url:"http://i.imgur.com/Sg1roi5.jpg"
 })
 
 Comic.create({
   title:"Gunnerkrigg Court",
   shortname:"gunnerkrigg",
   creator_id:1,
-  thumb_url:"http://i.imgur.com/BP9GO6T.jpg",
-  banner_url:"http://i.imgur.com/cnpwwWx.jpg"
+  thumb_url:"http://i.imgur.com/BP9GO6T.jpg"
 })
 
 Comic.create({
   title:"Spindrift",
   shortname:"spindrift",
   creator_id:3,
-  thumb_url:"http://i.imgur.com/nak6AET.jpg",
-  banner_url:"http://orig02.deviantart.net/473d/f/2011/250/a/d/ad11388afa758c01cbb33e28d8c2c52e-d494peu.jpg"
+  thumb_url:"http://i.imgur.com/nak6AET.jpg"
 })
 
 Comic.create({
   title:"Exvulnerum",
   shortname:"exvulnerum",
   creator_id:4,
-  thumb_url:"http://i.imgur.com/u5GGoYE.png",
-  banner_url:"http://i.imgur.com/PddnTE9.jpg"
+  thumb_url:"http://i.imgur.com/u5GGoYE.png"
 })
 
 Comic.create({
   title:"Sombulus",
   shortname:"sombulus",
   creator_id:5,
-  thumb_url:"http://i.imgur.com/zvjnQnI.jpg",
-  banner_url:"http://i.imgur.com/3lEd0cP.jpg"
+  thumb_url:"http://i.imgur.com/zvjnQnI.jpg"
 })
 
 Comic.create({
   title:"Buttercup Festival",
   shortname:"buttercup",
   creator_id:6,
-  thumb_url:"http://i.imgur.com/cCqYit1.png",
-  banner_url:"http://i.imgur.com/y9RJFT7.png"
+  thumb_url:"http://i.imgur.com/cCqYit1.png"
 })
 
 Comic.create({
