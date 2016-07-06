@@ -119,31 +119,30 @@ By the end of week nine, this app will satisfy the following criteria:
 
 #### Phase 5: They can even be updated!
 ###### W9D1 (1 day)
-- [ ] Edit comic form
-  - [ ] Edit all fields but shortname
-  - [ ] Change out any images
-  - [ ] Insert and remove pages
-  - [ ] Vaguely styled
+- [x] Edit comic form
+  - [x] Change out any images
+  - [x] Insert and remove pages
+  - [x] Vaguely styled
 
 #### Phase 6: Things are starting to look sleek and shiny!
 ###### W9D2 (1 day)
-- [ ] Finalize basic styling
+- [x] Finalize basic styling
   - [x] Solidify color palette
   - [x] Get logo put together
-  - [ ] Make everything pretty!
+  - [x] Make everything pretty!
 
 #### Phase 7: It's a never-ending deluge of comics!
 ###### W9D3 (1 day)
-- [ ] Put together an index page
-  - [ ] Tiles that link to comic page
-  - [ ] Uses all the right Flux bits
-  - [ ] Fully styled
+- [x] Put together an index page
+  - [x] Tiles that link to comic page
+  - [x] Uses all the right Flux bits
+  - [x] Fully styled
 
 #### Phase 8: This is now the sexiest site!
 ###### W9D4 (1 day)
 - [ ] Touch up/finish all styles
 - [ ] Add transitions
-- [ ] Make sure index page has OOMPH (large tiles, etc)
+- [x] Make sure index page has OOMPH (large tiles, etc)
 - [ ] Make it stunning
 
 #### Phase 9: Time to make this house a home!

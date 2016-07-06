@@ -12,22 +12,40 @@
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
-#banner-placeholder, #thumb-placeholder {
-  border: 2px dashed $medium-color;
+.upload-thumb {
+  position: relative;
   margin: 0px 20px 20px 20px;
-  height: 200px;
-}
-
-#banner-placeholder:hover, #thumb-placeholder:hover {
   cursor: pointer;
 }
 
-#banner-placeholder {
-  width: 100%;
+#thumb-placeholder {
+  border: 2px dashed $medium-color;
+  height: 200px;
+    width: 200px;
 }
 
-#thumb-placeholder {
-  width: 200px;
+#thumb-placeholder:hover {
+  border: 2px dashed $heavy-color;
+}
+
+.upload-thumb div {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, .35);
+}
+
+.upload-thumb:hover div, #thumb-placeholder div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-thumb:hover div, #thumb-placeholder:hover div {
+  background: rgba(255, 255, 255, .5);
 }
 
 .form-images img {
@@ -47,7 +65,7 @@
   justify-content: space-between;
 }
 
-.form-add-pages-header h2, .page-upload {
+.form-add-pages-header h2 {
   white-space: nowrap;
   flex: 0;
 }
@@ -58,12 +76,6 @@
   max-height: 400px;
   display: flex;
   flex-wrap: wrap;
-}
-
-.page-upload {
-  border: 2px dashed $medium-color;
-  box-sizing: border-box;
-  display: inline-block;
 }
 
 .page-thumb {
@@ -102,7 +114,6 @@
 }
 
 .form-inputs {
-  padding-top: 50px;
   flex: 0;
   white-space: nowrap;
 }
