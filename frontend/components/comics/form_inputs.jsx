@@ -1,4 +1,5 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
   componentDidMount(){
@@ -23,6 +24,15 @@ module.exports = React.createClass({
     }.bind(this));
   },
 
+  _go(){
+    const url = `/${this.props.comic.shortname}`;
+    hashHistory.push(url);
+  },
+
+  _prevent(e){
+    e.preventDefault();
+  },
+
   render(){
     // TODO: can't submit updates till comic fetched
     //       can't press any button till all fields valid?
@@ -31,10 +41,11 @@ module.exports = React.createClass({
     //button value needs to change
 
 
+    const name = this.props.buttonName;
     return(
       <section className="form-inputs">
-        <h2>{this.props.buttonName}:</h2>
-        <form onSubmit={this.props.doComic}>
+        <h2>{name}:</h2>
+        <form onSubmit={this._prevent}>
           <label className="form-element" htmlFor="title">Comic Title:</label>
           <input type="text" onChange={this.props.onChange} className="form-element"
             id="title" value={this.props.comic.title}></input>
@@ -43,7 +54,12 @@ module.exports = React.createClass({
             <input type="text" onChange={this.props.onChange} className="form-element"
                    id="shortname" value={this.props.comic.shortname}></input>
 
-          <input type="submit" value={this.props.buttonName}></input>
+                 {name === "Update Comic" ?
+                   <input type="submit"
+                          value="Go to Comic"
+                          onClick={this._go}></input> : ""}
+
+          <input type="submit" value={name} onClick={this.props.doComic}></input>
         </form>
       </section>
     )

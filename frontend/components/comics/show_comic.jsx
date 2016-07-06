@@ -64,7 +64,3 @@ module.exports = React.createClass({
     return(content);
   }
 });
-
-
-  // <img src={comic.banner_url}
-  //      className="full-img"></img>

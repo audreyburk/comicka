@@ -53,7 +53,7 @@ class Api::ComicsController < ApplicationController
 
   private
   def comic_params
-    fields = [:title, :shortname, :thumb_url, :banner_url]
+    fields = [:title, :shortname, :thumb_url]
     params.require(:comic).permit(*fields)
   end
 

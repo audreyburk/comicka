@@ -10,7 +10,6 @@ const FormImages = require('./form_images');
 module.exports = React.createClass({
   getInitialState(){
     return {
-      banner_url: "",
       thumb_url: "",
       title: "",
       shortname: "",
@@ -31,7 +30,6 @@ module.exports = React.createClass({
     const comic = {
       title: this.state.title,
       shortname: this.state.shortname,
-      banner_url: this.state.banner_url,
       thumb_url: this.state.thumb_url
     };
     ComicActions.createComic(comic, this._edit);
