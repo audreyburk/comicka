@@ -5,6 +5,7 @@ const SessionActions = require('./../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
 const LoginForm = require('./login_form');
 const Logo = require('./logo');
+const Menu = require('./menu');
 
 module.exports = React.createClass({
   getInitialState(){
@@ -50,35 +51,25 @@ module.exports = React.createClass({
     SessionActions.logOut();
   },
 
-  _new(){
-    hashHistory.push('/new');
-  },
-
   _selectInput(){
     const input = $(".text-field").get(0);
     input.focus();
     input.select();
   },
 
-  _home(){
-    hashHistory.push('/');
-  },
-
-  _edit(){
+  edit(){
     const url = `/${this.props.shortname}/edit`;
     hashHistory.push(url);
   },
 
+  _home(){
+    hashHistory.push('/');
+  },
   // TODO: make sure we can't click button before navigating
   _nav(pg){
     const url = `/${this.props.shortname}/${pg}`;
     window.scrollTo(0, 100);
     // window.scrollTo(0, ($('#page').offset().top - 50));
-    hashHistory.push(url);
-  },
-
-  _explore(){
-    const url = '/gunnerkrigg';
     hashHistory.push(url);
   },
 
@@ -99,7 +90,7 @@ module.exports = React.createClass({
     } else {
       login_button = (
         <li className="header-item">
-          <span id="ugh" onClick={this._selectInput}>Log In</span>
+          <span onClick={this._selectInput}>Log In</span>
           <LoginForm />
         </li>
       );
@@ -110,10 +101,8 @@ module.exports = React.createClass({
       <ul id="header-content" className={headerDisplay}>
         <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
         <li id="tagline" className={headerDisplay}>Comics are life.</li>
+        <Menu edit={this.edit} />
         <li className="spacing"></li>
-        <li className="header-item">About</li>
-        <li className="header-item" onClick={this._explore}>Explore</li>
-        <li className="header-item" onClick={this._new}>New Comic</li>
         { login_button }
       </ul>
     );
@@ -143,13 +132,7 @@ module.exports = React.createClass({
         <ul id="header-content" className={headerDisplay}>
           <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
           <li id="tagline" className={headerDisplay}>Comics are life.</li>
-          <li className="header-item" id="menu-button">
-            <span>vvv</span>
-            <ul className="dropdown">
-              <li className="dropdown-item" onClick={this._edit}>Edit</li>
-              <li className="dropdown-item" onClick={this._home}>Index</li>
-            </ul>
-          </li>
+          <Menu edit={this.edit} />
           <li className="spacing"></li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
