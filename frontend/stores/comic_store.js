@@ -7,6 +7,7 @@ const ComicStore = new Store(Dispatcher);
 let _comics = {};
 
 ComicStore.__onDispatch = function (payload) {
+  debugger
   switch (payload.actionType) {
     case ComicConstants.RECEIVE_COMIC:
       addComic(payload.comic);
@@ -42,6 +43,7 @@ function addAllComics(comics){
 
 function addComic(comic){
   _comics[comic.shortname] = comic;
+  debugger
   ComicStore.__emitChange();
 }
 

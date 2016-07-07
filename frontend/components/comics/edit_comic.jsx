@@ -1,4 +1,5 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory;
 
 const FormInputs = require('./form_inputs');
 const FormImages = require('./form_images');
@@ -28,6 +29,10 @@ module.exports = React.createClass({
 
   _onComicStoreChange(){
     const comic = ComicStore.get(this.props.params.shortname);
+    if(!SessionStore.isUserLoggedIn() || SessionStore.currentUser().id !== comic.creator_id){
+      const url = `/${comic.shortname}`;
+      hashHistory.push(url);
+    }
     this.setState( comic );
   },
 
@@ -40,6 +45,7 @@ module.exports = React.createClass({
   },
 
   updateComic(e){
+    // TODO: unbreak this even handler
     e.preventDefault();
     const comic = {
       title: this.state.title,
@@ -47,6 +53,7 @@ module.exports = React.createClass({
       thumb_url: this.state.thumb_url,
       id: this.state.id
     };
+    debugger
     ComicActions.updateComic(comic);
   },
 
