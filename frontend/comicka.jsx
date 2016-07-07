@@ -53,7 +53,7 @@ function _ensureLoggedIn(nextState, replace){
 // TODO: make sure this works if not navigating from comic page?
 function _ensureCreator(nextState, replace){
   const comic = ComicStore.get(nextState.params.shortname);
-  if(!SessionStore.isUserLoggedIn() || SessionStore.currentUser().id !== comic.creator_id){
+  if(!SessionStore.isUserLoggedIn() || (comic && SessionStore.currentUser().id !== comic.creator_id)){
     const url = `/${nextState.params.shortname}`;
     replace(url);
   }

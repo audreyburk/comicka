@@ -24,7 +24,8 @@ module.exports = React.createClass({
     this.setState({[e.target.id]: e.target.value});
   },
 
-  createComic(){
+  createComic(e){
+    e.preventDefault();
     // TODO: disable button until all fields are set!
 
     const comic = {
@@ -32,10 +33,12 @@ module.exports = React.createClass({
       shortname: this.state.shortname,
       thumb_url: this.state.thumb_url
     };
+    debugger
     ComicActions.createComic(comic, this._edit);
   },
 
   _edit(){
+    debugger
     const url = `/${this.state.shortname}/edit`;
     hashHistory.push(url);
   },

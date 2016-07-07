@@ -15,14 +15,17 @@ module.exports = {
   },
 
   createComic: function(comic, cb){
+    debugger
     ComicUtil.createComic(comic, response => this.receiveComic(response, cb), ErrorActions.setErrors);
   },
 
   updateComic: function(comic, pages){
+    debugger
     ComicUtil.updateComic(comic, this.receiveComic, ErrorActions.setErrors);
   },
 
   receiveComic: function(comic, cb){
+    debugger
     ErrorActions.clearErrors();
     Dispatcher.dispatch({
       actionType: ComicConstants.RECEIVE_COMIC,

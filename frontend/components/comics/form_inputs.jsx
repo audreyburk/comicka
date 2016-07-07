@@ -5,7 +5,7 @@ const ErrorStore = require('./../../stores/error_store');
 
 module.exports = React.createClass({
   componentDidMount(){
-    this.token = ErrorStore.addListener(this._onErrorChange);
+    this.token = ErrorStore.addListener(this._onErrorStoreChange);
   },
 
   componentWillUnmount(){
@@ -18,7 +18,7 @@ module.exports = React.createClass({
 
   _onErrorStoreChange(){
     const errors = ErrorStore.formErrors("comic");
-    this.setState( comic );
+    this.setState({errors: errors});
   },
 
   _addPage(){
@@ -58,7 +58,7 @@ module.exports = React.createClass({
     return(
       <section className="form-inputs">
         <h2>{name}:</h2>
-        <form onSubmit={this._prevent}>
+        <form onSubmit={this.props.doComic}>
           <label className="form-element" htmlFor="title">Comic Title:</label>
           <input type="text" onChange={this.props.onChange} className="form-element"
                  id="title" value={this.props.comic.title}></input>
@@ -75,7 +75,7 @@ module.exports = React.createClass({
                           value="Go to Comic"
                           onClick={this._go}></input> : ""}
 
-          <input type="submit" value={name} onClick={this.props.doComic}></input>
+          <input type="submit" value={name} ></input>
         </form>
       </section>
     )
