@@ -53,7 +53,6 @@ module.exports = React.createClass({
       thumb_url: this.state.thumb_url,
       id: this.state.id
     };
-    debugger
     ComicActions.updateComic(comic);
   },
 

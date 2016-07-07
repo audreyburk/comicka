@@ -49,9 +49,9 @@ module.exports = React.createClass({
     let titleErrors = "", shortnameErrors = "", thumbErrors = "";
 
     if(!$.isEmptyObject(this.state.errors)){
-      titleErrors = <div className="field-error">{this.state.errors.title}</div>
-      shortnameErrors = <div className="field-error">{this.state.errors.shortname}</div>
-      thumbErrors = <div className="field-error">{this.state.errors.thumb_url}</div>
+      titleErrors = <div className="form-error">{this.state.errors.title}</div>
+      shortnameErrors = <div className="form-error">{this.state.errors.shortname}</div>
+      thumbErrors = <div className="form-error">{this.state.errors.thumb_url}</div>
     }
 
     const name = this.props.buttonName;
@@ -69,13 +69,14 @@ module.exports = React.createClass({
                  id="shortname" value={this.props.comic.shortname}></input>
           {shortnameErrors}
           {thumbErrors}
-
+          <div className="form-buttons">
                  {name === "Update Comic" ?
-                   <input type="submit"
+                   <input type="submit" id="other-go"
                           value="Go to Comic"
                           onClick={this._go}></input> : ""}
 
-          <input type="submit" value={name} ></input>
+            <input type="submit" value={name} id="main-button"></input>
+          </div>
         </form>
       </section>
     )

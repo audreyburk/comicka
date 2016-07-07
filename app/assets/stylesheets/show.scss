@@ -7,9 +7,6 @@
 }
 
 #page {
-  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   margin: 20px auto;
 }
 
@@ -24,13 +21,13 @@
 .caption {
   width: 100%;
   background: $light-color;
-  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 .caption, #page {
   display: table-row;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 .caption > * {

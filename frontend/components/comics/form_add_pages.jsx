@@ -54,7 +54,7 @@ module.exports = React.createClass({
         { this.state.modal ? <EditPageModal page={this.state.modal} comic={this.props.comic} closeModal={this.closeModal} /> : "" }
         <div className="form-add-pages-header">
           <h2>Edit Pages:</h2>
-          <input type="submit" value="Add Page" className="page-upload" onClick={this._addPage}></input>
+          <input type="submit" value="Add Page" className="page-upload button" onClick={this._addPage}></input>
         </div>
         <div className="page-thumb-container">
           { this.props.comic.pages ? this.renderThumbs() : "" }

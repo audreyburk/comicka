@@ -134,7 +134,14 @@ label.form-element {
 }
 
 input.form-element {
-  padding: 5px;
+  padding: 5px 10px;
+}
+
+.form-error {
+  margin: 2px;
+  color: #620;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .form-inputs input[type=submit] {
@@ -200,13 +207,44 @@ input.form-element {
   margin: 20px 20px 0 0;
 }
 
-#delete {
-  background: #991f00;
+.form-buttons {
+  margin-top: 30px;
+}
+
+.buttons-abreast {
+  display: flex;
+}
+
+#other-delete {
+  margin-right: 10px
+}
+
+#delete, #other-delete {
+  background: $bad-button;
   color: white;
 }
 
-#delete:hover {
-  background: #661400;
+#other-delete:hover, #delete:hover {
+  background: $bad-button-hover;
+}
+
+#update {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: $good-button;
+}
+
+#update:hover {
+  background: $good-button-hover;
+}
+
+#go, #other-go {
+  background: $medium-color;
+}
+
+#go:hover, #other-go:hover {
+  background: $heavy-color;
 }
 
 #cancel {
@@ -216,4 +254,14 @@ input.form-element {
 
 #cancel:hover {
   background: $heaviest-color;
+}
+
+#main-button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: $good-button;
+}
+
+#main-button:hover {
+  background: $good-button-hover;
 }
