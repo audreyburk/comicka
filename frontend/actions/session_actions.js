@@ -22,6 +22,7 @@ const SessionActions = {
 
   logOut() {
     SessionUtil.logOut(SessionActions.removeCurrentUser);
+    hashHistory.push('/');
   },
 
   fetchCurrentUser(complete){

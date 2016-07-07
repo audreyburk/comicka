@@ -33,12 +33,10 @@ module.exports = React.createClass({
       shortname: this.state.shortname,
       thumb_url: this.state.thumb_url
     };
-    debugger
     ComicActions.createComic(comic, this._edit);
   },
 
   _edit(){
-    debugger
     const url = `/${this.state.shortname}/edit`;
     hashHistory.push(url);
   },

@@ -168,7 +168,7 @@
 }
 
 .button {
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .button:hover {
@@ -200,3 +200,11 @@
 .login-field input[type="submit"] {
   margin-left: 10px;
 }
+
+// #login-button {
+//   background: $good-button;
+// }
+//
+// #login-button:hover {
+//   background: $good-button-hover;
+// }

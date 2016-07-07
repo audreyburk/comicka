@@ -17,7 +17,6 @@ module.exports = {
   },
 
   createComic: function(comic, success, error){
-    debugger
     $.ajax({
       method: "POST",
       url: "/api/comics",
@@ -31,7 +30,6 @@ module.exports = {
   },
 
   updateComic: function(comic, success, error){
-    debugger
     const url = `/api/comics/${comic.id}`;
     $.ajax({
       method: "PATCH",

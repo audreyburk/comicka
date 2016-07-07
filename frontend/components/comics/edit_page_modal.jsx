@@ -65,9 +65,13 @@ module.exports = React.createClass({
               <input type="text" onChange={this._onChange} className="form-element"
                      id="caption" value={this.state.caption}></input>
 
-              <input type="submit" value="Delete Page" onClick={this._deletePage} className="form-element"></input>
-              <input type="submit" value="Go to Page" onClick={this._goToPage} className="form-element"></input>
-              <input type="submit" value="Update Page" onClick={this._updatePage} className="form-element"></input>
+              <div className="form-buttons">
+                <div className="buttons-abreast">
+                  <input type="submit" value="Delete Page" onClick={this._deletePage} className="form-element" id="other-delete"></input>
+                  <input type="submit" value="Go to Page" onClick={this._goToPage} className="form-element" id="go"></input>
+                </div>
+                <input type="submit" value="Update Page" onClick={this._updatePage} className="form-element" id="update"></input>
+              </div>
           </form>
         </div>
       </div>

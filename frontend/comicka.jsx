@@ -16,6 +16,7 @@ const SessionActions = require('./actions/session_actions');
 const ShowComic = require('./components/comics/show_comic');
 const NewComic = require('./components/comics/new_comic');
 const EditComic = require('./components/comics/edit_comic');
+const About = require('./components/about');
 const ComicIndex = require('./components/comics/comic_index');
 const SessionStore = require('./stores/session_store');
 const ComicStore = require('./stores/comic_store');
@@ -35,6 +36,8 @@ const router = (
       <IndexRoute component={ComicIndex} />
       <Route path="index" component={ComicIndex} />
       <Route path="new" component={NewComic} onEnter={_ensureLoggedIn} />
+      <Route path="about" component={About} />
+
       <Route path=":shortname">
         <IndexRedirect to="1" />
       </Route>
