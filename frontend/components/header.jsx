@@ -156,7 +156,6 @@ module.exports = React.createClass({
           <li id="progress">{page + "/" + length}</li>
           <li className={foreClass} onClick={() => this._nav(next)}>{">"}</li>
           <li className={foreClass} onClick={() => this._nav(last)}>{">>"}</li>
-          <li className="spacing"></li>
           { login_button }
         </ul>
       );
