@@ -20,7 +20,6 @@ module.exports = React.createClass({
     },
 
     render(){
-      debugger
       return(
         <li className="header-item" id="menu-button">
           <i className="fa fa-bars" aria-hidden="true"></i>
