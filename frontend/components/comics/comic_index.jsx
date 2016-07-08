@@ -7,6 +7,7 @@ module.exports = React.createClass({
   componentDidMount(){
     ComicActions.fetchAllComics();
     this.token = ComicStore.addListener(this._onChange);
+    window.scrollTo(0, 0);
   },
 
   componentWillUnmount(){

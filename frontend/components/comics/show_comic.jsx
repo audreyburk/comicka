@@ -63,7 +63,7 @@ module.exports = React.createClass({
       content = (
         <article className="content">
           <section className="show-comic">
-            <img src={comic.thumb_url} id="page"></img>
+            <img src={comic.thumb_url} id="page" className="last-page"></img>
             <div className="caption">
               Sorry! This comic doesn't seem to have any pages yet. Be sure to check back soon!
             </div>
