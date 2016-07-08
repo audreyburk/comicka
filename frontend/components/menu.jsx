@@ -6,6 +6,10 @@ module.exports = React.createClass({
       hashHistory.push('/new');
     },
 
+    _about(){
+      hashHistory.push('/about');
+    },
+
     _explore(){
       const url = '/gunnerkrigg';
       hashHistory.push(url);
@@ -16,17 +20,17 @@ module.exports = React.createClass({
     },
 
     render(){
-    return(
-      <li className="header-item" id="menu-button">
-        <i className="fa fa-bars" aria-hidden="true"></i>
-        <ul className="dropdown">
-          <li className="dropdown-item" onClick={this.props.edit}>Edit</li>
-          <li className="dropdown-item" onClick={this._home}>Index</li>
-          <li className="dropdown-item">About</li>
-          <li className="dropdown-item" onClick={this._explore}>Explore</li>
-          <li className="dropdown-item" onClick={this._new}>New Comic</li>
-        </ul>
-      </li>
-    );
+      debugger
+      return(
+        <li className="header-item" id="menu-button">
+          <i className="fa fa-bars" aria-hidden="true"></i>
+          <ul className="dropdown">
+            {this.props.edit ? <li className="dropdown-item" onClick={this.props.edit}>Edit</li> : ""}
+            <li className="dropdown-item" onClick={this._new}>New Comic</li>
+            <li className="dropdown-item" onClick={this._home}>Index</li>
+            <li className="dropdown-item" onClick={this._about}>About</li>
+          </ul>
+        </li>
+      );
   }
 });
