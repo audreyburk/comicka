@@ -6,17 +6,17 @@ const hashHistory = require('react-router').hashHistory;
 
 const SessionActions = {
 
-  signUp(formData){
+  signUp(formData, cb){
     SessionUtil.signUp(
       formData,
-      SessionActions.receiveCurrentUser,
+      response => SessionActions.receiveCurrentUser(response, cb),
       ErrorActions.setErrors);
   },
 
-  logIn(formData){
+  logIn(formData, cb){
     SessionUtil.logIn(
       formData,
-      SessionActions.receiveCurrentUser,
+      response => SessionActions.receiveCurrentUser(response, cb),
       ErrorActions.setErrors);
   },
 
@@ -30,12 +30,13 @@ const SessionActions = {
       SessionActions.receiveCurrentUser, complete);
   },
 
-  receiveCurrentUser(currentUser) {
+  receiveCurrentUser(currentUser, cb) {
     ErrorActions.clearErrors();
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGIN,
       currentUser: currentUser
     });
+    if(cb !== "success" && cb !== undefined) cb();
   },
 
   removeCurrentUser() {

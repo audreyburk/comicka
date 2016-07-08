@@ -70,6 +70,7 @@ module.exports = React.createClass({
           {shortnameErrors}
           {thumbErrors}
           <div className="form-buttons">
+            {this.props.comic.updated ? <span className="form-element">Comic updated!</span> : ""}
                  {name === "Update Comic" ?
                    <input type="submit" id="other-go"
                           value="Go to Comic"

@@ -41,7 +41,7 @@ module.exports = React.createClass({
   },
 
   render(){
-    let content = <article className="content"></article>;
+    let content = null;
     const comic = this.state.comic;
     if (comic && comic.pages){
       const pageNumber = parseInt(this.props.params.page);
@@ -58,6 +58,16 @@ module.exports = React.createClass({
                   onClick={this._nextPage}></img>
              {page.title || page.caption ? <Caption page={page}/> : ""}
            </section>
+        </article>);
+    } else if(comic && comic.length === 0){
+      content = (
+        <article className="content">
+          <section className="show-comic">
+            <img src={comic.thumb_url} id="page"></img>
+            <div className="caption">
+              Sorry! This comic doesn't seem to have any pages yet. Be sure to check back soon!
+            </div>
+          </section>
         </article>);
     }
 

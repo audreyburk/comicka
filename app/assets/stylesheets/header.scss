@@ -218,3 +218,21 @@
 // #login-button:hover {
 //   background: $good-button-hover;
 // }
+
+.login-modal {
+  background: $heaviest-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $light-color;
+}
+
+.modal #login {
+  position: static;
+  display: block;
+  min-width: 0%;
+  right: auto;
+  top: auto;
+  flex: 0;
+}

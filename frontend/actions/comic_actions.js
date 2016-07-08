@@ -18,8 +18,8 @@ module.exports = {
     ComicUtil.createComic(comic, response => this.receiveComic(response, cb), ErrorActions.setErrors);
   },
 
-  updateComic: function(comic, pages){
-    ComicUtil.updateComic(comic, this.receiveComic, ErrorActions.setErrors);
+  updateComic: function(comic, cb){
+    ComicUtil.updateComic(comic, response => this.receiveComic(response, cb), ErrorActions.setErrors);
   },
 
   receiveComic: function(comic, cb){

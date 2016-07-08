@@ -1,9 +1,20 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
+const SessionStore = require('./../stores/session_store');
+
+const LoginModal = require('./login_modal');
 
 module.exports = React.createClass({
+    getInitialState(){
+      return {modal: false};
+    },
+
     _new(){
-      hashHistory.push('/new');
+      if(SessionStore.isUserLoggedIn()){
+        hashHistory.push('/new');
+      } else {
+        this.setState({modal: true});
+      }
     },
 
     _about(){
@@ -19,6 +30,11 @@ module.exports = React.createClass({
       hashHistory.push('/');
     },
 
+    closeModal(){
+      this.setState({modal: false});
+      hashHistory.push('/new');
+    },
+
     render(){
       return(
         <li className="header-item" id="menu-button">
@@ -29,6 +45,7 @@ module.exports = React.createClass({
             <li className="dropdown-item" onClick={this._home}>Index</li>
             <li className="dropdown-item" onClick={this._about}>About</li>
           </ul>
+          { this.state.modal ? <LoginModal closeModal={this.closeModal} /> : "" }
         </li>
       );
   }
