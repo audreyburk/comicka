@@ -37,14 +37,14 @@ module.exports = React.createClass({
     switch (this.submit) {
       case "Log In":
         SessionActions.logIn({username: this.state.username,
-                               password: this.state.password});
+                              password: this.state.password});
         break;
       case "Sign Up":
         SessionActions.signUp({username: this.state.username,
                                password: this.state.password});
         break;
       case "Demo Login":
-        SessionActions.logIn({username:"jyllian", password:"demoaccount"});
+        SessionActions.logIn({username:"minna", password:"password"});
         break;
     }
   },
