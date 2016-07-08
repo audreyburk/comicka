@@ -178,6 +178,7 @@ url = "http://www.bob-artist.com/demon/img/comic/"
 202.times do |i|
   current_url = url + (i+1).to_s + ".jpg"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
   Page.create({
     comic_id: 1,
     page_number: (i+1),
@@ -187,126 +188,144 @@ url = "http://www.bob-artist.com/demon/img/comic/"
     caption: Faker::Hacker.say_something_smart
     })
   end
-#
-# url = "http://www.sssscomic.com/comicpages/"
-# 557.times do |i|
-#   current_url = url + (i + 1).to_s + ".jpg"
-#   Page.create({
-#       comic_id: 2,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url
-#   })
-# end
-#
-# url = "http://www.gunnerkrigg.com/comics/"
-# 1000.times do |i|
-#   current_url = url + (i+1).to_s.rjust(8, "0") + ".jpg"
-#   Page.create({
-#       comic_id: 3,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://www.spindrift-comic.com/static/pages/chapter0/"
-# 11.times do |i|
-#   current_url = url + i.to_s.rjust(2, "0") + ".jpg"
-#   Page.create({
-#       comic_id: 4,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://www.spindrift-comic.com/static/pages/chapter1/"
-# 76.times do |i|
-#   current_url = url + i.to_s.rjust(2, "0") + ".jpg"
-#   Page.create({
-#       comic_id: 4,
-#       page_number: (i+11),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://www.spindrift-comic.com/static/pages/chapter2/"
-# 25.times do |i|
-#   current_url = url + (i + 76).to_s.rjust(2, "0") + ".jpg"
-#   Page.create({
-#       comic_id: 4,
-#       page_number: (i+86),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://zules.com/exvulnerum/pages/"
-# 242.times do |i|
-#   current_url = url + (i + 1).to_s + ".jpg"
-#   Page.create({
-#       comic_id: 5,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://www.sombulus.com/comic/image/"
-# 631.times do |i|
-#   current_url = url + (i + 1).to_s
-#   Page.create({
-#       comic_id: 6,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url,
-#       title: Faker::Book.title,
-#       caption: Faker::Hacker.say_something_smart
-#   })
-# end
-#
-# url = "http://www.buttercupfestival.com/2-"
-# 143.times do |i|
-#   next if i == 11 || i == 29
-#   current_url = url + (i + 1).to_s + ".png"
-#   Page.create({
-#       comic_id: 7,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url
-#   })
-# end
-#
-# url = "http://www.bloodsplatteredsocks.com/pages/"
-# 407.times do |i|
-#   current_url = url + (i + 1).to_s + ".jpg"
-#   Page.create({
-#       comic_id: 8,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url
-#   })
-# end
-#
-# url = "http://www.rice-boy.com/vattu/"
-# 759.times do |i|
-#   current_url = url + (i + 1).to_s.rjust(3, "0") + ".png"
-#   Page.create({
-#       comic_id: 9,
-#       page_number: (i+1),
-#       image_url: current_url,
-#       thumb_url: current_url
-#   })
-# end
+
+url = "http://www.sssscomic.com/comicpages/"
+557.times do |i|
+  current_url = url + (i + 1).to_s + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 2,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url
+  })
+end
+
+url = "http://www.gunnerkrigg.com/comics/"
+1000.times do |i|
+  current_url = url + (i+1).to_s.rjust(8, "0") + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 3,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://www.spindrift-comic.com/static/pages/chapter0/"
+11.times do |i|
+  current_url = url + i.to_s.rjust(2, "0") + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 4,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://www.spindrift-comic.com/static/pages/chapter1/"
+76.times do |i|
+  current_url = url + i.to_s.rjust(2, "0") + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 4,
+      page_number: (i+11),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://www.spindrift-comic.com/static/pages/chapter2/"
+25.times do |i|
+  current_url = url + (i + 76).to_s.rjust(2, "0") + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 4,
+      page_number: (i+86),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://zules.com/exvulnerum/pages/"
+242.times do |i|
+  current_url = url + (i + 1).to_s + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 5,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://www.sombulus.com/comic/image/"
+631.times do |i|
+  current_url = url + (i + 1).to_s
+  Page.create({
+      comic_id: 6,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url,
+      title: Faker::Book.title,
+      caption: Faker::Hacker.say_something_smart
+  })
+end
+
+url = "http://www.buttercupfestival.com/2-"
+143.times do |i|
+  next if i == 11 || i == 29
+  current_url = url + (i + 1).to_s + ".png"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 7,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url
+  })
+end
+
+url = "http://www.bloodsplatteredsocks.com/pages/"
+407.times do |i|
+  current_url = url + (i + 1).to_s + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 8,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url
+  })
+end
+
+url = "http://www.rice-boy.com/vattu/"
+759.times do |i|
+  current_url = url + (i + 1).to_s.rjust(3, "0") + ".png"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  puts current_url
+  Page.create({
+      comic_id: 9,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url
+  })
+end

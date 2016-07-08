@@ -19,9 +19,64 @@ body {
   overflow-y: scroll;
 }
 
+footer {
+  width: 100%;
+  position: fixed;
+  background: $heaviest-color;
+  color: $light-color;
+  box-sizing: border-box;
+}
+
+footer.hide {
+  bottom: -100px;
+  -webkit-transition: bottom .25s;
+  transition: bottom .25s;
+}
+
+footer.show {
+  bottom: 0px;
+  -webkit-transition: bottom .25s;
+  transition: bottom .25s;
+}
+
+footer ul {
+  width: $column-width;
+  margin: 0 auto;
+  display: flex;
+}
+
+footer li {
+  padding: 15px;
+}
+
+#github {
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  content: image-url("github.svg");
+}
+
+#mail {
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  content: image-url("close-envelope.svg");
+}
+
+
+#github:hover {
+  content: image-url("github-logo-white.svg");
+  cursor: pointer;
+}
+
+#mail:hover {
+  content: image-url("close-envelope-white.svg");
+  cursor: pointer;
+}
+
 .content {
   max-width: $column-width;
-  margin: 180px auto 60px;
+  margin: 180px auto 100px;
 }
 
 .full-img {

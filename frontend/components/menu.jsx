@@ -43,7 +43,6 @@ module.exports = React.createClass({
             {this.props.edit ? <li className="dropdown-item" onClick={this.props.edit}>Edit</li> : ""}
             <li className="dropdown-item" onClick={this._new}>New Comic</li>
             <li className="dropdown-item" onClick={this._home}>Index</li>
-            <li className="dropdown-item" onClick={this._about}>About</li>
           </ul>
           { this.state.modal ? <LoginModal closeModal={this.closeModal} /> : "" }
         </li>
