@@ -132,7 +132,6 @@ module.exports = React.createClass({
       let editable = false
       if(this.state.comic && this.state.comic.creator_id === SessionStore.currentUser().id){
         editable = true;
-        debugger
       }
 
       nav_buttons = (
@@ -154,16 +153,14 @@ module.exports = React.createClass({
 
     // render everything
     return(
-      <div id="header-displacement">
-        <header id="header" className={headerDisplay}>
-          <div id="header-top">
-             <div id="header-top-inner">
-               <div id="logo" className={headerDisplay} onClick={this._home}></div>
-             </div>
+      <header id="header" className={headerDisplay}>
+        <div id="header-top">
+           <div id="header-top-inner">
+             <div id="logo" className={headerDisplay} onClick={this._home}></div>
            </div>
-          { nav_buttons }
-        </header>
-      </div>
+         </div>
+        { nav_buttons }
+      </header>
     );
   }
 });

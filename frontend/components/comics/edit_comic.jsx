@@ -23,7 +23,8 @@ module.exports = React.createClass({
     return {
       thumb_url: "",
       title: "",
-      shortname: ""
+      shortname: "",
+      updated: false
     };
   },
 
@@ -53,7 +54,16 @@ module.exports = React.createClass({
       thumb_url: this.state.thumb_url,
       id: this.state.id
     };
-    ComicActions.updateComic(comic);
+    ComicActions.updateComic(comic, this.updated);
+  },
+
+  updated(){
+    setTimeout(this.clearUpdated, 1500);
+    this.setState({updated: true});
+  },
+
+  clearUpdated(){
+    this.setState({updated: false});
   },
 
   render(){
