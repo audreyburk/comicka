@@ -44,7 +44,7 @@ module.exports = React.createClass({
   render(){
     return(
       <article className="content">
-        <div className="form-container">
+        <div className="form-container new-form-container">
           <FormInputs onChange={this.onChange}
                       doComic={this.createComic}
                       comic={this.state}

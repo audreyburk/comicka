@@ -3,6 +3,7 @@ const ComicActions = require('./../actions/comic_actions');
 const ComicStore = require('./../stores/comic_store');
 
 const Header = require('./header');
+const Footer = require('./footer');
 
 module.exports = React.createClass({
   componentDidMount(){
@@ -19,10 +20,11 @@ module.exports = React.createClass({
 
   render(){
     return (
-      <div>
+      <div id="app">
         <Header shortname={this.props.params.shortname}
                 pageNumber={this.props.params.page} />
         {this.props.children}
+        <Footer />
       </div>
     );
   }
