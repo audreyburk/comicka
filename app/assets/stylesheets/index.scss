@@ -26,9 +26,15 @@
   box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
-.index-item-container:nth-child(-n+2) {
-  width: 49%;
+.index-item-container:nth-child(7n+3),
+.index-item-container:nth-child(7n+1),
+.index-item-container:nth-child(7n+2) {
+  width: 32.33%;
 }
+
+// .index-item-container:nth-child(-n+3) {
+//   width: 32.33%;
+// }
 
 .dummy {
   margin-top: 100%;

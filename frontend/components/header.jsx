@@ -97,11 +97,12 @@ module.exports = React.createClass({
     }
 
     // display nav options or page stuff
+
     let nav_buttons = (
       <ul id="header-content" className={headerDisplay}>
+        <Menu />
         <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
         <li id="tagline" className={headerDisplay}>Comics are life.</li>
-        <Menu edit={this.edit} />
         <li className="spacing"></li>
         { login_button }
       </ul>
@@ -128,11 +129,17 @@ module.exports = React.createClass({
         last = page;
       }
 
+      let editable = false
+      if(this.state.comic && this.state.comic.creator_id === SessionStore.currentUser().id){
+        editable = true;
+        debugger
+      }
+
       nav_buttons = (
         <ul id="header-content" className={headerDisplay}>
+          <Menu edit={editable === true ? this.edit : null} />
           <li id="bar-logo" className={headerDisplay} onClick={this._home}>COMICKA</li>
           <li id="tagline" className={headerDisplay}>Comics are life.</li>
-          <Menu edit={this.edit} />
           <li className="spacing"></li>
           <li className={backClass} onClick={() => this._nav(first)}>{"<<"}</li>
           <li className={backClass} onClick={() => this._nav(prev)}>{"<"}</li>
