@@ -1,174 +1,35 @@
-# Capstone: Comicka <a name="top"></a>
-- [Comicka [Live Site]](https://comicka.herokuapp.com/)
-- [Minimum Viable Product](#mvp)
-- [Bonus Features](#bonus)
-- [Design Documents](#design)
-- [Production Timeline](#timeline)
+# COMICKA
 
-<a name="mvp"></a>
-## Minimum Viable Product [[top]](#top)
-Comicka is a web application inspired by DeviantArt and Hiveworks that will allow users to upload webcomics, read and follow webcomics, and interact via comments. It will be built on a Ruby-on-Rails backend, PostgreSQL database, and React/Flux frontend.
+Comicka is a platform for webcomic readers and creators. Users may upload their comics to share with the world, and anyone is free to browse the site and discover new creations.
 
-By the end of week nine, this app will satisfy the following criteria:
+## Implementation
 
-1. [x] Hosted on Heroku
-2. [ ] Production README to replace this file
+Comicka is built on a Ruby-on-Rails backend and PostgreSQL database. Its frontend is made in React.js and supported by Flux application architecture.
 
-3. [ ] Site overview:
-  - [ ] Adequate seed data
-  - [ ] Free of bugs and console logs
-  - [ ] Gorgeous!
+#### Authentication
 
-4. [x] Account creation and authorization:
-  - [x] Sign up, sign in, demo user!
-  - [x] Guests may browse full site
-  - [x] Users may upload comics
+Some things happen in the backend, and then they go to the frontend. It's kinda dope. Try it out as the demo user, Minna. Or make your own account! We use coolio encryption and session tokens to make sure that everything's perfectly safe.
 
-5. [x] Comics:
-  - [x] Displays comic and caption
-  - [x] Appropriate, intuitive navigation
-  - [x] Adequate styling
+#### Comics
 
-6. [x] New / Update Comic
-  - [x] Upload page and captions
-  - [x] Appropriate, intuitive navigation
-  - [x] Adequate styling
+We have models and models that belong to models. They are rendered in components that are in other components. Sometimes the components are modals, in which case we render models of modals in modal model components.
 
-7. [x] Index:
-  - [x] Shows all comics
-  - [x] Read or follow in one click
-  - [x] Adequate styling
+#### Uploading and Editing
 
-<a name="bonus"></a>
-## Bonus Features [[top]](#top)
+You can edit things and add things if you have sufficient privilege: you must me logged in to upload comics, and you must own a comic to edit it. As Minna, though, you can mess around with Stand Still Stay Silent.
 
-1. [ ] Please let me have time for a Bookshelf:
-  - [ ] Shows all comics user is following
-  - [ ] Appropriate, intuitive navigation
-  - [ ] Adequate styling
+## Future
 
-2. Semi-Important Bonus Features:
-  - [ ] Search/sort functionality
-  - [ ] Comments
-  - [ ] Bookmarking of readers' place in each comic
-  - [ ] Keyboard navigation: forward, backward
-  - [ ] Only loads some pages at once
+It's gonna be awesome. We need a lot of key features still, though.
 
-3. Super-bonus Bonus Features
-  - [ ] Multiple creators
-  - [ ] Improved search: by genre, creator, etc.
-  - [ ] Creator styling of comic pages
-  - [ ] Nested comments
-  - [ ] Moderator accounts for trimming comments, etc.
-  - [ ] Recommended/similar comics per user and per comic
-  - [ ] Comics have chapter/section markers
-  - [ ] Comment upvotes/downvotes; comment hiding
-  - [ ] Featured comments
-  - [ ] Organizable/draggable bookshelf items
-  - [ ] Multiple view options: tiles, list style, etc.
-  - [ ] Fancy, comment-style captions
-  - [ ] Update schedules
+#### Bookshelves
 
-<a name="design"></a>
-## Design Documents [[top]](#top)
-- [Wireframes](docs/wireframes.md)
-- [React Routes](docs/routes.md)
-- [React Components](docs/components.md)
-- [Flux Cycles](docs/flux_cycles.md)
-- [Database Schema](docs/schema.md)
-- [API Endpoints](docs/api.md)
+People can store comics on their shelves. We'll also bookmark readers' progress through each comic, and let them know when comics are updated.
 
-<a name="timeline"></a>
-## Production Timeline [[top]](#top)
+#### Comments
 
-#### Phase 1: We can log in to something!
-###### W8D2 (1 day)
-- [x] New project!
-- [x] User model
-- [x] Session/user create/destroy api routes
-- [x] Frontend Auth, however that works...
-- [x] Blank landing page after sign-in
-- [x] Hosted on Heroku!
+What's a webcomic site without comments? Trash, I tell you. Absolute trash.
 
-#### Phase 2: The server knows what to do!
-###### W8D3 (1 day)
-- [x] Comic model
-- [x] Page model
-- [x] ComicsController and Rails routes
-- [x] PagesController and Rails routes
-- [x] Comic JBuilder views
-- [x] Test all controller actions
-- [x] Seed a bit of test data
+#### Profiles
 
-#### Phase 3: Oh wow, a React router AND a comic view!?
-###### W8D5 (2 days)
-- [x] Initialize React router
-- [x] Set up React directories
-- [x] Make a header
-- [x] Read Comic page!
-  - [x] No comments yet
-  - [x] Displays page and caption
-  - [x] Vaguely styled
-
-#### Phase 4: We can totally upload comics now!
-###### W8D7 (1 weekend)
-- [x] New comic form
-  - [x] Image uploading O_O
-  - [x] Title, shortname, etc.
-  - [x] Vaguely styled
-
-#### Phase 5: They can even be updated!
-###### W9D1 (1 day)
-- [x] Edit comic form
-  - [x] Change out any images
-  - [x] Insert and remove pages
-  - [x] Vaguely styled
-
-#### Phase 6: Things are starting to look sleek and shiny!
-###### W9D2 (1 day)
-- [x] Finalize basic styling
-  - [x] Solidify color palette
-  - [x] Get logo put together
-  - [x] Make everything pretty!
-
-#### Phase 7: It's a never-ending deluge of comics!
-###### W9D3 (1 day)
-- [x] Put together an index page
-  - [x] Tiles that link to comic page
-  - [x] Uses all the right Flux bits
-  - [x] Fully styled
-
-#### Phase 8: This is now the sexiest site!
-###### W9D4 (1 day)
-- [ ] Touch up/finish all styles
-- [ ] Add transitions
-- [x] Make sure index page has OOMPH (large tiles, etc)
-- [ ] Make it stunning
-
-#### Phase 9: Time to make this house a home!
-###### W9D5 (1 day)
-- [ ] Ugh figure out how to get all the comics
-- [ ] Seed all the comics
-- [ ] Custom domain
-- [ ] Clean out logs, etc.
-  - [ ] window-mounted stores, etc.
-- [ ] Ensure HTML/JS injection security
-- [ ] Do whatever else needs doing
-
-#### Bonus Phase 1: Oh my god I'm so burnt out!
-###### W9D6 (1 day)
-- [ ] shortname only available for New Comic, not Edit
-- [ ] Readerships model
-  - [ ] Including bookmarking
-- [ ] Follow button on index tiles and on ReadComic header
-- [ ] Bookshelf!
-  - [ ] Displays all followed comics
-  - [ ] Fancy little nav pane
-  - [ ] Shows progress through each comic
-
-#### Bonus Phase 2: Please please just let me sleep!
-###### W9D7 (1 day)
-- [ ] Set up search flux loop
-- [ ] Add search bar to index/bookshelf
-- [ ] Add pagination to index
-- [ ] Sort by title, creator, amount read, length
+Creators especially need profiles to display the wonderful webcomics they've worked on.
