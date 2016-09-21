@@ -6,7 +6,7 @@ discover new creations.
 
 ![splash_page](readme/comicka_splash.png)
 
-Live site: [Comicka][http://comicka.io]
+Live site: [Comicka](http://comicka.io)
 
 ## Implementation
 
