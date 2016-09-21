@@ -6,6 +6,8 @@ discover new creations.
 
 ![splash_page](readme/comicka_splash.png)
 
+Live site: [Comicka][http://comicka.io]
+
 ## Implementation
 
 Comicka is a single-page app built on a Ruby-on-Rails backend and PostgreSQL
