@@ -1,35 +1,49 @@
 # COMICKA
 
-Comicka is a platform for webcomic readers and creators. Users may upload their comics to share with the world, and anyone is free to browse the site and discover new creations.
+Comicka is a platform for webcomic readers and creators. Users may upload their
+comics to share with the world, and anyone is free to browse the site and
+discover new creations.
+
+![splash_page](readme/comicka_splash.png)
 
 ## Implementation
 
-Comicka is built on a Ruby-on-Rails backend and PostgreSQL database. Its frontend is made in React.js and supported by Flux application architecture.
-
-#### Authentication
-
-Some things happen in the backend, and then they go to the frontend. It's kinda dope. Try it out as the demo user, Minna. Or make your own account! We use coolio encryption and session tokens to make sure that everything's perfectly safe.
+Comicka is a single-page app built on a Ruby-on-Rails backend and PostgreSQL
+database. Its frontend is made with React.js and supported by Flux application
+architecture.
 
 #### Comics
 
-We have models and models that belong to models. They are rendered in components that are in other components. Sometimes the components are modals, in which case we render models of modals in modal model components.
+Each comic is essentially a collection of pages. In the comic view, a navbar
+tracks your place in the comic and allows for intuitive navigation. Creator
+commentary is displayed along with each page. The navbar also allows displays
+different links, such as uploading or editing a comic, if the reader is logged
+in or is the creator of the comic.
 
 #### Uploading and Editing
 
-You can edit things and add things if you have sufficient privilege: you must me logged in to upload comics, and you must own a comic to edit it. As Minna, though, you can mess around with Stand Still Stay Silent.
+Different levels of authentication protect the uploading and editing of comics.
+Frontend and backend verification makes sure that only registered users can
+upload comics, and only the owner of a comic can edit it.
 
-## Future
+Sign in as the demo user, Minna, and you'll be able to mess around with the
+comic _Stand Still, Stay Silent_.
 
-It's gonna be awesome. We need a lot of key features still, though.
+Image uploading is taken care of by integration with the Cloudinary API, which
+ensures a reliable interface and great load speeds.
 
-#### Bookshelves
+## Looking Forward
 
-People can store comics on their shelves. We'll also bookmark readers' progress through each comic, and let them know when comics are updated.
-
-#### Comments
-
-What's a webcomic site without comments? Trash, I tell you. Absolute trash.
+A few more features could turn Comicka into something truly special.
 
 #### Profiles
 
-Creators especially need profiles to display the wonderful webcomics they've worked on.
+Users need profile pages. These will keep track of the comics they have created
+and the comics they are reading; it will also track their progress, and let
+users know when comics they are reading have been updated.
+
+#### Comments
+
+Users should be able to comment on each page. Administrators and comic creators
+should be able to moderate these comments, and an upvote/downvote system should
+be implemented.

@@ -1,9 +1,5 @@
 class Api::ComicsController < ApplicationController
 
-  # TODO: what even are errors?
-  #       appropriate way to display them
-  #       and WHY
-
   def create
     p current_user
     @comic = Comic.new(comic_params)
