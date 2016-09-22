@@ -166,6 +166,22 @@ Comic.create({
 
 # UNCONFIRMED --------------------------------
 
+
+
+url = "http://www.sssscomic.com/comicpages/"
+141.times do |i|
+  current_url = url + (i + 1).to_s + ".jpg"
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
+  Page.create({
+      comic_id: 2,
+      page_number: (i+1),
+      image_url: cloudinary_url,
+      thumb_url: cloudinary_url
+  })
+end
+
+# SHOULD BE GOOD ------------------
+
 url = "http://www.buttercupfestival.com/2-"
 7.times do |i|
   current_url = url + (i + 1).to_s + ".png"
@@ -438,17 +454,6 @@ url = "http://www.bob-artist.com/demon/img/comic/"
     })
   end
 
-url = "http://www.sssscomic.com/comicpages/"
-141.times do |i|
-  current_url = url + (i + 1).to_s + ".jpg"
-  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
-  Page.create({
-      comic_id: 2,
-      page_number: (i+1),
-      image_url: cloudinary_url,
-      thumb_url: cloudinary_url
-  })
-end
 
 url = "http://www.gunnerkrigg.com/comics/"
 95.times do |i|
