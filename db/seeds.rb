@@ -167,8 +167,7 @@ Comic.create({
 # UNCONFIRMED --------------------------------
 
 url = "http://www.buttercupfestival.com/2-"
-143.times do |i|
-  next if i == 11 || i == 29
+7.times do |i|
   current_url = url + (i + 1).to_s + ".png"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
