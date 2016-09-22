@@ -254,7 +254,7 @@ url = "http://zules.com/exvulnerum/pages/"
 end
 
 url = "http://www.sombulus.com/comic/image/"
-631.times do |i|
+17.times do |i|
   current_url = url + (i + 1).to_s
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
