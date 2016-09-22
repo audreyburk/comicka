@@ -1,3 +1,5 @@
+Cloudinary::Api.delete_all_resources(:resource_type => :image)
+
 User.create({username: "tom siddell", password: "coyote"});
 User.create({username: "BobArtist", password: "password"});
 User.create({username: "elsa_kroese", password: "password"});
@@ -235,9 +237,7 @@ url = "http://www.spindrift-comic.com/static/pages/chapter2/"
       comic_id: 4,
       page_number: (i+86),
       image_url: cloudinary_url,
-      thumb_url: cloudinary_url,
-      title: Faker::Book.title,
-      caption: Faker::Hacker.say_something_smart
+      thumb_url: cloudinary_url
   })
 end
 
@@ -249,15 +249,14 @@ url = "http://zules.com/exvulnerum/pages/"
       comic_id: 5,
       page_number: (i+1),
       image_url: cloudinary_url,
-      thumb_url: cloudinary_url,
-      title: Faker::Book.title,
-      caption: Faker::Hacker.say_something_smart
+      thumb_url: cloudinary_url
   })
 end
 
 url = "http://www.sombulus.com/comic/image/"
 631.times do |i|
   current_url = url + (i + 1).to_s
+  cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
       comic_id: 6,
       page_number: (i+1),
