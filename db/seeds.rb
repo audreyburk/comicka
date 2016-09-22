@@ -88,6 +88,13 @@ Comic.create({
 })
 
 Comic.create({
+  title:"Ava's Demon",
+  shortname:"avas_demon",
+  creator_id:13,
+  thumb_url:"http://i.imgur.com/dneaVbv.png"
+})
+
+Comic.create({
   title:"Girl Genius",
   shortname:"girlgenius",
   creator_id:9,
@@ -113,13 +120,6 @@ Comic.create({
   shortname:"penny_arcade",
   creator_id:12,
   thumb_url:"http://i.imgur.com/GoVhwTL.jpg"
-})
-
-Comic.create({
-  title:"Ava's Demon",
-  shortname:"avas_demon",
-  creator_id:13,
-  thumb_url:"http://i.imgur.com/dneaVbv.png"
 })
 
 Comic.create({
@@ -393,6 +393,11 @@ UNSOUNDED = [
   "http://www.casualvillain.com/Unsounded/comic/ch01/pageart/ch01_27.jpg",
   "http://www.casualvillain.com/Unsounded/comic/ch01/pageart/ch01_28.jpg"
 ]
+
+# gg
+# starlsip
+# penny Arcade
+# avas demon
 
 ALL = [
   GIRL_GENIUS,
