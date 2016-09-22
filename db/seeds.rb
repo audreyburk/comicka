@@ -179,7 +179,7 @@ url = "http://www.buttercupfestival.com/2-"
 end
 
 url = "http://www.bloodsplatteredsocks.com/pages/"
-407.times do |i|
+168.times do |i|
   current_url = url + (i + 1).to_s + ".jpg"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
@@ -191,7 +191,7 @@ url = "http://www.bloodsplatteredsocks.com/pages/"
 end
 
 url = "http://www.rice-boy.com/vattu/"
-759.times do |i|
+270.times do |i|
   current_url = url + (i + 1).to_s.rjust(3, "0") + ".png"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
@@ -439,7 +439,7 @@ url = "http://www.bob-artist.com/demon/img/comic/"
   end
 
 url = "http://www.sssscomic.com/comicpages/"
-557.times do |i|
+141.times do |i|
   current_url = url + (i + 1).to_s + ".jpg"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
@@ -451,7 +451,7 @@ url = "http://www.sssscomic.com/comicpages/"
 end
 
 url = "http://www.gunnerkrigg.com/comics/"
-1000.times do |i|
+95.times do |i|
   current_url = url + (i+1).to_s.rjust(8, "0") + ".jpg"
   cloudinary_url = Cloudinary::Uploader.upload(current_url)["url"]
   Page.create({
